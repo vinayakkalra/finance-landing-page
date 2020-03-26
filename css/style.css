@@ -1,0 +1,187 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: Oswald-b;
+    src: url(../fonts/Oswald-Bold.ttf);
+    font-display: swap;
+}
+.font-Oswald-b {
+    font-family: Oswald-b;
+}
+@font-face {
+    font-family: Oswald-m;
+    src: url(../fonts/Oswald-Medium.ttf);
+    font-display: swap;
+}
+.font-Oswald-m {
+    font-family: Oswald-m;
+}
+@font-face {
+    font-family: Oswald-r;
+    src: url(../fonts/Oswald-Regular.ttf);
+    font-display: swap;
+}
+.font-Oswald-r {
+    font-family: Oswald-r;
+}
+@font-face {
+    font-family: Oswald-l;
+    src: url(../fonts/Oswald-Light.ttf);
+    font-display: swap;
+}
+.font-Oswald-l {
+    font-family: Oswald-l;
+}
+@font-face {
+    font-family: roboto-b;
+    src: url(../fonts/Roboto-Bold.ttf);
+    font-display: swap;
+}
+.font-roboto-b {
+    font-family: roboto-b;
+}
+@font-face {
+    font-family: roboto-m;
+    src: url(../fonts/Roboto-Medium.ttf);
+    font-display: swap;
+}
+.font-roboto-m {
+    font-family: roboto-m;
+}
+@font-face {
+    font-family: roboto-r;
+    src: url(../fonts/Roboto-Regular.ttf);
+    font-display: swap;
+}
+.font-roboto-r {
+    font-family:roboto-r;
+}
+@font-face {
+    font-family: merriweather-b;
+    src: url(../fonts/Merriweather-Bold.ttf);
+    font-display: swap;
+}
+.font-merriweather-b {
+    font-family:merriweather-b;
+}
+@font-face {
+    font-family: merriweather-r;
+    src: url(../fonts/Merriweather-Regular.ttf);
+    font-display: swap;
+}
+.font-merriweather-r {
+    font-family:merriweather-r;
+}
+@font-face {
+    font-family: merriweather-l;
+    src: url(../fonts/Merriweather-Light.ttf);
+    font-display: swap;
+}
+.font-merriweather-l {
+    font-family:merriweather-l;
+}
+.countdown-row {
+    clear: both;
+    width: 100%;
+    padding: 0px 2px;
+    text-align: center;
+}
+.countdown-section {
+    display: block;
+    float: left;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0px;
+    padding: 0px 10px;
+}
+.countdown-amount {
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.is-countdown {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.elAlign_center {
+    text-align: center;
+}
+.wideCountdownSize1.cdStyleCircleLine .countdown-amount {
+    border-radius: 100px;
+    min-width: 55px;
+}
+.cdWhite.cdStyleCircleLine .countdown-amount {
+    color: #FFF;
+    border: 4px solid #FFF;
+}
+.wideCountdownSize1 .countdown-amount {
+    font-size: 18px;
+}
+.wideCountdownSize1 .countdown-period {
+    font-size: 9px;
+}
+.cdLabelWhite .countdown-period {
+    color:#fff;
+}
+.cdLabelBold .countdown-period {
+    font-weight: bold;
+}
+/* video player 4  */
+.innerContent {
+    word-wrap: break-word;
+}
+.bgCover {
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+    background-attachment: fixed !important;
+    background-repeat: repeat repeat !important;
+    background-position: center center;
+}
+.elVideoWidth100 {
+    width: 100% !important;
+}
+.de-editable {
+    position: relative;
+    cursor: auto !important;
+}
+.elVideoplaceholder {
+    position: relative;
+    padding-bottom: 56.25% !important;
+    padding-top: 25px !important;
+    height: 0;
+    margin-bottom: 0px;
+    z-index: 1;
+    display:none;
+}
+.elVideoplaceholder_inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #2B2B2B;
+    border: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
+    background-image: url(/images/videoplaceholderbg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);
+    -moz-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);
+}
+.elVideo {
+    position: relative;
+    overflow: hidden;
+    display:block !important;
+}
+.fluid-width-video-wrapper {
+    width: 100%;
+    position: relative;
+    padding: 0;
+}
