@@ -20,6 +20,10 @@ if(isset($_POST['productName']) == 'productName'){
     $other_details = $_POST['other_details'];
     $productName = $_POST['productName'];
     $amount = $_POST['amount'];
+    $referral_id = "";
+    if(isset($_POST["referral_id"])){
+        $referral_id = $_POST["referral_id"];
+    }
 
     if($phone == ""){
         $phone = 0;
@@ -40,7 +44,7 @@ if(isset($_POST['productName']) == 'productName'){
     }
     $id = $id + 1;
 
-    $query = "INSERT INTO `orders_razorpay` (`id`, `name`, `phone`, `email`, `country`, `address`, `state`, `postcode`, `other_details`, `productName`, `amount`, `date_now`, `from_ip`, `from_browser`, `status`) VALUES ('$id','$name', '$phone', '$email', '$country', '$address', '$state', '$postcode' , '$other_details', '$productName', '$amount','$date_now','$from_ip', '$from_browser','processing')";
+    $query = "INSERT INTO `orders_razorpay` (`id`, `name`, `phone`, `email`, `country`, `address`, `state`, `postcode`, `other_details`, `productName`, `amount`, `date_now`, `from_ip`, `from_browser`, `status`, `referral_id`) VALUES ('$id','$name', '$phone', '$email', '$country', '$address', '$state', '$postcode' , '$other_details', '$productName', '$amount','$date_now','$from_ip', '$from_browser','processing', '$referral_id')";
 
     // echo $query;
     

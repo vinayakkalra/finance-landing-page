@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Affiliate Dashboard | Finstreet | India's 1st ever Financial Freedom Coach</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/cropped-Fin-270x270.jpg">
+    <script src="https://use.fontawesome.com/ebc80d226d.js"></script>
+    
+    
+</head>
+
+<body style="background-color: #eeeeee;">
+    <div class="d-none d-lg-block">
+        <!-- Navigation -->
+        <div class="fixed-top" style="padding:20px 0px;background-color:#00abc9;outline:none;">
+            <nav class="navbar navbar-expand-lg navbar-dark static-top">
+                <div class="container">
+                    <a class="navbar-brand" href="/">
+                        <img src="images/logo.png" alt="" width="133" height="50">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto font-roboto-b" style="font-size: 18px;font-weight:bold;">
+                            
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Dashboard</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- page content -->
+        <div class="container-fluid" style="margin-top: 150px;">
+            <h2 class="pl-3">Hello <span id="name-desktop"></span></h2>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-4">
+                    <p class="text-muted m-0 text-center mb-3">Click the button below to transfer money to your account</p>
+                    <button type="button" class="btn btn-primary w-100 font-weight-bold" style="font-size: 20px;">Redeem Now</button>
+                </div>
+            </div>
+            <div class="row p-2 mt-4">
+                <div class="col-3 p-3">
+                    <div class="bg-white w-100 p-2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <i class="fa fa-money text-blue" style="font-size: 50px;"></i>
+                                </div>
+                                <div class="col-8 d-flex justify-content-center align-items-center">
+                                    <div class="w-100">
+                                        <p class="text-muted m-0">Total Income</p>
+                                        <h3 class="m-0"><span>&#8377;</span><span id="total-income-desktop">0</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-3 p-3">
+                    <div class="bg-white w-100 p-2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <i class="fa fa-hand-pointer-o text-blue" style="font-size: 50px;"></i>
+                                </div>
+                                <div class="col-8 d-flex justify-content-center align-items-center">
+                                    <div class="w-100">
+                                        <p class="text-muted m-0">Total clicks</p>
+                                        <h3 class="m-0" id="total-clicks-desktop">0</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-3 p-3">
+                    <div class="bg-white w-100 p-2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <i class="fa fa-stack-overflow text-blue" style="font-size: 50px;"></i>
+                                </div>
+                                <div class="col-8 d-flex justify-content-center align-items-center">
+                                    <div class="w-100">
+                                        <p class="text-muted m-0">eCPC</p>
+                                        <h3 class="m-0"><span>&#8377;</span><span id="ecpc-desktop">0</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-3 p-3">
+                    <div class="bg-white w-100 p-2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <i class="fa fa-vcard-o text-blue" style="font-size: 50px;"></i>
+                                </div>
+                                <div class="col-8 d-flex justify-content-center align-items-center">
+                                    <div class="w-100">
+                                        <p class="text-muted m-0">Visitors</p>
+                                        <h3 class="m-0" id="unique-visitors-desktop">0</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- sales overview -->
+            <div class="row p-2 mt-4">
+                <div class="col-md-8 p-3">
+                    <div class="bg-white w-100">
+                        <h4 class="p-3">Sales Overview</h1>
+                        <div class="container-fluid" style="background-color: #3F51B5;">
+                            <div class="row">
+                                <div class="col-md-3 d-flex justify-content-center align-items-center" style="background-color: #283593;">
+                                    <div style="text-align: center;" class="text-white py-2">
+                                        <p class="text-white m-0">Total</p>
+                                        <h3 class="m-0"><span>&#8377;</span><span id="total-desktop">0</span></h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                    <div style="text-align: center;" class="text-white py-2">
+                                        <p class="text-white m-0">This Month</p>
+                                        <h3 class="m-0"><span>&#8377;</span><span id="month-desktop">0</span></h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                    <div style="text-align: center;" class="text-white py-2">
+                                        <p class="text-white m-0">This Week</p>
+                                        <h3 class="m-0"><span>&#8377;</span><span id="week-desktop">0</span></h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                    <div style="text-align: center;" class="text-white py-2">
+                                        <p class="text-white m-0">Yesterday</p>
+                                        <h3 class="m-0"><span>&#8377;</span><span id="yesterday-desktop">0</span></h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                    <div style="text-align: center;" class="text-white py-2">
+                                        <p class="text-white m-0">Today</p>
+                                        <h3 class="m-0"><span>&#8377;</span><span id="today-desktop">0</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-6">
+                            <div class="bg-white">
+                                <h4 class="p-3 m-0">Referral Link</h4>
+                                <hr class="mt-0">
+                                <p class="text-muted px-3 m-0">Share this affiliate link within your circle to avail benefits.</p>
+                                <div  class="w-100 d-flex justify-content-center align-items-center">
+                                    <a  id="referral-link-desktop" href="https://material.io/design/color/#tools-for-picking-colors" class="mx-3 mb-3">https://material.io/design/color/#tools-for-picking-colors</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-white">
+                                <h4 class="p-3 m-0">Creative link</h4>
+                                
+                                <hr class="mt-0">
+                                <p class="text-muted px-3 m-0">If you need creative to popularize in your circle use the link below</p>
+                                <div class="w-100 d-flex justify-content-center align-items-center">
+                                    <a href="https://material.io/design/color/#tools-for-picking-colors" class="mx-3 mb-3">https://material.io/design/color/#tools-for-picking-colors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Payment Overview -->
+                <div class="col-md-4 p-3">
+                    <div class="bg-white w-100">
+                        <h4 class="p-3">Payment Overview</h4>
+                        <hr>
+                        <div class="container">
+                            <p class="p-3" id="no-payments-desktop">No payments to display</p>
+                            <div id="orders-desktop"></div>
+                            <!-- <div class="row">
+                                <div class="col-8 pl-5">
+                                    Sachin
+                                </div>
+                                <div class="col-4 pr-5 text-right">
+                                    <span>&#8377;</span>500
+                                </div>
+                            </div>
+                            <hr> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="d-lg-none">
+        <!-- Navigation -->
+        <div class="fixed-top" style="padding:80px 0px;background-color:#00abc9;outline:none;">
+            <header>
+                <div class="position-fixed h-100 w-100" style="opacity:1;backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);z-index:16;display:none;top:0px" id="drawer">
+                    <div class="container h-100 w-100 pr-0">
+                        <div class="row h-100 w-100 mr-0 position-absolute">
+                            <div class="col-2 d-flex justify-content-end pt-5 pl-0" id="cross" style="padding-right:20px !important;">
+                                <div id="mobile-cross">
+                                    <p class="m-0" style="font-size:50px;color:#fff;">X</p>
+                                </div>
+                            </div>
+                            <div class="col-10 position-relative" style="background: #00abc9 0% 0% no-repeat padding-box;">
+                                <div class="position-absolute w-100" style="top:10%;">
+                                    
+                                    <p class="footer-text font-weight-light text-center" style="font-size:50px;margin-bottom:10px; font-family: europhonic;color:#fff;" onclick="window.location = '#'">Dashboard</p>
+                                </div>                          
+                            </div>                        
+                        </div>                
+                    </div>                
+                </div>        
+                <div class="nav-container">
+                    <div id="mobile-navbar"></div>
+                    <div style="position: fixed; z-index: 10; right:70px; margin-top:-38px; z-index:15 !important;" id="open-drawer">
+                        <hr style="width: 50px;height: 4px;background-color: white;margin-top: 10px;margin-bottom: 0px;border-radius: 100px;">
+                        <hr style="width: 50px;height: 4px;background-color: white;margin-top: 15px;margin-bottom: 0px;border-radius: 100px;">
+                        <hr style="width: 50px;height: 4px;background-color: white;margin-top: 15px;margin-bottom: 0px;border-radius: 100px;">
+                    </div>
+                    <div class="d-flex position-fixed align-items-center w-100" style="z-index: 10; margin-top:-45px; margin-left:32px;">
+                        <a class="navbar-brand header-text" id="mobile-header-logo-text" href="/">
+                            <img class="logo-header" src="images/logo.png" alt="" style="width:250px;">
+                        </a>
+                    </div>
+                </div>            
+            </header>
+        </div>
+
+        <!-- page content -->
+        <div class="container-fluid" style="margin-top: 250px;">
+            <h2 class="pl-3 pb-3" style="font-size: 3rem;">Hello <span id="name-mobile"></span></h2>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-8">
+                    <p class="text-muted m-0 text-center mb-3" style="font-size: 2rem;">Click the button below to transfer money to your account</p>
+                    <button type="button" class="btn btn-primary w-100 font-weight-bold" style="font-size: 3rem;">Redeem Now</button>
+                </div>
+            </div>
+            <div class="row p-2 mt-4">
+                <div class="col-6 p-3">
+                    <div class="bg-white w-100 p-2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <i class="fa fa-money text-blue" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="col-8 d-flex justify-content-center align-items-center">
+                                    <div class="w-100">
+                                        <p class="text-muted m-0" style="font-size: 2rem;">Total Income</p>
+                                        <h3 class="m-0" style="font-size: 3rem;"><span>&#8377;</span><span id="total-income-mobile">0</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-6 p-3">
+                    <div class="bg-white w-100 p-2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <i class="fa fa-hand-pointer-o text-blue" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="col-8 d-flex justify-content-center align-items-center">
+                                    <div class="w-100">
+                                        <p class="text-muted m-0" style="font-size: 2rem;">Total clicks</p>
+                                        <h3 class="m-0" style="font-size: 3rem;" id="total-clicks-mobile">0</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row p-2 mt-4">
+                <div class="col-6 p-3">
+                    <div class="bg-white w-100 p-2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <i class="fa fa-stack-overflow text-blue" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="col-8 d-flex justify-content-center align-items-center">
+                                    <div class="w-100">
+                                        <p class="text-muted m-0" style="font-size: 2rem;">eCPC</p>
+                                        <h3 class="m-0" style="font-size: 3rem;"><span>&#8377;</span><span id="ecpc-mobile">0</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-6 p-3">
+                    <div class="bg-white w-100 p-2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <i class="fa fa-vcard-o text-blue" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="col-8 d-flex justify-content-center align-items-center">
+                                    <div class="w-100">
+                                        <p class="text-muted m-0" style="font-size: 2rem;">Visitors</p>
+                                        <h3 class="m-0" style="font-size: 3rem;" id="unique-visitors-mobile">0</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+                
+
+            <!-- sales overview -->
+            <div class="row p-2 mt-4">
+                <div class="col-md-12 p-3">
+                    <div class="bg-white w-100">
+                        <h4 class="p-3" style="font-size: 3rem">Sales Overview</h1>
+                        <div class="container-fluid" style="background-color: #3F51B5;">
+                            <div class="row">
+                                <div class="col-md-3 d-flex justify-content-center align-items-center" style="background-color: #283593;">
+                                    <div style="text-align: center;" class="text-white py-4">
+                                        <p class="text-white m-0" style="font-size: 2rem">Total</p>
+                                        <h3 class="m-0" style="font-size: 3rem"><span>&#8377;</span><span id="total-mobile">0</span></h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                    <div style="text-align: center;" class="text-white py-2">
+                                        <p class="text-white m-0" style="font-size: 2rem">Month</p>
+                                        <h3 class="m-0" style="font-size: 3rem"><span>&#8377;</span>0</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                    <div style="text-align: center;" class="text-white py-2">
+                                        <p class="text-white m-0" style="font-size: 2rem">Week</p>
+                                        <h3 class="m-0" style="font-size: 3rem"><span>&#8377;</span>0</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                    <div style="text-align: center;" class="text-white py-2">
+                                        <p class="text-white m-0" style="font-size: 2rem">Yesterday</p>
+                                        <h3 class="m-0" style="font-size: 3rem"><span>&#8377;</span>0</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                    <div style="text-align: center;" class="text-white py-2">
+                                        <p class="text-white m-0" style="font-size: 2rem">Today</p>
+                                        <h3 class="m-0" style="font-size: 3rem"><span>&#8377;</span>0</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <div class="bg-white pb-4">
+                                <h4 class="p-3 m-0" style="font-size: 3rem">Referral Link</h4>
+                                <hr class="mt-0">
+                                <p class="text-muted px-3 m-0" style="font-size: 2rem">Share this affiliate link within your circle to avail benefits.</p>
+                                <div class="w-100 mx-3 pb-3" style="font-size: 2rem; word-wrap: break-word;">
+                                    <a id="referral-link-mobile" href="https://material.io/design/color/#tools-for-picking-colors" class="" style="word-wrap: break-word;">https://material.io/design/color/#tools-for-picking-colors</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-12 mt-5">
+                            <div class="bg-white pb-4">
+                                <h4 class="p-3 m-0" style="font-size: 3rem">Creative link</h4>
+                                
+                                <hr class="mt-0">
+                                <p class="text-muted px-3 m-0" style="font-size: 2rem">If you need creative to popularize in your circle use the link below</p>
+                                <div class="w-100" style="font-size: 2rem">
+                                    <a href="https://material.io/design/color/#tools-for-picking-colors" class="mx-3 mb-3">https://material.io/design/color/#tools-for-picking-colors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Payment Overview -->
+                <div class="col-md-12 p-3">
+                    <div class="bg-white w-100 pb-3">
+                        <h4 class="p-3" style="font-size: 3rem">Payment Overview</h4>
+                        <hr class="mt-0">
+                        <div class="container">
+                            <p class="p-3" id="no-payments-mobile" style="font-size: 2rem">No payments to display</p>
+                            <div id="orders-mobile"></div>
+                            <!-- <div class="row">
+                                <div class="col-8" style="font-size: 2rem">
+                                    Sachin
+                                </div>
+                                <div class="col-4 text-right" style="font-size: 2rem">
+                                    <span>&#8377;</span>500
+                                </div>
+                            </div>
+                            <hr> -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+        
+    
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        //open mobile drawer
+        $("#drawer").css('display','none');
+        $("#open-drawer").on("click",function(){
+            if($("#drawer").css('display') == 'none'){
+                $("#drawer").css('display','block');
+            } else{
+                $("#drawer").css('display','none');
+            }
+        });
+        $("#cross").on("click",function(){
+            $("#drawer").css('display','none');
+        });
+
+        var email = sessionStorage.getItem('username');
+
+        if(email == null){
+            window.location = "login";
+        }
+
+        var name="";
+        var referral_id="";
+        var phone="";
+
+        $.ajax({
+            type:'POST',
+            url:'php/affiliate-dashboard-data.php',
+            dataType: "json",
+            data:{
+                'email' : email
+            },
+            success:function(data){
+                if(data.status == 201){
+                    name = data.name;
+                    referral_id = data.referral_id;
+                    phone = data.phone;
+
+                    // assign values
+                    $("#name-desktop").html(name);
+                    $("#name-mobile").html(name);
+                    $("#referral-link-desktop").html("https://webinar.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-desktop").attr('href',"https://webinar.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-mobile").html("https://webinar.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-mobile").attr('href',"https://webinar.finstreet.in/?ref="+referral_id);
+                    $("#total-clicks-desktop").html(data.total_clicks);
+                    $("#total-clicks-mobile").html(data.total_clicks);
+                    $("#unique-visitors-desktop").html(data.unique_visitors);
+                    $("#unique-visitors-mobile").html(data.unique_visitors);
+
+                    $("#no-payments-desktop").css('display', 'none');
+                    for( var i =0; i<data.orders.length; i++){
+                        $("#orders-desktop").html($("#orders-desktop").html() + '<div class="row"><div class="col-8 pl-5">' + data.orders[i].name + '</div><div class="col-4 pr-5 text-right"><span>&#8377;</span>'+ data.orders[i].amount +'</div></div><hr>')
+                    }
+
+                    $("#no-payments-mobile").css('display', 'none');
+                    for( var i =0; i<data.orders.length; i++){
+                        $("#orders-mobile").html($("#orders-mobile").html() + '<div class="row"><div class="col-8" style="font-size: 2rem">'+ data.orders[i].name+'</div><div class="col-4 text-right" style="font-size: 2rem"><span>&#8377;</span>'+ data.orders[i].amount+'</div></div><hr>')
+                    }
+                    var total_income = data.orders.length * 149;
+                    var ecpc = total_income/data.total_clicks;
+                    var ecpc_final = ecpc.toFixed(2);
+                    $("#total-income-desktop").html(total_income);
+                    $("#total-income-mobile").html(total_income);
+                    $("#ecpc-desktop").html(ecpc_final);
+                    $("#ecpc-mobile").html(ecpc_final);
+
+
+                    
+                    console.log(data.orders);
+
+                }else if(data.status == 401){
+                    //only no orders were found rest all is same
+                    // alert(data.error);
+                    name = data.name;
+                    referral_id = data.referral_id;
+                    phone = data.phone;
+
+                    // assign values
+                    $("#name-desktop").html(name);
+                    $("#name-mobile").html(name);
+                    $("#referral-link-desktop").html("https://webinar.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-desktop").attr('href',"https://webinar.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-mobile").html("https://webinar.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-mobile").attr('href',"https://webinar.finstreet.in/?ref="+referral_id);
+                    $("#total-clicks-desktop").html(data.total_clicks);
+                    $("#total-clicks-mobile").html(data.total_clicks);
+                    $("#unique-visitors-desktop").html(data.unique_visitors);
+                    $("#unique-visitors-mobile").html(data.unique_visitors);
+
+                } else if(data.status == 301){
+                    //Email already registered
+                    alert(data.error);
+                }else if(data.status == 302){
+                    //phone already registered
+                    alert(data.error);
+                } else if(data.status == 601){
+                    console.log(data.error);
+                    // alert("problem with query");
+                }else{
+                    
+                } 
+            }
+        });
+        
+
+    </script>
+</body>
+</html>

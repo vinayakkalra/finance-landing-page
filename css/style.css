@@ -80,6 +80,23 @@
 .font-merriweather-l {
     font-family:merriweather-l;
 }
+/* drawer */
+#drawer{
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideright;
+    animation-name: slideright;
+}
+@-webkit-keyframes slideright {
+    0% {transform: translate(-100%,0px);}
+    100% {transform: translate(0px,0px);}
+}
+@keyframes slideright {
+    0% {transform: translate(100%,0px);}
+    100% {transform: translate(0%,0px);}
+}
 .countdown-row {
     clear: both;
     width: 100%;
@@ -188,4 +205,50 @@
 
 .cursor-pointer{
     cursor: pointer !important;
+}
+
+.bg-white{
+    background-color: white;
+}
+
+.text-white{
+    color: white;
+}
+
+.bg-blue{
+    background-color: #231C62;
+}
+
+.text-blue{
+    color: #231C62;
+}
+/* Discount price section 7  */
+.pricing-panel .panel-heading {
+    text-align: center;
+    padding: 25px 15px;
+    margin-bottom: 0px;
+}
+.pricely-label {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 0 auto 0px;
+    text-transform: uppercase;
+}
+.pricely-currency {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    top: 30px;
+}
+.pricely-figure {
+    padding: 20px 0 20px;
+    position: relative;
+}
+.pricely-amount {
+    display: inline-block;
+    font-size: 70px;
+    line-height: 70px;
+    padding: 0 0 0 17px;
 }
