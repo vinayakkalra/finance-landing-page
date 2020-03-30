@@ -97,6 +97,7 @@
     0% {transform: translate(100%,0px);}
     100% {transform: translate(0%,0px);}
 }
+/* timer */
 .countdown-row {
     clear: both;
     width: 100%;
@@ -251,4 +252,12 @@
     font-size: 70px;
     line-height: 70px;
     padding: 0 0 0 17px;
+}
+/* faq */
+.faqTitle {
+    padding-bottom: 5px;
+}
+.elDividerStyle1 .elDividerInner {
+    border-top-width: 2px;
+    border-top-style: solid;
 }
