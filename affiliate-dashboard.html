@@ -219,7 +219,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Redeem Amount</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -278,13 +278,19 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade p-4" id="nav-account" role="tabpanel" aria-labelledby="nav-account-tab">
-                                <h4 class="w-100 text-center text-muted mb-3"> Enter Your Account Details</h4>
-                                <input type="text" id="account-name" name="account-name" class="form-control mb-3 text-center" placeholder="Name On Account">
-                                <input type="number" id="account-number" name="account-number" class="form-control mb-3 text-center" placeholder="Account Number">
-                                <input type="text" id="account-ifsc" name="account-ifsc" class="form-control mb-3 text-center" placeholder="IFSC Code">
-                                <div class="w-100 d-flex justify-content-center align-items-center">
-                                    <button type="button" class="btn btn-primary" id="account-submit">Submit</button>
+                                <div id="account-container">
+                                    <h4 class="w-100 text-center text-muted mb-3"> Enter Your Account Details</h4>
+                                    <input type="text" id="account-name" name="account-name" class="form-control mb-3 text-center" placeholder="Name On Account">
+                                    <input type="number" id="account-number" name="account-number" class="form-control mb-3 text-center" placeholder="Account Number">
+                                    <input type="text" id="account-ifsc" name="account-ifsc" class="form-control mb-3 text-center" placeholder="IFSC Code">
+                                    <div class="w-100 d-flex justify-content-center align-items-center">
+                                        <button type="button" class="btn btn-primary" id="account-submit">Submit</button>
+                                    </div>
                                 </div>
+                                <div id="account-success" style="display: none;">
+                                    <h4 class="w-100 text-center text-muted mb-3" >Thankyou, Your request is submitted successfully. The amount will be transferred to your account within 24 hours.</h4>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -341,7 +347,7 @@
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-8">
                     <p class="text-muted m-0 text-center mb-3" style="font-size: 2rem;">Click the button below to transfer money to your account</p>
-                    <button type="button" class="btn btn-primary w-100 font-weight-bold" style="font-size: 3rem;" data-toggle="modal" data-target="#exampleModal">Redeem Now</button>
+                    <button type="button" class="btn btn-primary w-100 font-weight-bold" style="font-size: 3rem;" data-toggle="modal" data-target="#exampleModal-mobile">Redeem Now</button>
                 </div>
             </div>
             <div class="row p-2 mt-4">
@@ -511,6 +517,95 @@
                             
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal-mobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="margin-left: 100px; margin-right: 100px; max-width: 100%;">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel-mobile" style="font-size: 3rem;">Redeem Amount</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 3rem;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab-mobile" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-home-tab-mobile" data-toggle="tab" href="#nav-home-mobile" role="tab"
+                                    aria-controls="nav-home" aria-selected="true"><img src="images/gpay.png" style="width: 120px;"></a>
+                                <a class="nav-item nav-link" id="nav-profile-tab-mobile" data-toggle="tab" href="#nav-profile-mobile" role="tab"
+                                    aria-controls="nav-profile" aria-selected="false"><img src="images/phonepay.png" style="width: 150px;"></a>
+                                <a class="nav-item nav-link" id="nav-contact-tab-mobile" data-toggle="tab" href="#nav-contact-mobile" role="tab"
+                                    aria-controls="nav-contact" aria-selected="false"><img src="images/Paytm_logo.png" style="width: 150px;"></a>
+                                <a class="nav-item nav-link" id="nav-account-tab-mobile" data-toggle="tab" href="#nav-account-mobile" role="tab"
+                                aria-controls="nav-account" aria-selected="false" style="font-size: 2.5rem;">Account</a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent-mobile">
+                            <div class="tab-pane fade show active p-4" id="nav-home-mobile" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <div id="gpay-container-mobile">
+                                    <h4 class="w-100 text-center text-muted mb-3" style="font-size: 2.5rem;"> Enter Your 10 digit GPay Number</h4>
+                                    <input type="number" id="gpay-number-mobile" name="gpay-number" class="form-control mb-3 text-center" style="font-size: 2rem;">
+                                    <div class="w-100 d-flex justify-content-center align-items-center">
+                                        <button type="button" class="btn btn-primary" id="gpay-submit-mobile" style="font-size: 2rem;">Submit</button>
+                                    </div>
+                                </div>
+
+                                <div id="gpay-success-mobile" style="display: none;">
+                                    <h4 class="w-100 text-center text-muted mb-3" style="font-size: 2.5rem;">Thankyou, Your request is submitted successfully. The amount will be transferred to your account within 24 hours.</h4>
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="tab-pane fade p-4" id="nav-profile-mobile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <div id="phonepay-container-mobile">
+                                    <h4 class="w-100 text-center text-muted mb-3" style="font-size: 2.5rem;"> Enter Your 10 digit Phonepay Number</h4>
+                                    <input type="number" id="phonepay-number-mobile" name="phonepay-number" class="form-control mb-3 text-center" style="font-size: 2rem;" >
+                                    <div class="w-100 d-flex justify-content-center align-items-center">
+                                        <button type="button" class="btn btn-primary" id="phonepay-submit-mobile" style="font-size: 2rem;">Submit</button>
+                                    </div>
+                                </div>
+                                <div id="phonepay-success-mobile" style="display: none;">
+                                    <h4 class="w-100 text-center text-muted mb-3" style="font-size: 2.5rem;">Thankyou, Your request is submitted successfully. The amount will be transferred to your account within 24 hours.</h4>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade p-4" id="nav-contact-mobile" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <div id="paytm-container-mobile">
+                                    <h4 class="w-100 text-center text-muted mb-3" style="font-size: 2.5rem;"> Enter Your 10 digit Paytm Number</h4>
+                                    <input type="number" id="paytm-number-mobile" name="paytm-number" class="form-control mb-3 text-center" style="font-size: 2rem;" >
+                                    <div class="w-100 d-flex justify-content-center align-items-center">
+                                        <button type="button" class="btn btn-primary" id="paytm-submit-mobile" style="font-size: 2rem;">Submit</button>
+                                    </div>
+                                </div>
+                                <div id="paytm-success-mobile" style="display: none;">
+                                    <h4 class="w-100 text-center text-muted mb-3" style="font-size: 2.5rem;">Thankyou, Your request is submitted successfully. The amount will be transferred to your account within 24 hours.</h4>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade p-4" id="nav-account-mobile" role="tabpanel" aria-labelledby="nav-account-tab">
+                                <div id="account-container-mobile">
+                                    <h4 class="w-100 text-center text-muted mb-3" style="font-size: 2.5rem;"> Enter Your Account Details</h4>
+                                    <input type="text" id="account-name-mobile" name="account-name" class="form-control mb-3 text-center" placeholder="Name On Account" style="font-size: 2rem;">
+                                    <input type="number" id="account-number-mobile" name="account-number" class="form-control mb-3 text-center" placeholder="Account Number" style="font-size: 2rem;">
+                                    <input type="text" id="account-ifsc-mobile" name="account-ifsc" class="form-control mb-3 text-center" placeholder="IFSC Code" style="font-size: 2rem;">
+                                    <div class="w-100 d-flex justify-content-center align-items-center">
+                                        <button type="button" class="btn btn-primary" id="account-submit-mobile" style="font-size: 2rem;">Submit</button>
+                                    </div>
+                                </div>
+                                <div id="account-success-mobile" style="display: none;">
+                                    <h4 class="w-100 text-center text-muted mb-3" style="font-size: 2.5rem;">Thankyou, Your request is submitted successfully. The amount will be transferred to your account within 24 hours.</h4>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -772,6 +867,235 @@
                             alert('success');
                             $("#paytm-container").css('display','none');
                             $("#paytm-success").css('display','block');
+                        } else if(data.status == 301){
+                            //Email already registered
+                            alert(data.error);
+                        }else{
+                            alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
+                        } 
+                    }
+                });
+            }
+        });
+        $("#account-submit").on("click",function(e){
+            e.preventDefault();
+            var error = "";
+
+            if($("#account-number").val() == ""){
+                $("#account-number").css('border-color','red');
+                $("#account-number").css('border-width','1px');
+                error = error + 'number';
+            }else{
+                $("#account-number").css('border-color','#BCE0FD');
+                $("#account-number").css('border-width','1px');
+            }
+            if($("#account-name").val() == ""){
+                $("#account-name").css('border-color','red');
+                $("#account-name").css('border-width','1px');
+                error = error + 'name';
+            }else{
+                $("#account-name").css('border-color','#BCE0FD');
+                $("#account-name").css('border-width','1px');
+            }
+            if($("#account-ifsc").val() == ""){
+                $("#account-ifsc").css('border-color','red');
+                $("#account-ifsc").css('border-width','1px');
+                error = error + 'ifsc';
+            }else{
+                $("#account-ifsc").css('border-color','#BCE0FD');
+                $("#account-ifsc").css('border-width','1px');
+            }
+
+            if(error == ""){
+                $.ajax({
+                    type:'POST',
+                    url:'php/redeem-requests.php',
+                    dataType: "json",
+                    data:{
+                        account_number : $("#account-number").val(),
+                        account_name: $("#account-name").val(),
+                        account_ifsc: $("#account-ifsc").val(),
+                        type: 'account',
+                        'email': email
+                    },
+                    success:function(data){
+                        if(data.status == 201){
+                            alert('success');
+                            $("#account-container").css('display','none');
+                            $("#account-success").css('display','block');
+                        } else if(data.status == 301){
+                            //Email already registered
+                            alert(data.error);
+                        }else{
+                            alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
+                        } 
+                    }
+                });
+            }
+        });
+
+
+        // mobile code
+        $("#gpay-submit-mobile").on("click",function(e){
+            e.preventDefault();
+            var error = "";
+
+            if($("#gpay-number-mobile").val() == ""){
+                $("#gpay-number-mobile").css('border-color','red');
+                $("#gpay-number-mobile").css('border-width','1px');
+                error = error + 'number';
+            }else{
+                $("#gpay-number-mobile").css('border-color','#BCE0FD');
+                $("#gpay-number-mobile").css('border-width','1px');
+            }
+
+            if(error == ""){
+                $.ajax({
+                    type:'POST',
+                    url:'php/redeem-requests.php',
+                    dataType: "json",
+                    data:{
+                        gpay_number : $("#gpay-number-mobile").val(),
+                        type: 'gpay',
+                        'email': email
+                    },
+                    success:function(data){
+                        if(data.status == 201){
+                            alert('success');
+                            $("#gpay-container-mobile").css('display','none');
+                            $("#gpay-success-mobile").css('display','block');
+                        } else if(data.status == 301){
+                            //Email already registered
+                            alert(data.error);
+                        }else{
+                            alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
+                        } 
+                    }
+                });
+            }
+        });
+        $("#phonepay-submit-mobile").on("click",function(e){
+            e.preventDefault();
+            var error = "";
+
+            if($("#phonepay-number-mobile").val() == ""){
+                $("#phonepay-number-mobile").css('border-color','red');
+                $("#phonepay-number-mobile").css('border-width','1px');
+                error = error + 'number';
+            }else{
+                $("#phonepay-number-mobile").css('border-color','#BCE0FD');
+                $("#phonepay-number-mobile").css('border-width','1px');
+            }
+
+            if(error == ""){
+                $.ajax({
+                    type:'POST',
+                    url:'php/redeem-requests.php',
+                    dataType: "json",
+                    data:{
+                        phonepay_number : $("#phonepay-number-mobile").val(),
+                        type: 'phonepay',
+                        'email': email
+                    },
+                    success:function(data){
+                        if(data.status == 201){
+                            alert('success');
+                            $("#phonepay-container-mobile").css('display','none');
+                            $("#phonepay-success-mobile").css('display','block');
+                        } else if(data.status == 301){
+                            //Email already registered
+                            alert(data.error);
+                        }else{
+                            alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
+                        } 
+                    }
+                });
+            }
+        });
+        $("#paytm-submit-mobile").on("click",function(e){
+            e.preventDefault();
+            var error = "";
+
+            if($("#paytm-number-mobile").val() == ""){
+                $("#paytm-number-mobile").css('border-color','red');
+                $("#paytm-number-mobile").css('border-width','1px');
+                error = error + 'number';
+            }else{
+                $("#paytm-number-mobile").css('border-color','#BCE0FD');
+                $("#paytm-number-mobile").css('border-width','1px');
+            }
+
+            if(error == ""){
+                $.ajax({
+                    type:'POST',
+                    url:'php/redeem-requests.php',
+                    dataType: "json",
+                    data:{
+                        paytm_number : $("#paytm-number-mobile").val(),
+                        type: 'paytm',
+                        'email': email
+                    },
+                    success:function(data){
+                        if(data.status == 201){
+                            alert('success');
+                            $("#paytm-container-mobile").css('display','none');
+                            $("#paytm-success-mobile").css('display','block');
+                        } else if(data.status == 301){
+                            //Email already registered
+                            alert(data.error);
+                        }else{
+                            alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
+                        } 
+                    }
+                });
+            }
+        });
+        $("#account-submit-mobile").on("click",function(e){
+            e.preventDefault();
+            var error = "";
+
+            if($("#account-number-mobile").val() == ""){
+                $("#account-number-mobile").css('border-color','red');
+                $("#account-number-mobile").css('border-width','1px');
+                error = error + 'number';
+            }else{
+                $("#account-number-mobile").css('border-color','#BCE0FD');
+                $("#account-number-mobile").css('border-width','1px');
+            }
+            if($("#account-name-mobile").val() == ""){
+                $("#account-name-mobile").css('border-color','red');
+                $("#account-name-mobile").css('border-width','1px');
+                error = error + 'name';
+            }else{
+                $("#account-name-mobile").css('border-color','#BCE0FD');
+                $("#account-name-mobile").css('border-width','1px');
+            }
+            if($("#account-ifsc-mobile").val() == ""){
+                $("#account-ifsc-mobile").css('border-color','red');
+                $("#account-ifsc-mobile").css('border-width','1px');
+                error = error + 'ifsc';
+            }else{
+                $("#account-ifsc-mobile").css('border-color','#BCE0FD');
+                $("#account-ifsc-mobile").css('border-width','1px');
+            }
+
+            if(error == ""){
+                $.ajax({
+                    type:'POST',
+                    url:'php/redeem-requests.php',
+                    dataType: "json",
+                    data:{
+                        account_number : $("#account-number-mobile").val(),
+                        account_name: $("#account-name-mobile").val(),
+                        account_ifsc: $("#account-ifsc-mobile").val(),
+                        type: 'account',
+                        'email': email
+                    },
+                    success:function(data){
+                        if(data.status == 201){
+                            alert('success');
+                            $("#account-container-mobile").css('display','none');
+                            $("#account-success-mobile").css('display','block');
                         } else if(data.status == 301){
                             //Email already registered
                             alert(data.error);

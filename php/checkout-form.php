@@ -10,20 +10,22 @@ if(isset($_POST['productName']) == 'productName'){
     date_default_timezone_set("Asia/Calcutta");
     $date_now = date("r");
 
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    $country = $_POST['country'];
-    $address = $_POST['address'];
-    $state = $_POST['state'];
-    $postcode = $_POST['postcode'];
-    $other_details = $_POST['other_details'];
-    $productName = $_POST['productName'];
-    $amount = $_POST['amount'];
+    $name = mysqli_real_escape_string($link, $_POST['name']) ;
+    $phone = mysqli_real_escape_string($link,$_POST['phone']);
+    $email = mysqli_real_escape_string($link,$_POST['email']);
+    $country =mysqli_real_escape_string($link, $_POST['country']);
+    $address = mysqli_real_escape_string($link,$_POST['address']);
+    $state = mysqli_real_escape_string($link,$_POST['state']);
+    $postcode = mysqli_real_escape_string($link,$_POST['postcode']);
+    $other_details =mysqli_real_escape_string($link, $_POST['other_details']);
+    $productName = mysqli_real_escape_string($link,$_POST['productName']);
+    $amount = mysqli_real_escape_string($link,$_POST['amount']);
     $referral_id = "";
     if(isset($_POST["referral_id"])){
-        $referral_id = $_POST["referral_id"];
+        $referral_id = mysqli_real_escape_string($link, $_POST["referral_id"]);
     }
+    $password = mysqli_real_escape_string($link, $_POST['password']);
+    $hashed_password = hash("sha512", $password);
 
     if($phone == ""){
         $phone = 0;
@@ -44,7 +46,7 @@ if(isset($_POST['productName']) == 'productName'){
     }
     $id = $id + 1;
 
-    $query = "INSERT INTO `orders_razorpay` (`id`, `name`, `phone`, `email`, `country`, `address`, `state`, `postcode`, `other_details`, `productName`, `amount`, `date_now`, `from_ip`, `from_browser`, `status`, `referral_id`) VALUES ('$id','$name', '$phone', '$email', '$country', '$address', '$state', '$postcode' , '$other_details', '$productName', '$amount','$date_now','$from_ip', '$from_browser','processing', '$referral_id')";
+    $query = "INSERT INTO `orders_razorpay` (`id`, `name`, `phone`, `email`, `country`, `address`, `state`, `postcode`, `other_details`, `productName`, `amount`, `date_now`, `from_ip`, `from_browser`, `status`, `referral_id` ,`password`) VALUES ('$id','$name', '$phone', '$email', '$country', '$address', '$state', '$postcode' , '$other_details', '$productName', '$amount','$date_now','$from_ip', '$from_browser','processing', '$referral_id' ,'$hashed_password')";
 
     // echo $query;
     

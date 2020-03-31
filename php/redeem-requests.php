@@ -73,6 +73,29 @@ if(isset($_POST['type'])){
         }
 
     }
+    if($_POST['type'] == 'account'){
+        $account_number = mysqli_real_escape_string($link, $_POST['account_number']) ;
+        $account_name = mysqli_real_escape_string($link, $_POST['account_name']) ;
+        $account_ifsc = mysqli_real_escape_string($link, $_POST['account_ifsc']) ;
+        $email = mysqli_real_escape_string($link, $_POST['email']) ;
+
+        $query = "INSERT INTO `redeem_requests` (`account_number`, `account_name`, `account_ifsc`, `email`, `time`, `from_ip`, `from_browser`) VALUES ('$account_number','$account_name', '$account_ifsc', '$email', '$date_now', '$from_ip', '$from_browser')";
+
+        // echo $query;
+        
+        if($result = mysqli_query($link, $query))
+        {  
+            $data['status'] = 201;
+            echo json_encode($data);
+        }  
+        else  
+        {  
+            $data['status'] = 601;
+            $data['error'] = $link -> error;
+            echo json_encode($data);
+        }
+
+    }
 
 
 

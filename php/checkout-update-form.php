@@ -30,8 +30,8 @@ if(isset($_POST['razorpay_payment_id']) == 'razorpay_payment_id'){
     if($result = mysqli_query($link, $query))  
     {  
 
-        $query = "UPDATE `inventory` SET `left_inventory` = `left_inventory` - 1 WHERE `productName` = $productName ";
-        $result = mysqli_query($link, $query);
+        // $query = "UPDATE `inventory` SET `left_inventory` = `left_inventory` - 1 WHERE `productName` = $productName ";
+        // $result = mysqli_query($link, $query);
         $data['status'] = 'ok';
         $data['id'] = $id;
         echo json_encode($data);
