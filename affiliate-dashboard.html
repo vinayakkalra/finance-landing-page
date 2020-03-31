@@ -3,6 +3,26 @@
 <html lang="en">
 
 <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150643411-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-150643411-2');
+    </script>
+
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PFRW8HP');</script>
+        <!-- End Google Tag Manager -->
+
     <title>Affiliate Dashboard | Finstreet | India's 1st ever Financial Freedom Coach</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,6 +33,13 @@
 </head>
 
 <body style="background-color: #eeeeee;">
+    
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFRW8HP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
     <div class="d-none d-lg-block">
         <!-- Navigation -->
         <div class="fixed-top" style="padding:20px 0px;background-color:#00abc9;outline:none;">
@@ -29,7 +56,7 @@
                         <ul class="navbar-nav ml-auto font-roboto-b" style="font-size: 18px;font-weight:bold;">
                             
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Dashboard</a>
+                                <a class="nav-link" href="login">Logout</a>
                             </li>
                         </ul>
                     </div>
@@ -166,18 +193,18 @@
                         </div>
                     </div>
                     <div class="row mt-5">
-                        <div class="col-6">
+                        <div class="col-12">
                             <div class="bg-white">
                                 <h4 class="p-3 m-0">Referral Link</h4>
                                 <hr class="mt-0">
                                 <p class="text-muted px-3 m-0">Share this affiliate link within your circle to avail benefits.</p>
-                                <div  class="w-100 d-flex justify-content-center align-items-center">
+                                <div  class="w-100">
                                     <a  id="referral-link-desktop" href="https://material.io/design/color/#tools-for-picking-colors" class="mx-3 mb-3">https://material.io/design/color/#tools-for-picking-colors</a>
                                 </div>
                                 
                             </div>
                         </div>
-                        <div class="col-6">
+                        <!-- <div class="col-6">
                             <div class="bg-white">
                                 <h4 class="p-3 m-0">Creative link</h4>
                                 
@@ -187,7 +214,7 @@
                                     <a href="https://material.io/design/color/#tools-for-picking-colors" class="mx-3 mb-3">https://material.io/design/color/#tools-for-picking-colors</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!-- Payment Overview -->
@@ -319,7 +346,7 @@
                             <div class="col-10 position-relative" style="background: #00abc9 0% 0% no-repeat padding-box;">
                                 <div class="position-absolute w-100" style="top:10%;">
                                     
-                                    <p class="footer-text font-weight-light text-center" style="font-size:50px;margin-bottom:10px; font-family: europhonic;color:#fff;" onclick="window.location = '#'">Dashboard</p>
+                                    <p class="footer-text font-weight-light text-center" style="font-size:50px;margin-bottom:10px; font-family: europhonic;color:#fff;" onclick="window.location = 'login'">Logout</p>
                                 </div>                          
                             </div>                        
                         </div>                
@@ -485,7 +512,7 @@
                             </div>
                         </div>
                         <div class="col-12 mt-5">
-                            <div class="bg-white pb-4">
+                            <!-- <div class="bg-white pb-4">
                                 <h4 class="p-3 m-0" style="font-size: 3rem">Creative link</h4>
                                 
                                 <hr class="mt-0">
@@ -493,7 +520,7 @@
                                 <div class="w-100" style="font-size: 2rem">
                                     <a href="https://material.io/design/color/#tools-for-picking-colors" class="mx-3 mb-3">https://material.io/design/color/#tools-for-picking-colors</a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -659,10 +686,10 @@
                     // assign values
                     $("#name-desktop").html(name);
                     $("#name-mobile").html(name);
-                    $("#referral-link-desktop").html("https://webinar.finstreet.in/?ref="+referral_id);
-                    $("#referral-link-desktop").attr('href',"https://webinar.finstreet.in/?ref="+referral_id);
-                    $("#referral-link-mobile").html("https://webinar.finstreet.in/?ref="+referral_id);
-                    $("#referral-link-mobile").attr('href',"https://webinar.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-desktop").html("https://cryptonite.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-desktop").attr('href',"https://cryptonite.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-mobile").html("https://cryptonite.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-mobile").attr('href',"https://cryptonite.finstreet.in/?ref="+referral_id);
                     $("#total-clicks-desktop").html(data.total_clicks);
                     $("#total-clicks-mobile").html(data.total_clicks);
                     $("#unique-visitors-desktop").html(data.unique_visitors);
@@ -739,10 +766,10 @@
                     // assign values
                     $("#name-desktop").html(name);
                     $("#name-mobile").html(name);
-                    $("#referral-link-desktop").html("https://webinar.finstreet.in/?ref="+referral_id);
-                    $("#referral-link-desktop").attr('href',"https://webinar.finstreet.in/?ref="+referral_id);
-                    $("#referral-link-mobile").html("https://webinar.finstreet.in/?ref="+referral_id);
-                    $("#referral-link-mobile").attr('href',"https://webinar.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-desktop").html("https://cryptonite.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-desktop").attr('href',"https://cryptonite.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-mobile").html("https://cryptonite.finstreet.in/?ref="+referral_id);
+                    $("#referral-link-mobile").attr('href',"https://cryptonite.finstreet.in/?ref="+referral_id);
                     $("#total-clicks-desktop").html(data.total_clicks);
                     $("#total-clicks-mobile").html(data.total_clicks);
                     $("#unique-visitors-desktop").html(data.unique_visitors);

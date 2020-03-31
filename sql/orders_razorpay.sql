@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2020 at 10:16 AM
+-- Generation Time: Mar 31, 2020 at 04:33 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -32,6 +32,7 @@ CREATE TABLE `orders_razorpay` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
+  `password` varchar(500) DEFAULT NULL,
   `phone` varchar(100) NOT NULL,
   `country` varchar(100) NOT NULL,
   `address` varchar(1000) NOT NULL,
@@ -52,11 +53,10 @@ CREATE TABLE `orders_razorpay` (
 -- Dumping data for table `orders_razorpay`
 --
 
-INSERT INTO `orders_razorpay` (`id`, `name`, `email`, `phone`, `country`, `address`, `state`, `postcode`, `other_details`, `productName`, `amount`, `date_now`, `from_ip`, `from_browser`, `status`, `razorpay_payment_id`, `referral_id`) VALUES
-(1, 'Test', 'kalravinayak07@gmail.com', '09530512748', 'India', 'dsad, sadsa', 'dsadsa', '190011', '', 'Online Millionaire Summit 2020', '497', 'Mon, 30 Mar 2020 01:50:04 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36', 'processing', '', NULL),
-(2, 'Test', 'kalravinayak07@gmail.com', '09530512748', 'India', 'dsad, sadsa', 'dsadsa', '190011', '', 'Crypto-Nite 2020', '497', 'Mon, 30 Mar 2020 06:13:29 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36', 'paid', 'pay_EYEjOcut5o15TS', '3250abb29c615dc3bcb850d870efeeaa'),
-(3, 'Test', 'kalravinayak07@gmail.com', '09530512748', 'India', 'dsad, sadsa', 'dsadsa', '190011', '', 'Crypto-Nite 2020', '497', 'Mon, 30 Mar 2020 07:38:46 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36', 'processing', '', '825b7430cf61647123594f357e5f935d'),
-(4, 'Test', 'kalravinayak07@gmail.com', '09530512748', 'India', 'dsad, sadsa', 'dsadsa', '190011', '', 'Crypto-Nite 2020', '497', 'Mon, 30 Mar 2020 07:42:24 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36', 'processing', '', '825b7430cf61647123594f357e5f935d');
+INSERT INTO `orders_razorpay` (`id`, `name`, `email`, `password`, `phone`, `country`, `address`, `state`, `postcode`, `other_details`, `productName`, `amount`, `date_now`, `from_ip`, `from_browser`, `status`, `razorpay_payment_id`, `referral_id`) VALUES
+(5, 'Test', 'kalravinayak07@gmail.com', '2af8a9104b3f64ed640d8c7e298d2d480f03a3610cbc2b33474321ec59024a48592ea8545e41e09d5d1108759df48ede0054f225df39d4f0f312450e0aa9dd25', '09530512748', 'India', 'dsad, sadsa', 'dsadsa', '190011', '', 'Crypto-Nite 2020', '497', 'Tue, 31 Mar 2020 15:36:17 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36', 'processing', '', ''),
+(6, 'Test', 'kalravinayak07@gmail.com', '2af8a9104b3f64ed640d8c7e298d2d480f03a3610cbc2b33474321ec59024a48592ea8545e41e09d5d1108759df48ede0054f225df39d4f0f312450e0aa9dd25', '09530512748', 'India', 'dsad, sadsa', 'dsadsa', '190011', '', 'Crypto-Nite 2020', '497', 'Tue, 31 Mar 2020 15:40:25 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36', 'processing', '', ''),
+(7, 'Test', 'kalravinayak07@gmail.com', '2af8a9104b3f64ed640d8c7e298d2d480f03a3610cbc2b33474321ec59024a48592ea8545e41e09d5d1108759df48ede0054f225df39d4f0f312450e0aa9dd25', '09530512748', 'India', 'dsad, sadsa', 'dsadsa', '190011', '', 'Crypto-Nite 2020', '497', 'Tue, 31 Mar 2020 15:42:10 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36', 'paid', 'pay_EYmwue0IoJqLbY', '');
 
 --
 -- Indexes for dumped tables
@@ -76,7 +76,7 @@ ALTER TABLE `orders_razorpay`
 -- AUTO_INCREMENT for table `orders_razorpay`
 --
 ALTER TABLE `orders_razorpay`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

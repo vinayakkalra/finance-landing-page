@@ -139,7 +139,7 @@
     font-size: 18px;
 }
 .wideCountdownSize1 .countdown-period {
-    font-size: 9px;
+    font-size: 11px;
 }
 .cdLabelWhite .countdown-period {
     color:#fff;
@@ -311,3 +311,48 @@
   .popupoption2:hover{
       color: red;
   }
+
+  @font-face {
+    font-family: poppins-bold;
+    src: url(../fonts/Poppins-Bold.ttf);
+    font-display: swap;
+}
+.font-poppins-bold {
+    font-family: poppins-bold;
+}
+
+@font-face {
+    font-family: poppins-extrabold;
+    src: url(../fonts/Poppins-ExtraBold.ttf);
+    font-display: swap;
+}
+.font-poppins-extrabold {
+    font-family: poppins-extrabold;
+}
+
+@font-face {
+    font-family: poppins-light;
+    src: url(../fonts/Poppins-Light.ttf);
+    font-display: swap;
+}
+.font-poppins-light {
+    font-family: poppins-light;
+}
+
+@font-face {
+    font-family: poppins-medium;
+    src: url(../fonts/Poppins-Medium.ttf);
+    font-display: swap;
+}
+.font-poppins-medium {
+    font-family: poppins-medium;
+}
+
+@font-face {
+    font-family: poppins-regular;
+    src: url(../fonts/Poppins-Regular.ttf);
+    font-display: swap;
+}
+.font-poppins-regular {
+    font-family: poppins-regular;
+}
