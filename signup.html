@@ -389,6 +389,8 @@
                     success:function(data){
                         if(data.status == 201){
                             sessionStorage.username = $("#email").val();
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({'event': 'affiliate signup'});
                             window.location = "affiliate-dashboard";
                         } else if(data.status == 301){
                             //Email already registered
@@ -488,6 +490,8 @@
                     success:function(data){
                         if(data.status == 201){
                             sessionStorage.username = $("#email-mobile").val();
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({'event': 'affiliate signup'});
                             window.location = "affiliate-dashboard";
                         } else if(data.status == 301){
                             //Email already registered

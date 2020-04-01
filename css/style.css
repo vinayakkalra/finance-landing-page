@@ -281,12 +281,19 @@
     background-color:#26262c;
     display:none;
   }  
-  #boxes .window {
+  #mask1 {
     position:absolute;
     left:0;
     top:0;
-    width:440px;
-    height:850px;
+    z-index:9000;
+    background-color:#26262c;
+    display:none;
+  }
+  #boxes .window {
+    position:fixed;
+    left:0;
+    top:100px !important;
+    width:100%;
     display:none;
     z-index:9999;
     padding:20px;
@@ -294,13 +301,19 @@
     text-align: center;
   }
   #boxes #dialog {
-    width:450px; 
+    width:780px; 
     height:auto;
-    padding: 10px 10px 10px 10px;
+    padding:10px;
+    background-color:#ffffff;
+    font-size: 15pt;
+  }  
+  #boxes #dialog1 {
+    width:780px; 
+    height:auto;
+    padding:10px;
     background-color:#ffffff;
     font-size: 15pt;
   }
-  
   .agree:hover{
     background-color: #D1D1D1;
   }

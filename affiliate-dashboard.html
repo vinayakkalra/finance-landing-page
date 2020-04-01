@@ -818,6 +818,12 @@
                             alert('success');
                             $("#gpay-container").css('display','none');
                             $("#gpay-success").css('display','block');
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'redeem',
+                                'method' : 'gpay',
+                                'email' : email
+                            });
                         } else if(data.status == 301){
                             //Email already registered
                             alert(data.error);
@@ -856,6 +862,12 @@
                             alert('success');
                             $("#phonepay-container").css('display','none');
                             $("#phonepay-success").css('display','block');
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'redeem',
+                                'method' : 'phonepay',
+                                'email' : email
+                            });
                         } else if(data.status == 301){
                             //Email already registered
                             alert(data.error);
@@ -894,6 +906,12 @@
                             alert('success');
                             $("#paytm-container").css('display','none');
                             $("#paytm-success").css('display','block');
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'redeem',
+                                'method' : 'paytm',
+                                'email' : email
+                            });
                         } else if(data.status == 301){
                             //Email already registered
                             alert(data.error);
@@ -950,6 +968,12 @@
                             alert('success');
                             $("#account-container").css('display','none');
                             $("#account-success").css('display','block');
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'redeem',
+                                'method' : 'account',
+                                'email' : email
+                            });
                         } else if(data.status == 301){
                             //Email already registered
                             alert(data.error);
@@ -991,6 +1015,12 @@
                             alert('success');
                             $("#gpay-container-mobile").css('display','none');
                             $("#gpay-success-mobile").css('display','block');
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'redeem',
+                                'method' : 'gpay',
+                                'email' : email
+                            });
                         } else if(data.status == 301){
                             //Email already registered
                             alert(data.error);
@@ -1029,6 +1059,12 @@
                             alert('success');
                             $("#phonepay-container-mobile").css('display','none');
                             $("#phonepay-success-mobile").css('display','block');
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'redeem',
+                                'method' : 'phonepay',
+                                'email' : email
+                            });
                         } else if(data.status == 301){
                             //Email already registered
                             alert(data.error);
@@ -1067,6 +1103,12 @@
                             alert('success');
                             $("#paytm-container-mobile").css('display','none');
                             $("#paytm-success-mobile").css('display','block');
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'redeem',
+                                'method' : 'paytm',
+                                'email' : email
+                            });
                         } else if(data.status == 301){
                             //Email already registered
                             alert(data.error);
@@ -1123,6 +1165,12 @@
                             alert('success');
                             $("#account-container-mobile").css('display','none');
                             $("#account-success-mobile").css('display','block');
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'redeem',
+                                'method' : 'account',
+                                'email' : email
+                            });
                         } else if(data.status == 301){
                             //Email already registered
                             alert(data.error);
