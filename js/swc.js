@@ -11,8 +11,8 @@
 			$('#mask').css({'width':maskWidth,'height':maskHeight});
 			
 			//transition effect		
-			$('#mask').fadeIn(500);	
-			$('#mask').fadeTo("slow",0.9);	
+			$('#mask').fadeIn(5000);	
+			$('#mask').fadeTo("slow",1.2);	
 		
 			//Get the window height and width
 			var winH = $(window).height();
@@ -50,8 +50,8 @@
 			$('#mask1').css({'width':maskWidth,'height':maskHeight});
 			
 			//transition effect		
-			$('#mask1').fadeIn(500);	
-			$('#mask1').fadeTo("slow",0.9);	
+			$('#mask1').fadeIn(5000);	
+			$('#mask1').fadeTo("slow",1.2);	
 		
 			//Get the window height and width
 			var winH = $(window).height();
