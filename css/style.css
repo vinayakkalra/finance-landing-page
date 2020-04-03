@@ -266,11 +266,11 @@
     font-size: 60px;
     text-align: center;
     display: flex;
-  }
-  .block > *{
+}
+.block > *{
     margin: auto;
     display: inline-block;
-  }
+}
 
 /* popup */
 #mask {
@@ -280,84 +280,239 @@
     z-index:9000;
     background-color:#26262c;
     display:none;
-  }  
-  #mask1 {
-    position:absolute;
-    left:0;
-    top:0;
-    z-index:9000;
-    background-color:#26262c;
-    display:none;
-  }
-  #boxes .window {
-    position:fixed;
-    left:0;
-    top:100px !important;
-    width:100%;
-    display:none;
-    z-index:9999;
-    padding:20px;
-    border-radius: 5px;
-    text-align: center;
-  }
-  #boxes #dialog {
-    width:780px; 
-    height:auto;
-    padding:10px;
-    background-color:#ffffff;
-    font-size: 15pt;
-  }  
-  #boxes #dialog1 {
-    width:780px; 
-    height:auto;
-    padding:10px;
-    background-color:#ffffff;
-    font-size: 15pt;
-  }
-  .agree:hover{
-    background-color: #D1D1D1;
-  }
-  .popupoption:hover{
-      background-color:#D1D1D1;
-      color: green;
-  }
-  .popupoption2:hover{
-      color: red;
-  }
+}  
+#mask1 {
+position:absolute;
+left:0;
+top:0;
+z-index:9000;
+background-color:#26262c;
+display:none;
+}
+#boxes .window {
+position:fixed;
+left:0;
+top:100px !important;
+width:100%;
+display:none;
+z-index:9999;
+padding:20px;
+border-radius: 5px;
+text-align: center;
+}
+#boxes #dialog {
+width:780px; 
+height:auto;
+padding:10px;
+background-color:#ffffff;
+font-size: 15pt;
+}  
+#boxes #dialog1 {
+width:780px; 
+height:auto;
+padding:10px;
+background-color:#ffffff;
+font-size: 15pt;
+}
+.agree:hover{
+background-color: #D1D1D1;
+}
+.popupoption:hover{
+    background-color:#D1D1D1;
+    color: green;
+}
+.popupoption2:hover{
+    color: red;
+}
 
-  /* sideNav Button */
-  /* #mySidenav a {
-    position: absolute;
-    left: -50px;
-    transition:all 0.2s ease-in;
-    padding: 15px;
-    width: 100px;
-    text-decoration: none;
-    font-size: 20px;
+/* sideNav Button */
+#st-2 {
+    font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    backface-visibility: hidden;
+    display: block;
+    position: fixed;
+    opacity: 1;
+    text-align: left;
+    top: 180px;
+    z-index: 94034;
+}
+#st-2 .st-total {
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    background: #fff;
+    color: #555;
+    display: inline-block;
+    font-weight: 500;
+    line-height: 18px;
+    margin-right: 0;
+    min-height: 34px;
+    max-width: 80px;
+    opacity: 1;
+    padding: 4px 0;
+    text-align: center;
+    width: 48px;
+}
+#st-2 .st-btn.st-first {
+    border-top: none;
+    border-top-right-radius: 4px;
+}
+#st-2 .st-btn[data-network='facebook'] {
+    background-color: #4267B2;
+}
+#st-2 .st-btn[data-network='whatsapp'] {
+    background-color: #25d366;
+}
+#st-2 .st-btn[data-network='twitter'] {
+    background-color: #55acee;
+}
+#st-2 .st-btn[data-network='email'] {
+    background-color: #7d7d7d;
+}
+#st-2 .st-btn[data-network='messenger'] {
+    background-color: #448AFF;
+}
+#st-2 .st-btn.st-last {
+    border-bottom: none;
+    border-bottom-right-radius: 4px;
+}
+#st-2 .st-toggle {
+    left: -48px;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    background: #ccc;
+    border-bottom-right-radius: 4px;
     color: white;
-    border-radius: 0 5px 5px 0;
-  }
-  
-  #mySidenav a:hover {
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 24px;
+    position: relative;
+    text-align: center;
+    width: 48px;
+}
+#st-2 .st-btn > img {
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    height: 24px;
+    margin-left: 0;
+    vertical-align: top;
+    width: 24px;
+}
+#st-2 > div {
+    clear: left;
+    float: left;
+}
+#st-2.st-left .st-toggle .st-left {
+    display: inline-block;
+}
+#st-2.st-left .st-toggle .st-right {
+    display: none;
+}
+#st-2.st-left {
+    left: 0px;
+}
+#st-2.st-left.st-hidden .st-toggle .st-right {
+    display: inline-block;
+}
+#st-2.st-hidden.st-left {
+    left: -48px;
+}
+#st-2.st-hidden.st-right {
+    left: -48px;
+}
+#st-2 .st-btn:hover {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+#st-2:hover .st-toggle {
     left: 0;
-  }
-  
-  #about {
-    top: 20px;
-    background-color: #4CAF50;
-  }
-  
-  #blog {
-    top: 80px;
-    background-color: #2196F3;
-  }
-  
-  #projects {
-    top: 140px;
-    background-color: #f44336;
-  }
-  
-  #contact {
-    top: 200px;
-    background-color: #555
-  } */
+}
+#st-2.st-has-labels .st-btn:hover {
+    width: 120px;
+}
+#st-2 .st-btn > span {
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    color: #fff;
+    display: inline-block;
+    font-weight: 500;
+    left: -35px;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    padding: 0 6px;
+    position: relative;
+    vertical-align: top;
+    filter: alpha(opacity=0);
+}
+#st-2 .st-btn[data-network='facebook'] > span {
+    color: #fff;
+}
+#st-2 .st-btn[data-network='whatsapp'] > span {
+    color: #fff;
+}
+#st-2 .st-btn[data-network='twitter'] > span {
+    color: #fff;
+}
+#st-2 .st-btn[data-network='email'] > span {
+    color: #fff;
+}
+#st-2 .st-btn[data-network='messenger'] > span {
+    color: #fff;
+}
+#st-2 .st-btn:hover > span {
+    opacity: 1;
+    display: inline-block;
+    left: 0;
+    filter: alpha(opacity=100);
+}
+#st-2 .st-btn {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: NaNpx;
+    height: 48px;
+    line-height: 24px;
+    margin-bottom: 0;
+    opacity: 1;
+    overflow: hidden;
+    padding: 12px;
+    position: relative;
+    text-align: left;
+    top: 0;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 48px;
+}
+#st-2.st-hidden .st-toggle {
+    border-top-right-radius: 4px;
+}
+#st-2.st-hidden:hover .st-toggle {
+    left: 48px;
+}
+#st-2.st-hidden {
+    width: 96px;
+}
