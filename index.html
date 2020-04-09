@@ -93,7 +93,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark static-top">
                 <div class="container">
                     <a class="navbar-brand" href="/">
-                        <img src="images/logo.png" alt="" width="133" height="50">
+                        <img src="images/logo.png" alt="" width="100" height="50">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -142,7 +142,7 @@
                 </div>
                 <div class="col-md-4" style="float:left;">
                     <b class="font-Oswald-b" style="display:block;text-align:center;font-size:40px;color:#fff;">India's Biggest Cryptocurrency Event is HERE..!</b>
-                    <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
+                    <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 25px;font-size:9px;">
                         <span class="countdown-row countdown-show4">
                             <span class="countdown-section">
                                 <span class="days countdown-amount font-roboto-r">11</span>
@@ -1317,11 +1317,7 @@
     <!-- mobile view -->
     <div class="d-lg-none position-relative">
         <!-- sidenav mobile -->
-        <div id="st-2" class=" st-sticky-share-buttons st-left st-toggleable st-has-labels st-show-total" style="top:550px;">
-            <div class="st-total" style="height:90px;width:90px;max-width:90px;font-size:28px;line-height:30px;visibility: hidden;">
-                <span class="st-label">1.1k</span>
-                <span class="st-shares">Shares</span>
-            </div>
+        <div id="st-2" class=" st-sticky-share-buttons st-left st-toggleable st-has-labels st-show-total" style="top:590px;">
             <div class="st-btn st-first" onclick="window.location = 'https://www.facebook.com/sharer.php?display=page&u=https%3A%2F%2Fcryptonite.finstreet.in%2F'" data-network="facebook" target="_blank" style="display: inline-block;width:90px;height:90px;visibility: hidden;">
                 <img alt="facebook sharing button" src="https://platform-cdn.sharethis.com/img/facebook.svg" style="height:50px;width:50px;">
             </div>
@@ -1334,12 +1330,14 @@
             <div class="st-btn st-last" data-action="share/whatsapp/share" onclick="window.location = 'whatsapp://send?text=If You Have To START ALL OVER FROM ZERO... WHAT WOULD YOU DO FROM DAY 1 TO DAY 30, STEP-BY-STEP? https%3A%2F%2Fcryptonite.finstreet.in'" data-action="share/whatsapp/share" data-network="whatsapp" style="display:inline-block;width:90px;height:90px;visibility: hidden;">
                 <img alt="whatsapp sharing button" src="https://platform-cdn.sharethis.com/img/whatsapp.svg" style="height:50px;width:50px;">
             </div>
-            <div class="st-toggle" style="width:90px;height:90px;left:0">
+            <div class="st-toggle arrow" style="width:90px;height:90px;left:0;color:#000;">
                 <div class="st-left" style="display:none !important;">
-                    <img alt="arrow_left sharing button" src="https://platform-cdn.sharethis.com/img/arrow_left.svg" style="height:50px;width:50px;margin-top:20px;">
+                    <span class="st-label">1.1k</span>
+                    <span class="st-shares">Shares</span>
                 </div>
                 <div class="st-right" style="display:inline-block !important;">
-                    <img alt="arrow_right sharing button" src="https://platform-cdn.sharethis.com/img/arrow_right.svg" style="height:50px;width:50px;margin-top:20px;">
+                    <span class="st-label">1.1k</span>
+                    <span class="st-shares">Shares</span>
                 </div>
             </div>
         </div>
@@ -2544,7 +2542,7 @@
     });
 
     // The data/time we want to countdown to
-    var countDownDate = new Date("apr 9, 2020 24:00:00").getTime();
+    var countDownDate = new Date("apr 10, 2020 24:00:00").getTime();
 
     // Run myfunc every second
     var myfunc = setInterval(function() {
@@ -2738,11 +2736,10 @@
 
         for (var i = 0; i < youtube.length; i++) {
 
-            var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
+            var source = "images/video.jpg";
 
             var image = new Image();
             image.src = source;
-            image.setAttribute( "style", "height:400px;width:700px;" );
             image.addEventListener( "load", function() {
             youtube[ i ].appendChild( image );
 
