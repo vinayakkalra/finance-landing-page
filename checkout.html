@@ -176,7 +176,7 @@
                                 <li><b>End Date:</b> April 14, 2020, 8 p.m.</li>
                                 <li><b>Lecture timings:</b> 6 p.m. - 8 p.m.</li>
                                 <li><b>Venue:</b> Online Event</li>
-                                <p style="font-size:25px;padding-top:5px;"> <strike><b>&#8377;1,997</b></strike> <span style="color:#2fbe6d;">&#8377;597</span></p>
+                                <p style="font-size:25px;padding-top:5px;"> <strike><b>&#8377;1,997</b></strike> <span style="color:#2fbe6d;">&#8377;997</span></p>
                             </ul>
                             <div style="padding:0px 10px;">
                                 <a data-toggle="modal" data-target="#razorpay" class="btn-green btn-block caps cursor-pointer" style="padding:10px;background-color:#2fbe6d;border-radius:10px;color:#fff;font-size:20px;text-align:center;">Buy Tickets</a>
@@ -316,7 +316,7 @@
                             <li style="padding-bottom:5px;"><b>End Date:</b> April 14, 2020, 8 p.m.</li>
                             <li style="padding-bottom:5px;"><b>Lecture timings:</b> 6 p.m. - 8 p.m.</li>
                             <li style="padding-bottom: 5px;"><b>Venue:</b> Online Event</li>                       
-                            <p style="font-size: 25px;"> <strike><b>&#8377;1,997</b></strike> <span style="color:#2fbe6d;">&#8377;597</span></p>
+                            <p style="font-size: 25px;"> <strike><b>&#8377;1,997</b></strike> <span style="color:#2fbe6d;">&#8377;997</span></p>
                         </ul>
                         <div style="padding: 0px 10px;">
                             <a data-toggle="modal" data-target="#razorpay" class="btn-green btn-block caps" style="padding: 5px;background-color:#2fbe6d;border-radius: 10px;color:#fff;font-size: 23px;text-align:center;">Buy Tickets</a>
@@ -483,14 +483,14 @@
                                     <tr class="cart-subtotal">
                                         <th>Discount(%)</th>
                                         <td><strong>
-                                            <span>-<span class="discount">70%</span></span>
+                                            <span>-<span class="discount">50%</span></span>
                                             </strong> 
                                         </td>
                                     </tr>  
                                     <tr class="order-total">
                                         <th>Total</th>
                                         <td><strong>
-                                                <span>&#8377;<span name="amount" class="modaltotal">597</span></span>
+                                                <span>&#8377;<span name="amount" class="modaltotal">997</span></span>
                                             </strong> 
                                         </td>
                                     </tr>    
@@ -726,7 +726,7 @@
                         postcode : $("#postcode").val(),
                         other_details : $("#other_details").val(),
                         productName :  "Crypto-Nite 2020",
-                        amount : "597",
+                        amount : "997",
                         'referral_id': referral_id,
                         password: $("#password").val()
 
@@ -739,7 +739,7 @@
                             var order_id = data.id;
                             var options = {
                                 "key": "rzp_live_LSedTe83FzVuTe", //rzp_test_BAnreND3t2AMOK test key // Enter the Key ID generated from the Dashboard rzp_test_Deii5btTqdfYUu rzp_live_LSedTe83FzVuTe
-                                "amount": parseInt(597*100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                "amount": parseInt(997*100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
                                 "currency": "INR",    
                                 "name": "Finstreet",
                                 "description": "Crypto-Nite",
@@ -757,7 +757,7 @@
                                             id: data.id,
                                             productName : "Finstreet",
                                             razorpay_payment_id : razorpay_payment_id,
-                                            amount : 597,
+                                            amount : 997,
                                             email : $("#email").val()
                                         },
                                         success:function(data){
