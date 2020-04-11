@@ -723,7 +723,7 @@
                     for( var i =0; i<data.orders.length; i++){
                         $("#orders-mobile").html($("#orders-mobile").html() + '<div class="row"><div class="col-8" style="font-size: 2rem">'+ data.orders[i].name+'</div><div class="col-4 text-right" style="font-size: 2rem"><span>&#8377;</span>'+ data.orders[i].amount+'</div></div><hr>')
                     }
-                    var total_income = data.orders.length * 299;
+                    var total_income = data.orders.length * 599;
                     var ecpc = total_income/data.total_clicks;
                     var ecpc_final = ecpc.toFixed(2);
                     $("#total-income-desktop").html(total_income);
@@ -741,17 +741,17 @@
                     for( var i = 0; i<data.orders.length; i++){
                         var order_date = new Date(data.orders[i].date_now);
                         if(order_date.toDateString() === date_today.toDateString()){
-                            today = today + 299;
+                            today = today + 599;
                         }
                         var diff = date_today.getDate() - order_date.getDate();
                         if(diff == 1){
-                            yesterday = yesterday + 299;
+                            yesterday = yesterday + 599;
                         }
                         if(diff <= 7){
-                            week = week + 299;
+                            week = week + 599;
                         }
                         if(diff <= 30){
-                            month = month + 299;
+                            month = month + 599;
                         }
                     }
                     $("#month-desktop").html(month);
