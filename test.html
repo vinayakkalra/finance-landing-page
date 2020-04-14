@@ -1,3 +1,74 @@
-<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@finstreet.in/video/6809200543580310785" data-video-id="6809200543580310785" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@finstreet.in" href="https://www.tiktok.com/@finstreet.in">@finstreet.in</a> <p>High paying jobs <a title="learnfromhome" target="_blank" href="https://www.tiktok.com/tag/learnfromhome">##learnfromhome</a> <a title="gharbaithoindia" target="_blank" href="https://www.tiktok.com/tag/gharbaithoindia">##gharbaithoindia</a> <a title="playathome" target="_blank" href="https://www.tiktok.com/tag/playathome">##playathome</a> <a title="earnmoneyfromhome" target="_blank" href="https://www.tiktok.com/tag/earnmoneyfromhome">##earnmoneyfromhome</a> <a title="finstreet" target="_blank" href="https://www.tiktok.com/tag/finstreet">##finstreet</a> <a title="welcometo1percent" target="_blank" href="https://www.tiktok.com/tag/welcometo1percent">##welcometo1percent</a> <a title="money" target="_blank" href="https://www.tiktok.com/tag/money">##money</a> <a title="earn" target="_blank" href="https://www.tiktok.com/tag/earn">##earn</a> <a title="bitcoin" target="_blank" href="https://www.tiktok.com/tag/bitcoin">##bitcoin</a> <a title="finance" target="_blank" href="https://www.tiktok.com/tag/finance">##finance</a> <a title="nse" target="_blank" href="https://www.tiktok.com/tag/nse">##nse</a></p> <a target="_blank" title="♬ original sound  - Finstreet.in" href="https://www.tiktok.com/music/original-sound-Finstreetin-6809184933941086978">♬ original sound  - Finstreet.in</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>videojs-http-source-selector Demo</title>
+  <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
+  <!--<link href="node_modules/video.js/dist/video-js.css" rel="stylesheet">-->
+  <link href="dist/videojs-http-source-selector.css" rel="stylesheet">
+</head>
+<body>
+  <title>videojs-http-source-selector Demo</title>
+  <video id="videojs-http-source-selector-player" width="1280" height="720" class="video-js vjs-default-skin vjs-big-play-centered" controls>
+    <source src="videos/day1/mediaFilePlaylist.m3u8" type='application/x-mpegURL'>
+  </video>
+  <!-- Stream URL:
+  <input type="text" id="streamURL" value="https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8" size="65">
+  <button onClick="loadStream()">Load</button>
+  <br/>
+  Caption1 URL:
+  <input type="text" id="caption1URL" value="https://crackle-mediaconvert.s3.amazonaws.com/assets/thesonata/HLS/captions/thesonata_aiml.vtt" size="65">
+  <button onClick="loadCaption1()">Load Caption</button>
+  <br/>
+  Caption2 URL:
+  <input type="text" id="caption2URL" value="https://crackle-mediaconvert.s3.amazonaws.com/assets/thesonata/HLS/captions/thesonata_3play.vtt" size="65">
+  <button onClick="loadCaption2()">Load Caption</button> -->
 
+  <!--<script src="node_modules/video.js/dist/video.js"></script>-->
+  <script src='https://vjs.zencdn.net/7.4.1/video.js'></script>
+  <script src="dist/videojs-contrib-quality-levels.js"></script>
+  <script src="dist/videojs-http-source-selector.js"></script>
+  <script>
+    (function(window, videojs) {
+      var player = window.player = videojs('videojs-http-source-selector-player');
+      player.httpSourceSelector();
+      //Load stream from query param /?stream=MYHLS_STREAM_URL_GOES_HERE
+      var queryParamStream = getQueryString('stream');
+      if(queryParamStream !== null)
+      {
+        document.getElementById("streamURL").value = queryParamStream;
+        player.src({ type: "application/x-mpegURL", src: document.getElementById("streamURL").value });
+      }
+    }(window, window.videojs));
 
+    function loadStream(){
+      console.log("Change stream to : "+document.getElementById("streamURL").value );
+      player.src({ type: "application/x-mpegURL", src: document.getElementById("streamURL").value });
+    }
+
+    function loadCaption1(){
+      console.log("Add caption: "+document.getElementById("caption1URL").value );
+      player.addRemoteTextTrack({src: document.getElementById("caption1URL").value, label: 'Caption 1'}, false);
+    }
+
+    function loadCaption2(){
+      console.log("Add caption: "+document.getElementById("caption2URL").value );
+      player.addRemoteTextTrack({src: document.getElementById("caption2URL").value, label: 'Caption 2'}, false);
+    }
+
+    /**
+      * Get the value of a querystring
+      * @param  {String} field The field to get the value of
+      * @param  {String} url   The URL to get the value from (optional)
+      * @return {String}       The field value
+      */
+    function getQueryString ( field, url )
+    {
+      var href = url ? url : window.location.href;
+      var reg = new RegExp( '[?&]' + field + '=([^]*)', 'i' );
+      var string = reg.exec(href);
+      return string ? string[1] : null;
+    }
+  </script>
+</body>
+</html>
