@@ -78,6 +78,12 @@
             padding: 10px 40px;
             margin-bottom:20px !important;
         }
+        .disabled {
+            color: currentColor;
+            cursor: not-allowed !important;
+            opacity: 0.5;
+            text-decoration: none;
+        }
         @media (max-width: 700px){
             .closeButton{
                 margin-right:15px;font-size:27px;
@@ -162,22 +168,34 @@
             </nav>
         </div>
         <!-- Page Content -->
-        <div class="container-fluid" style="margin-top:93px;height:345px;display:flex;">
+        <div class="container-fluid" style="margin-top:93px;height:427px;display:flex;">
             <div class="container" style="padding:30px 0px">
                 <div class="col-md-12" style="border-radius:10px;">
-                    <div style="background-color:#fff;padding:20px;float:left;border-radius:10px;height:320px;" class="col-md-8">
+                    <div style="background-color:#fff;padding:20px;float:left;border-radius:10px;height: 410px;" class="col-md-8">
                         <div class="col-md-6" style="background-color:#fff;padding: 10px;float:left;justify-content:center;display:flex;">
                             <img src="images/image.png" alt="" style="border-radius:10px;">
                         </div>
                         <div class="col-md-6 font-roboto-m" style="background-color:#fff;padding-left:20px !important;float:left;">
-                            <p style="font-size:24px;line-height:33px;padding:10px 0px;text-align:center;">Crypto-Nite 2020</p>
+                            <p style="font-size:24px;line-height:33px;padding:10px 0px;text-align:center;margin-bottom:0px;">Crypto-Nite 2020</p>
                             <ul style="font-size: 18px;padding: 0 0 0 25px;margin-bottom:0 !important;">
                                 <li><b>Start Date:</b> April 12, 2020, 11 a.m.</li>
                                 <li><b>End Date:</b> April 14, 2020, 8 p.m.</li>
                                 <li><b>Lecture timings:</b> 6 p.m. - 8 p.m.</li>
                                 <li><b>Venue:</b> Online Event</li>
-                                <p style="font-size:25px;padding-top:5px;"><b>&#8377;1,997</b></p>
+                                <p style="font-size:25px;padding-top:5px;margin-bottom:0px;"><strike class="strike"><b>&#8377;1,997</b></strike> <span id="price" style="color:#2fbe6d;">&#8377;497</span></p>
                             </ul>
+                            <div class="couponDiv" style="padding:10px;display:flex;font-size:21px;">
+                                <input type="text" name="coupon" id="in" class="coupon" title="Enter coupon" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;border:2px solid #2fbe6d;width:160%;text-align:center;">
+                                <a onclick="validate(coupon)" id="err" class="btn-green btn-block caps disabled" style="padding:10px;background-color:#2fbe6d;border-top-right-radius:10px;border-bottom-right-radius:10px;color:#fff;font-size:15px;text-align:center;cursor:pointer;">Apply Coupon</a>
+                            </div>
+                            <div class="applied" style="padding:10px;">
+                                <a class="btn-green btn-block caps" style="border-radius:10px;color: #000;font-size:20px;text-align:left;"><span id="code">EARLYBIRD70</span> Coupon Applied</a>
+                                <div class="position-absolute" style="right:7px;margin-top: -41px;">
+                                    <div style="border-radius: 100px;width: 50px;height: 50px;color: #3c4792;font-size: 10px;" class="d-flex justify-content-center align-items-center cursor-pointer coupon-code-applied-cross">
+                                        <p class="m-0" style="font-size:30px;transform:rotate(40deg);">+</p>
+                                    </div>
+                                </div>
+                            </div>
                             <div style="padding:0px 10px;">
                                 <a data-toggle="modal" data-target="#razorpay" class="btn-green btn-block caps cursor-pointer" style="padding:10px;background-color:#2fbe6d;border-radius:10px;color:#fff;font-size:20px;text-align:center;">Buy Tickets</a>
                             </div>
@@ -304,7 +322,7 @@
 
         <!-- Page Content -->
         <div class="container-fluid" style="width:100%;padding:15px;">
-            <div class="container-fluid" style="margin-top: 115px;padding: 0px 0px;background-color:#fff;height: 575px;border-radius:10px;">
+            <div class="container-fluid" style="margin-top: 115px;padding: 0px 0px;background-color:#fff;height: 705px;border-radius:10px;">
                 <div>
                     <div class="col-md-12" style="padding: 20px;float:left;">
                         <img src="images/image.png" alt="" width="100%" style="border-radius:10px;">
@@ -316,8 +334,20 @@
                             <li style="padding-bottom:5px;"><b>End Date:</b> April 14, 2020, 8 p.m.</li>
                             <li style="padding-bottom:5px;"><b>Lecture timings:</b> 6 p.m. - 8 p.m.</li>
                             <li style="padding-bottom: 5px;"><b>Venue:</b> Online Event</li>                       
-                            <p style="font-size: 25px;"><b>&#8377;1,997</b></p>
-                        </ul>
+                            <p style="font-size: 25px;"><strike class="strike-mobile"><b>&#8377;1,997</b></strike> <span id="price-mobile" style="color:#2fbe6d;">&#8377;497</span></p>
+                        </ul>                      
+                        <div class="couponDiv-mobile" style="padding:10px;display:flex;font-size:18px;">
+                            <input type="text" name="coupon-mobile" id="in-mobile" class="coupon-mobile" title="Enter coupon" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;border:2px solid #2fbe6d;width:145%;">
+                            <a onClick="validate(couponMob)" id="err-mobile" class="btn-green btn-block caps disabled" style="padding: 5px;background-color:#2fbe6d;border-top-right-radius: 10px;border-bottom-right-radius: 10px;color:#fff;font-size:20px;text-align:center;">Apply Coupon</a>
+                        </div>
+                        <div class="applied-mobile" style="padding:10px;">
+                            <a class="btn-green btn-block caps" style="border-radius:10px;color: #000;font-size:20px;text-align:left;"><span id="code-mobile">EARLYBIRD70</span> Coupon Applied</a>
+                            <div class="position-absolute" style="right:7px;margin-top: -41px;">
+                                <div style="border-radius: 100px;width: 50px;height: 50px;color: #3c4792;font-size: 10px;" class="d-flex justify-content-center align-items-center cursor-pointer coupon-code-applied-cross-mobile">
+                                    <p class="m-0" style="font-size:30px;transform:rotate(40deg);">+</p>
+                                </div>
+                            </div>
+                        </div>
                         <div style="padding: 0px 10px;">
                             <a data-toggle="modal" data-target="#razorpay" class="btn-green btn-block caps" style="padding: 5px;background-color:#2fbe6d;border-radius: 10px;color:#fff;font-size: 23px;text-align:center;">Buy Tickets</a>
                         </div>
@@ -481,9 +511,9 @@
                                         </td>
                                     </tr>
                                     <tr class="cart-subtotal">
-                                        <th>Discount</th>
+                                        <th>Discount(%)</th>
                                         <td><strong>
-                                            <span>&#8377;<span class="discount">0</span></span>
+                                            <span><span id="discount">0</span>%</span>
                                             </strong> 
                                         </td>
                                     </tr>  
@@ -568,255 +598,601 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
-        //open mobile drawer
-        $("#drawer").css('display','none');
-        $("#open-drawer").on("click",function(){
-        if($("#drawer").css('display') == 'none'){
-            $("#drawer").css('display','block');
-        } else{
-            $("#drawer").css('display','none');
-        }
-    });
-    $("#cross").on("click",function(){
-        $("#drawer").css('display','none');
-    });
 
     var referral_id = sessionStorage.getItem('referral_id');
     if(referral_id == null){
         referral_id = "";
     }
-    // validation razorpay 
-    $("#razorpaycheckout").on("click",function(){
-            var error = "";
-            function validateEmail() {
-                var email = $("#email").val();
-                var emailReg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
-            if( emailReg.test(email)){
-                return true;
-                }else{
-                    return false;
-                }
-            }
-            var error = "";
-            function validateEmail() {
-                var phone= $("#phone").val();
-                var phoneReg = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
-            if( phoneReg.test(phone)){
-                return true;
-                }else{
-                    return false;
-                }
-            }
-            if($("#name").val() == ""){
-                $("#name").css('border-color','red');
-                $("#name").css('border-width','2px');
-                $("#name").attr('placeholder','Required Field');
-                error = error + 'name';
-            } else{
-                $("#name").css('border-color','black');
-                $("#name").css('border-width','1px');
-            }
-            
-            if($("#phone").val() == ""){
-                $("#phone").css('border-color','red');
-                $("#phone").css('border-width','2px');
-                $("#phone").attr('placeholder','Required Field');
-                error = error + 'Phone';
-            }else{
-                $("#phone").css('border-color','black');
-                $("#phone").css('border-width','1px');
-            }
-            if(validateEmail()) {
-                $("#email").css('border-color','black');
-                $("#email").css('border-width','1px');
-                
-            }else{
-                $("#email").css('border-color','red');
-                $("#email").css('border-width','2px');
-                $("#email").attr('placeholder','Required Field');
-                error = error + 'email';
-            }
-            if($("#country").val() == 0){
-                $("#country").css('border-color','red');
-                $("#country").css('border-width','2px');
-                $("#country").attr('placeholder','Required Field');
-                error = error + 'country';
-            } else{
-                $("#country").css('border-color','black');
-                $("#Country").css('border-width','1px');
-            }
-            if($("#address").val() == ""){
-                $("#address").css('border-color','red');
-                $("#address").css('border-width','2px');
-                $("#address").attr('placeholder','Required Field');
-                error = error + 'address';
-            } else{
-                $("#address").css('border-color','black');
-                $("#address").css('border-width','1px');
-            }
-            if($("#state").val() == ""){
-                $("#state").css('border-color','red');
-                $("#state").css('border-width','2px');
-                $("#state").attr('placeholder','Required Field');
-                error = error + 'state';
-            } else{
-                $("#state").css('border-color','black');
-                $("#state").css('border-width','1px');
-            }
-            if($("#postcode").val() == ""){
-                $("#postcode").css('border-color','red');
-                $("#postcode").css('border-width','2px');
-                $("#postcode").attr('placeholder','Required Field');
-                error = error + 'postcode';
-            } else{
-                $("#postcode").css('border-color','black');
-                $("#postcode").css('border-width','1px');
-            }
 
-            if(error == ""){
-                if($("#confirm_password").val() == ""){
-                    $("#confirm_password").css('border-color','red');
-                    $("#confirm_password").css('border-width','1px');
-                    error = error + 'confirm password';
-                }else{
-                    if($("#confirm_password").val() != $("#password").val()){
-                        $("#confirm_password").css('border-color','red');
-                        $("#confirm_password").css('border-width','1px');
-                        error = error + 'confirm password failure';
-                        alert("Password and Confirm password fields do not match");
-                    }else{
-                        $("#confirm_password").css('border-color','#BCE0FD');
-                        $("#confirm_password").css('border-width','1px');
-                    }
-                }
-
-                if($("#password").val() == ""){
-                    $("#password").css('border-color','red');
-                    $("#password").css('border-width','1px');
-                    error = error + 'confirm password';
-                }else{
-                    $("#password").css('border-color','#BCE0FD');
-                    $("#password").css('border-width','1px');
-                }
-            }
-
-            
-
-            // if(error == ""){
-            //     if ($('#chkterms').is(':checked')) {
-            //     alert('you agreed conditions')
-            //     } else{
-            //     alert('please check terms & conditions');
-            //     error = error +"chkterms";
-            //     }	
-            // }	
-            if(error == ""){
-            // ajax call
-                $.ajax({
-                    type:'POST',
-                    url:'php/checkout-form.php',
+    if( window.innerWidth >= 960 ){
+        var coupon = document.getElementById('in').value;
+        function validate(coupon) {
+            var input = "";
+            if(input.toUpperCase() == coupon.toUpperCase()) {
+			    $.ajax({
+                    type: "POST",
+                    url: "php/process.php",
+                    'async': false,
                     dataType: "json",
                     data:{
-                        name : $("#name").val(),
-                        email : $("#email").val(),
-                        phone : $("#phone").val(),
-                        country : $("#country").val(),
-                        address : $("#address").val(),
-                        state : $("#state").val(),
-                        postcode : $("#postcode").val(),
-                        other_details : $("#other_details").val(),
-                        productName :  "Crypto-Nite 2020",
-                        amount : "1997",
-                        'referral_id': referral_id,
-                        password: $("#password").val()
-
+                        coupon_code: document.getElementById('in').value
                     },
-                    success:function(data){
-                        if(data.status == 201){
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({'event': 'payment initiated'});
-                            // alert("checked out");
-                            var order_id = data.id;
-                            var options = {
-                                "key": "rzp_live_LSedTe83FzVuTe", //rzp_test_BAnreND3t2AMOK test key // Enter the Key ID generated from the Dashboard rzp_test_Deii5btTqdfYUu rzp_live_LSedTe83FzVuTe
-                                "amount": parseInt(1997*100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
-                                "currency": "INR",    
-                                "name": "Finstreet",
-                                "description": "Crypto-Nite",
-                                "image": "images/logo.png",    
-                                //"order_id": "order_9A33XWu170gUtm",//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below    
-                                "handler": function (response){
-                                    // alert(response.razorpay_payment_id);
-                                    var razorpay_payment_id = response.razorpay_payment_id;
-                                    // console.log(response);
-                                    $.ajax({
-                                        type:'POST',
-                                        url:'php/checkout-update-form.php',
-                                        dataType: "json",
-                                        data:{
-                                            id: data.id,
-                                            productName : "Finstreet",
-                                            razorpay_payment_id : razorpay_payment_id,
-                                            amount : 1997,
-                                            email : $("#email").val()
-                                        },
-                                        success:function(data){
-                                            if(data.status == 'ok'){
-                                                //window.location = "thankyou.html";
-                                                //alert("Your payment has been successful");
-                                                // $("#checkout-form").css('display','none');
-                                                // $("#order-success").css('display','block');
-                                                // $("#order-id").html('#'+ data.id);
-                                                // window.scrollTo(0,0);
-                                                sessionStorage.useremail = $("#email").val();
-                                                window.dataLayer = window.dataLayer || [];
-                                                window.dataLayer.push({'event':'payment success'});
-
-                                                window.location = "user-dashboard";
-                                            }else{
-                                                console.log("error");
-                                            } 
-                                        }
-                                    });
-                            
-                                    
-                                },"prefill": {
-                                    "name": $("#name").val(),
-                                    "email": $("#email").val(),
-                                    "phone": $("#phone").val()
-                                },"notes": {
-                                    "country": $("#country").val(),
-                                    "address": $("#Address").val(),
-                                    "state": $("#state").val(),
-                                    "postcode": $("#postcode").val(),
-                                    "productName": "Crypto-Nite 2020",
-
-                                },"theme": {
-                                    "color": "#2e3192"
-                                }
-                            };
-
-                            var rzp1 = new Razorpay(options);
-                            rzp1.open();
-                            
-                            
-                        }else if(data.status == 601){
-                            console.log(data.error);
-                            // alert("problem with query");
-                        }else{
-                            
-                        } 
+                    success: function(dataResult){
+                        if(dataResult.statusCode==200){
+                            result = dataResult;
+                            $('#price').html(dataResult.value);
+                            $(".applied").css('display','block');
+                            $(".strike").css('display','contents');
+                            $("#price").css('color','#2fbe6d');
+                            $('#code').html(dataResult.coupon_value);
+                            $('.modaltotal').html(dataResult.value);
+                            $('#discount').html(dataResult.discount);
+                            document.getElementById('err').innerHTML="Apply Coupon";
+                            $("#err").addClass("disabled");
+                            return true;                            
+                        }
+                        else if(dataResult.statusCode==201){
+                            $('#err').html("Invalid coupon");
+                            $(".applied").css('display','none');
+                            $(".strike").css('display','none');
+                            document.getElementById('price').innerHTML="&#8377;1,997";
+                            $("#price").css('color','#000');
+                        }
                     }
-                });
-            }else{
-                return true;
-            }     
+			    });
+		    }else{
+                document.getElementById('err').innerHTML="Invalid coupon";
+            }
+            
+            var dataResult = result;
+            // validation razorpay 
+            $("#razorpaycheckout").on("click",function(){
+                var error = "";
+                function validateEmail() {
+                    var email = $("#email").val();
+                    var emailReg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+                if( emailReg.test(email)){
+                    return true;
+                    }else{
+                        return false;
+                    }
+                }
+                var error = "";
+                function validateEmail() {
+                    var phone= $("#phone").val();
+                    var phoneReg = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
+                if( phoneReg.test(phone)){
+                    return true;
+                    }else{
+                        return false;
+                    }
+                }
+                if($("#name").val() == ""){
+                    $("#name").css('border-color','red');
+                    $("#name").css('border-width','2px');
+                    $("#name").attr('placeholder','Required Field');
+                    error = error + 'name';
+                } else{
+                    $("#name").css('border-color','black');
+                    $("#name").css('border-width','1px');
+                }
+                
+                if($("#phone").val() == ""){
+                    $("#phone").css('border-color','red');
+                    $("#phone").css('border-width','2px');
+                    $("#phone").attr('placeholder','Required Field');
+                    error = error + 'Phone';
+                }else{
+                    $("#phone").css('border-color','black');
+                    $("#phone").css('border-width','1px');
+                }
+                if(validateEmail()) {
+                    $("#email").css('border-color','black');
+                    $("#email").css('border-width','1px');
+                    
+                }else{
+                    $("#email").css('border-color','red');
+                    $("#email").css('border-width','2px');
+                    $("#email").attr('placeholder','Required Field');
+                    error = error + 'email';
+                }
+                if($("#country").val() == 0){
+                    $("#country").css('border-color','red');
+                    $("#country").css('border-width','2px');
+                    $("#country").attr('placeholder','Required Field');
+                    error = error + 'country';
+                } else{
+                    $("#country").css('border-color','black');
+                    $("#Country").css('border-width','1px');
+                }
+                if($("#address").val() == ""){
+                    $("#address").css('border-color','red');
+                    $("#address").css('border-width','2px');
+                    $("#address").attr('placeholder','Required Field');
+                    error = error + 'address';
+                } else{
+                    $("#address").css('border-color','black');
+                    $("#address").css('border-width','1px');
+                }
+                if($("#state").val() == ""){
+                    $("#state").css('border-color','red');
+                    $("#state").css('border-width','2px');
+                    $("#state").attr('placeholder','Required Field');
+                    error = error + 'state';
+                } else{
+                    $("#state").css('border-color','black');
+                    $("#state").css('border-width','1px');
+                }
+                if($("#postcode").val() == ""){
+                    $("#postcode").css('border-color','red');
+                    $("#postcode").css('border-width','2px');
+                    $("#postcode").attr('placeholder','Required Field');
+                    error = error + 'postcode';
+                } else{
+                    $("#postcode").css('border-color','black');
+                    $("#postcode").css('border-width','1px');
+                }
+
+                if(error == ""){
+                    if($("#confirm_password").val() == ""){
+                        $("#confirm_password").css('border-color','red');
+                        $("#confirm_password").css('border-width','1px');
+                        error = error + 'confirm password';
+                    }else{
+                        if($("#confirm_password").val() != $("#password").val()){
+                            $("#confirm_password").css('border-color','red');
+                            $("#confirm_password").css('border-width','1px');
+                            error = error + 'confirm password failure';
+                            alert("Password and Confirm password fields do not match");
+                        }else{
+                            $("#confirm_password").css('border-color','#BCE0FD');
+                            $("#confirm_password").css('border-width','1px');
+                        }
+                    }
+
+                    if($("#password").val() == ""){
+                        $("#password").css('border-color','red');
+                        $("#password").css('border-width','1px');
+                        error = error + 'confirm password';
+                    }else{
+                        $("#password").css('border-color','#BCE0FD');
+                        $("#password").css('border-width','1px');
+                    }
+                }
+
+                
+
+                // if(error == ""){
+                //     if ($('#chkterms').is(':checked')) {
+                //     alert('you agreed conditions')
+                //     } else{
+                //     alert('please check terms & conditions');
+                //     error = error +"chkterms";
+                //     }	
+                // }
+                // console.log(dataResult);	
+                if(error == ""){
+                // ajax call
+                    $.ajax({
+                        type:'POST',
+                        url:'php/checkout-form.php',
+                        dataType: "json",
+                        data:{
+                            name : $("#name").val(),
+                            email : $("#email").val(),
+                            phone : $("#phone").val(),
+                            country : $("#country").val(),
+                            address : $("#address").val(),
+                            state : $("#state").val(),
+                            postcode : $("#postcode").val(),
+                            other_details : $("#other_details").val(),
+                            productName :  "Crypto-Nite 2020",
+                            amount :  dataResult.value,
+                            'referral_id': referral_id,
+                            password: $("#password").val(),
+                            discount: dataResult.discount
+
+                        },
+                        success:function(data){
+                            if(data.status == 201){
+                                window.dataLayer = window.dataLayer || [];
+                                window.dataLayer.push({'event': 'payment initiated'});
+                                // alert("checked out");
+                                var order_id = data.id;
+                                var options = {
+                                    "key": "rzp_test_BAnreND3t2AMOK", // rzp_live_LSedTe83FzVuTe, rzp_test_BAnreND3t2AMOK test key // Enter the Key ID generated from the Dashboard rzp_test_Deii5btTqdfYUu rzp_live_LSedTe83FzVuTe
+                                    "amount": parseInt(dataResult.value*100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                    "currency": "INR",    
+                                    "name": "Finstreet",
+                                    "description": "Crypto-Nite",
+                                    "image": "images/logo.png",    
+                                    //"order_id": "order_9A33XWu170gUtm",//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below    
+                                    "handler": function (response){
+                                        // alert(response.razorpay_payment_id);
+                                        var razorpay_payment_id = response.razorpay_payment_id;
+                                        // console.log(response);
+                                        $.ajax({
+                                            type:'POST',
+                                            url:'php/checkout-update-form.php',
+                                            dataType: "json",
+                                            data:{
+                                                id: data.id,
+                                                productName : "Finstreet",
+                                                razorpay_payment_id : razorpay_payment_id,
+                                                amount : dataResult.value,
+                                                email : $("#email").val()
+                                            },
+                                            success:function(data){
+                                                if(data.status == 'ok'){
+                                                    //window.location = "thankyou.html";
+                                                    //alert("Your payment has been successful");
+                                                    // $("#checkout-form").css('display','none');
+                                                    // $("#order-success").css('display','block');
+                                                    // $("#order-id").html('#'+ data.id);
+                                                    // window.scrollTo(0,0);
+                                                    sessionStorage.useremail = $("#email").val();
+                                                    window.dataLayer = window.dataLayer || [];
+                                                    window.dataLayer.push({'event':'payment success'});
+
+                                                    window.location = "user-dashboard";
+                                                }else{
+                                                    console.log("error");
+                                                } 
+                                            }
+                                        });
+                                
+                                        
+                                    },"prefill": {
+                                        "name": $("#name").val(),
+                                        "email": $("#email").val(),
+                                        "phone": $("#phone").val()
+                                    },"notes": {
+                                        "country": $("#country").val(),
+                                        "address": $("#Address").val(),
+                                        "state": $("#state").val(),
+                                        "postcode": $("#postcode").val(),
+                                        "productName": "Crypto-Nite 2020",
+
+                                    },"theme": {
+                                        "color": "#2e3192"
+                                    }
+                                };
+
+                                var rzp1 = new Razorpay(options);
+                                rzp1.open();
+                                
+                                
+                            }else if(data.status == 601){
+                                console.log(data.error);
+                                // alert("problem with query");
+                            }else{
+                                
+                            } 
+                        }
+                    });
+                }else{
+                    return true;
+                }     
+            });
+
+            $("#razorpay").on('show.bs.modal',function(e){
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({'event':'buy ticket'});
+            })
+        }
+
+        $(".coupon-code-applied-cross").on("click",function(e){
+                e.preventDefault();
+            document.getElementById('err').innerHTML="Apply Coupon";
+            $(".applied").css('display','none');
+            $(".strike").css('display','none');
+            document.getElementById('price').innerHTML="&#8377;1,997";
+            $("#price").css('color','#000');
+            $("#err").removeClass("disabled");            
+            });
+    }else{
+
+        //open mobile drawer
+        $("#drawer").css('display','none');
+        $("#open-drawer").on("click",function(){
+            if($("#drawer").css('display') == 'none'){
+                $("#drawer").css('display','block');
+            } else{
+                $("#drawer").css('display','none');
+            }
+        });
+        $("#cross").on("click",function(){
+            $("#drawer").css('display','none');
         });
 
-        $("#razorpay").on('show.bs.modal',function(e){
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({'event':'buy ticket'});
-        })
+
+        // coupon code js
+        var couponMob = document.getElementById('in').value;
+        function validate(couponMob) {
+            var input = "";
+            if(input.toUpperCase() == couponMob.toUpperCase()) {
+			    $.ajax({
+                    type: "POST",
+                    url: "php/process.php",
+                    'async': false,
+                    dataType: "json",
+                    data:{
+                        coupon_code: document.getElementById('in-mobile').value
+                    },
+                    success: function(dataResult){
+                        if(dataResult.statusCode==200){
+                            result = dataResult;
+                            $('#price-mobile').html(dataResult.value);
+                            $(".applied-mobile").css('display','block');
+                            $(".strike-mobile").css('display','contents');
+                            $("#price-mobile").css('color','#2fbe6d');
+                            $('#code-mobile').html(dataResult.coupon_value);
+                            $('.modaltotal').html(dataResult.value);
+                            $('#discount').html(dataResult.discount);
+                            document.getElementById('err-mobile').innerHTML="Apply Coupon";
+                            $("#err-mobile").addClass("disabled");
+                            return true;                            
+                        }
+                        else if(dataResult.statusCode==201){
+                            $('#err-mobile').html("Invalid coupon");
+                            $(".applied-mobile").css('display','none');
+                            $(".strike-mobile").css('display','none');
+                            document.getElementById('price-mobile').innerHTML="&#8377;1,997";
+                            $("#price-mobile").css('color','#000');
+                        }
+                    }
+			    });
+		    }else{
+                document.getElementById('err-mobile').innerHTML="Invalid coupon";
+            }
+            
+            var dataResult = result;
+            // validation razorpay 
+            $("#razorpaycheckout").on("click",function(){
+                var error = "";
+                function validateEmail() {
+                    var email = $("#email").val();
+                    var emailReg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+                if( emailReg.test(email)){
+                    return true;
+                    }else{
+                        return false;
+                    }
+                }
+                var error = "";
+                function validateEmail() {
+                    var phone= $("#phone").val();
+                    var phoneReg = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
+                if( phoneReg.test(phone)){
+                    return true;
+                    }else{
+                        return false;
+                    }
+                }
+                if($("#name").val() == ""){
+                    $("#name").css('border-color','red');
+                    $("#name").css('border-width','2px');
+                    $("#name").attr('placeholder','Required Field');
+                    error = error + 'name';
+                } else{
+                    $("#name").css('border-color','black');
+                    $("#name").css('border-width','1px');
+                }
+                
+                if($("#phone").val() == ""){
+                    $("#phone").css('border-color','red');
+                    $("#phone").css('border-width','2px');
+                    $("#phone").attr('placeholder','Required Field');
+                    error = error + 'Phone';
+                }else{
+                    $("#phone").css('border-color','black');
+                    $("#phone").css('border-width','1px');
+                }
+                if(validateEmail()) {
+                    $("#email").css('border-color','black');
+                    $("#email").css('border-width','1px');
+                    
+                }else{
+                    $("#email").css('border-color','red');
+                    $("#email").css('border-width','2px');
+                    $("#email").attr('placeholder','Required Field');
+                    error = error + 'email';
+                }
+                if($("#country").val() == 0){
+                    $("#country").css('border-color','red');
+                    $("#country").css('border-width','2px');
+                    $("#country").attr('placeholder','Required Field');
+                    error = error + 'country';
+                } else{
+                    $("#country").css('border-color','black');
+                    $("#Country").css('border-width','1px');
+                }
+                if($("#address").val() == ""){
+                    $("#address").css('border-color','red');
+                    $("#address").css('border-width','2px');
+                    $("#address").attr('placeholder','Required Field');
+                    error = error + 'address';
+                } else{
+                    $("#address").css('border-color','black');
+                    $("#address").css('border-width','1px');
+                }
+                if($("#state").val() == ""){
+                    $("#state").css('border-color','red');
+                    $("#state").css('border-width','2px');
+                    $("#state").attr('placeholder','Required Field');
+                    error = error + 'state';
+                } else{
+                    $("#state").css('border-color','black');
+                    $("#state").css('border-width','1px');
+                }
+                if($("#postcode").val() == ""){
+                    $("#postcode").css('border-color','red');
+                    $("#postcode").css('border-width','2px');
+                    $("#postcode").attr('placeholder','Required Field');
+                    error = error + 'postcode';
+                } else{
+                    $("#postcode").css('border-color','black');
+                    $("#postcode").css('border-width','1px');
+                }
+
+                if(error == ""){
+                    if($("#confirm_password").val() == ""){
+                        $("#confirm_password").css('border-color','red');
+                        $("#confirm_password").css('border-width','1px');
+                        error = error + 'confirm password';
+                    }else{
+                        if($("#confirm_password").val() != $("#password").val()){
+                            $("#confirm_password").css('border-color','red');
+                            $("#confirm_password").css('border-width','1px');
+                            error = error + 'confirm password failure';
+                            alert("Password and Confirm password fields do not match");
+                        }else{
+                            $("#confirm_password").css('border-color','#BCE0FD');
+                            $("#confirm_password").css('border-width','1px');
+                        }
+                    }
+
+                    if($("#password").val() == ""){
+                        $("#password").css('border-color','red');
+                        $("#password").css('border-width','1px');
+                        error = error + 'confirm password';
+                    }else{
+                        $("#password").css('border-color','#BCE0FD');
+                        $("#password").css('border-width','1px');
+                    }
+                }
+
+                
+
+                // if(error == ""){
+                //     if ($('#chkterms').is(':checked')) {
+                //     alert('you agreed conditions')
+                //     } else{
+                //     alert('please check terms & conditions');
+                //     error = error +"chkterms";
+                //     }	
+                // }
+                // console.log(dataResult);	
+                if(error == ""){
+                // ajax call
+                    $.ajax({
+                        type:'POST',
+                        url:'php/checkout-form.php',
+                        dataType: "json",
+                        data:{
+                            name : $("#name").val(),
+                            email : $("#email").val(),
+                            phone : $("#phone").val(),
+                            country : $("#country").val(),
+                            address : $("#address").val(),
+                            state : $("#state").val(),
+                            postcode : $("#postcode").val(),
+                            other_details : $("#other_details").val(),
+                            productName :  "Crypto-Nite 2020",
+                            amount :  dataResult.value,
+                            'referral_id': referral_id,
+                            password: $("#password").val(),
+                            discount: dataResult.discount
+
+                        },
+                        success:function(data){
+                            if(data.status == 201){
+                                window.dataLayer = window.dataLayer || [];
+                                window.dataLayer.push({'event': 'payment initiated'});
+                                // alert("checked out");
+                                var order_id = data.id;
+                                var options = {
+                                    "key": "rzp_test_BAnreND3t2AMOK", // rzp_live_LSedTe83FzVuTe, rzp_test_BAnreND3t2AMOK test key // Enter the Key ID generated from the Dashboard rzp_test_Deii5btTqdfYUu rzp_live_LSedTe83FzVuTe
+                                    "amount": parseInt(dataResult.value*100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                    "currency": "INR",    
+                                    "name": "Finstreet",
+                                    "description": "Crypto-Nite",
+                                    "image": "images/logo.png",    
+                                    //"order_id": "order_9A33XWu170gUtm",//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below    
+                                    "handler": function (response){
+                                        // alert(response.razorpay_payment_id);
+                                        var razorpay_payment_id = response.razorpay_payment_id;
+                                        // console.log(response);
+                                        $.ajax({
+                                            type:'POST',
+                                            url:'php/checkout-update-form.php',
+                                            dataType: "json",
+                                            data:{
+                                                id: data.id,
+                                                productName : "Finstreet",
+                                                razorpay_payment_id : razorpay_payment_id,
+                                                amount : dataResult.value,
+                                                email : $("#email").val()
+                                            },
+                                            success:function(data){
+                                                if(data.status == 'ok'){
+                                                    //window.location = "thankyou.html";
+                                                    //alert("Your payment has been successful");
+                                                    // $("#checkout-form").css('display','none');
+                                                    // $("#order-success").css('display','block');
+                                                    // $("#order-id").html('#'+ data.id);
+                                                    // window.scrollTo(0,0);
+                                                    sessionStorage.useremail = $("#email").val();
+                                                    window.dataLayer = window.dataLayer || [];
+                                                    window.dataLayer.push({'event':'payment success'});
+
+                                                    window.location = "user-dashboard";
+                                                }else{
+                                                    console.log("error");
+                                                } 
+                                            }
+                                        });
+                                
+                                        
+                                    },"prefill": {
+                                        "name": $("#name").val(),
+                                        "email": $("#email").val(),
+                                        "phone": $("#phone").val()
+                                    },"notes": {
+                                        "country": $("#country").val(),
+                                        "address": $("#Address").val(),
+                                        "state": $("#state").val(),
+                                        "postcode": $("#postcode").val(),
+                                        "productName": "Crypto-Nite 2020",
+
+                                    },"theme": {
+                                        "color": "#2e3192"
+                                    }
+                                };
+
+                                var rzp1 = new Razorpay(options);
+                                rzp1.open();
+                                
+                                
+                            }else if(data.status == 601){
+                                console.log(data.error);
+                                // alert("problem with query");
+                            }else{
+                                
+                            } 
+                        }
+                    });
+                }else{
+                    return true;
+                }     
+            });
+
+            $("#razorpay").on('show.bs.modal',function(e){
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({'event':'buy ticket'});
+            })
+        }
+        $(".coupon-code-applied-cross-mobile").on("click",function(e){
+                e.preventDefault();
+            document.getElementById('err').innerHTML="Apply Coupon";
+            $(".applied-mobile").css('display','none');
+            $(".strike-mobile").css('display','none');
+            document.getElementById('price-mobile').innerHTML="&#8377;1,997";
+            $("#price-mobile").css('color','#000');
+            $("#err-mobile").removeClass("disabled");            
+            });
+    }
+    
     </script>
 </body>
 </html>
