@@ -6,20 +6,23 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150643411-2"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'UA-150643411-2');
+        gtag('config', 'UA-150643411-2');
     </script>
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PFRW8HP');</script>
-        <!-- End Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PFRW8HP');</script>
+    <!-- End Google Tag Manager -->
 
     <title>Page | Finstreet | India's 1st ever Financial Freedom Coach</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -29,79 +32,102 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <!-- style -->
     <style type="text/css">
-         /* model razorpay */
-        
-         .closeButton{
-            margin-right:40px;color:#000;font-size:27px;
-            }
-        .formStyle{
-            padding:0px 55px;     
-            }
-        .formInput{
-            width:50%;float:left;padding:0px 25px;
+        /* model razorpay */
+
+        .closeButton {
+            margin-right: 40px;
+            color: #000;
+            font-size: 27px;
         }
-        .formInput1{
-            width:50%;float:left;padding:0px 25px;
+
+        .formStyle {
+            padding: 0px 55px;
         }
-        .buttonStyle{
-            
+
+        .formInput {
+            width: 50%;
+            float: left;
+            padding: 0px 25px;
+        }
+
+        .formInput1 {
+            width: 50%;
+            float: left;
+            padding: 0px 25px;
+        }
+
+        .buttonStyle {
+
             background-color: #2fbe6d;
             border-radius: 30px;
-            color: #fff;     
-            float:right;
+            color: #fff;
+            float: right;
             margin-bottom: 30px;
             font-size: 16px;
-            border-color:#2fbe6d;
-            font-weight:bold;
+            border-color: #2fbe6d;
+            font-weight: bold;
             padding-top: 5px;
             padding-bottom: 5px;
             z-index: 20;
         }
-        .buttonStyle:hover{
-            color:#fff;
+
+        .buttonStyle:hover {
+            color: #fff;
             background-color: #2fbe6d;
-            border-color:#2fbe6d;
+            border-color: #2fbe6d;
         }
+
         /* sucessfully form css */
-        .backToShop{
-            background-color:#2fbe6d;
-            border-radius:100px;
-            text-align:center;
-            font-weight:bold;
-            font-size:20px;
-            letter-spacing:0;
-            color:#fff !important;
+        .backToShop {
+            background-color: #2fbe6d;
+            border-radius: 100px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 0;
+            color: #fff !important;
             opacity: 1;
-            justify-content:center;
-            display:flex;
+            justify-content: center;
+            display: flex;
             margin: 0px 60px 0px 60px;
             padding: 10px 40px;
-            margin-bottom:20px !important;
+            margin-bottom: 20px !important;
         }
+
         .disabled {
             color: currentColor;
             cursor: not-allowed !important;
             opacity: 0.5;
             text-decoration: none;
         }
-        @media (max-width: 700px){
-            .closeButton{
-                margin-right:15px;font-size:27px;
+
+        @media (max-width: 700px) {
+            .closeButton {
+                margin-right: 15px;
+                font-size: 27px;
             }
-            .formStyle{
-                padding:0px 0px;
+
+            .formStyle {
+                padding: 0px 0px;
             }
-            .formInput{
-                width:100%;padding:0px 0px;
+
+            .formInput {
+                width: 100%;
+                padding: 0px 0px;
             }
-            .formInput1{
-                width:100%;float:left;padding: 0px 0px;
+
+            .formInput1 {
+                width: 100%;
+                float: left;
+                padding: 0px 0px;
             }
-            .buttonStyle{
-                float:left;
+
+            .buttonStyle {
+                float: left;
             }
+
             /* sucessfully form css */
-            .backToShop{
+            .backToShop {
                 margin: 0px 10px 0px 10px;
                 padding: 10px 20px;
             }
@@ -110,28 +136,30 @@
 
     <!-- Facebook Pixel Code -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '2925272084236286');
         fbq('track', 'PageView');
-      </script>
-      <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=2925272084236286&ev=PageView&noscript=1"
-      /></noscript>
-      <!-- End Facebook Pixel Code -->
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=2925272084236286&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 
 <body style="background-color:rgb(35, 28, 98);">
-    
+
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFRW8HP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFRW8HP" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
 
@@ -143,7 +171,8 @@
                     <a class="navbar-brand" href="/">
                         <img src="images/logo.png" alt="" width="133" height="50">
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -171,44 +200,68 @@
         <div class="container-fluid" style="margin-top:93px;height:427px;display:flex;">
             <div class="container" style="padding:30px 0px">
                 <div class="col-md-12" style="border-radius:10px;">
-                    <div style="background-color:#fff;padding:20px;float:left;border-radius:10px;height: 410px;" class="col-md-8">
-                        <div class="col-md-6" style="background-color:#fff;padding: 10px;float:left;justify-content:center;display:flex;">
+                    <div style="background-color:#fff;padding:20px;float:left;border-radius:10px;height: 410px;"
+                        class="col-md-8">
+                        <div class="col-md-6"
+                            style="background-color:#fff;padding: 10px;float:left;justify-content:center;display:flex;">
                             <img src="images/image.png" alt="" style="border-radius:10px;">
                         </div>
-                        <div class="col-md-6 font-roboto-m" style="background-color:#fff;padding-left:20px !important;float:left;">
-                            <p style="font-size:24px;line-height:33px;padding:10px 0px;text-align:center;margin-bottom:0px;">Crypto-Nite 2020</p>
+                        <div class="col-md-6 font-roboto-m"
+                            style="background-color:#fff;padding-left:20px !important;float:left;">
+                            <p
+                                style="font-size:24px;line-height:33px;padding:10px 0px;text-align:center;margin-bottom:0px;">
+                                Crypto-Nite 2020</p>
                             <ul style="font-size: 18px;padding: 0 0 0 25px;margin-bottom:0 !important;">
                                 <li><b>Start Date:</b> April 12, 2020, 11 a.m.</li>
                                 <li><b>End Date:</b> April 14, 2020, 8 p.m.</li>
                                 <li><b>Lecture timings:</b> 6 p.m. - 8 p.m.</li>
                                 <li><b>Venue:</b> Online Event</li>
-                                <p style="font-size:25px;padding-top:5px;margin-bottom:0px;"><strike class="strike"><b>&#8377;1,997</b></strike> <span id="price" style="color:#2fbe6d;">&#8377;497</span></p>
+                                <p style="font-size:25px;padding-top:5px;margin-bottom:0px;"><strike
+                                        class="strike"><b>&#8377;1,997</b></strike> <span id="price"
+                                        style="color:#2fbe6d;">&#8377;497</span></p>
                             </ul>
                             <div class="couponDiv" style="padding:10px;display:flex;font-size:21px;">
-                                <input type="text" name="coupon" id="in" class="coupon" title="Enter coupon" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;border:2px solid #2fbe6d;width:160%;text-align:center;">
-                                <a onclick="validate(coupon)" id="err" class="btn-green btn-block caps disabled" style="padding:10px;background-color:#2fbe6d;border-top-right-radius:10px;border-bottom-right-radius:10px;color:#fff;font-size:15px;text-align:center;cursor:pointer;">Apply Coupon</a>
+                                <input type="text" name="coupon" id="in" class="coupon" title="Enter coupon"
+                                    style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;border:2px solid #2fbe6d;width:160%;text-align:center;">
+                                <a onclick="validate(coupon)" id="err" class="btn-green btn-block caps"
+                                    style="padding:10px;background-color:#2fbe6d;border-top-right-radius:10px;border-bottom-right-radius:10px;color:#fff;font-size:15px;text-align:center;cursor:pointer;">Apply
+                                    Coupon</a>
                             </div>
                             <div class="applied" style="padding:10px;">
-                                <a class="btn-green btn-block caps" style="border-radius:10px;color: #000;font-size:20px;text-align:left;"><span id="code">EARLYBIRD70</span> Coupon Applied</a>
+                                <a class="btn-green btn-block caps"
+                                    style="border-radius:10px;color: #000;font-size:20px;text-align:left;"><span
+                                        id="code">EARLYBIRD70</span> Coupon Applied</a>
                                 <div class="position-absolute" style="right:7px;margin-top: -41px;">
-                                    <div style="border-radius: 100px;width: 50px;height: 50px;color: #3c4792;font-size: 10px;" class="d-flex justify-content-center align-items-center cursor-pointer coupon-code-applied-cross">
+                                    <div style="border-radius: 100px;width: 50px;height: 50px;color: #3c4792;font-size: 10px;"
+                                        class="d-flex justify-content-center align-items-center cursor-pointer coupon-code-applied-cross">
                                         <p class="m-0" style="font-size:30px;transform:rotate(40deg);">+</p>
                                     </div>
                                 </div>
                             </div>
                             <div style="padding:0px 10px;">
-                                <a data-toggle="modal" data-target="#razorpay" class="btn-green btn-block caps cursor-pointer" style="padding:10px;background-color:#2fbe6d;border-radius:10px;color:#fff;font-size:20px;text-align:center;">Buy Tickets</a>
+                                <a data-toggle="modal" data-target="#razorpay"
+                                    class="btn-green btn-block caps cursor-pointer"
+                                    style="padding:10px;background-color:#2fbe6d;border-radius:10px;color:#fff;font-size:20px;text-align:center;">Buy
+                                    Tickets</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3" style="background-color:#fff;border-radius: 10px;float: left;margin: 0px 15px;">
+                    <div class="col-md-3"
+                        style="background-color:#fff;border-radius: 10px;float: left;margin: 0px 15px;">
                         <div class="font-roboto-r" style="padding: 20px 0px;justify-content:center;display:flex;">
                             <span style="color: #000;">
-                                <span style="vertical-align:middle;font-size: 24px;" class="caps strong soft-half--left seller-name store__link font-roboto-b">About Finstreet</span>
+                                <span style="vertical-align:middle;font-size: 24px;"
+                                    class="caps strong soft-half--left seller-name store__link font-roboto-b">About
+                                    Finstreet</span>
                                 <img src="images/Finstreet-min.jpg" alt="" width="250">
-                            </span>                               
+                            </span>
                         </div>
-                        <p style="font-size: 15px;font-family:roboto-r;padding-bottom:15px;text-align:justify;">Finstreet is the first and only solution in India which focuses to increase your monthly income and overall wealth by giving you precise and researched content on passive income and investment options. We at Finstreet always believe the fact that 1% of the population which hold more than 90% of world wealth is always smarter and these attributes can be embedded artificially via smart and vigrous researched content.</p>  
+                        <p style="font-size: 15px;font-family:roboto-r;padding-bottom:15px;text-align:justify;">
+                            Finstreet is the first and only solution in India which focuses to increase your monthly
+                            income and overall wealth by giving you precise and researched content on passive income and
+                            investment options. We at Finstreet always believe the fact that 1% of the population which
+                            hold more than 90% of world wealth is always smarter and these attributes can be embedded
+                            artificially via smart and vigrous researched content.</p>
                     </div>
                 </div>
             </div>
@@ -218,16 +271,24 @@
             <div class="container" style="padding:0px;">
                 <div class="col-md-10" style="border-radius:10px;">
                     <div style="width:890px;">
-                        <div class="col-md-10 font-roboto-r" style="padding:25px 30px;background-color:#fff;border-radius:10px;">
+                        <div class="col-md-10 font-roboto-r"
+                            style="padding:25px 30px;background-color:#fff;border-radius:10px;">
                             <p style="font-size: 17px;font-family:roboto-m;text-decoration:underline;">DESCRIPTION</p>
-                            <p style="font-size: 23px;font-family:roboto-m;padding-top:10px;">India's Biggest Cryptocurrency Event Is HERE ..!</p>
-                            <p style="font-size: 17px;font-family:roboto-r;padding: 15px 0px;">After having huge success in 2019 with 5,492 students we are here to provide more value.
+                            <p style="font-size: 23px;font-family:roboto-m;padding-top:10px;">India's Biggest
+                                Cryptocurrency Event Is HERE ..!</p>
+                            <p style="font-size: 17px;font-family:roboto-r;padding: 15px 0px;">After having huge success
+                                in 2019 with 5,492 students we are here to provide more value.
                             </p>
-                            <p style="font-size: 17px;font-family:roboto-r;padding-bottom: 15px;">Full details here - <a href="/"> https://www.Finstreet.in </a></p>
-                            <p style="font-size: 17px;font-family:roboto-r;padding-bottom: 15px;">In 2020 we wanted to keep things more Practical and Actionable.</p>
-                            <p style="font-size: 17px;font-family:roboto-r;padding-bottom:10px;">So we asked all ourselves <b>ONE QUESTION</b></p>
-                            <p style="font-size: 17px;font-family:roboto-r;padding: 15px 0px;">If You Have To START ALL OVER FROM ZERO...<br>"WHAT WOULD YOU DO FROM DAY 1 TO DAY 30, STEP-BY-STEP?"</p>
-                            <p style="font-size: 17px;font-family:roboto-r;padding-bottom: 15px;">People shared their Amazing plans in different ways:</p>
+                            <p style="font-size: 17px;font-family:roboto-r;padding-bottom: 15px;">Full details here - <a
+                                    href="/"> https://www.Finstreet.in </a></p>
+                            <p style="font-size: 17px;font-family:roboto-r;padding-bottom: 15px;">In 2020 we wanted to
+                                keep things more Practical and Actionable.</p>
+                            <p style="font-size: 17px;font-family:roboto-r;padding-bottom:10px;">So we asked all
+                                ourselves <b>ONE QUESTION</b></p>
+                            <p style="font-size: 17px;font-family:roboto-r;padding: 15px 0px;">If You Have To START ALL
+                                OVER FROM ZERO...<br>"WHAT WOULD YOU DO FROM DAY 1 TO DAY 30, STEP-BY-STEP?"</p>
+                            <p style="font-size: 17px;font-family:roboto-r;padding-bottom: 15px;">People shared their
+                                Amazing plans in different ways:</p>
                             <p style="font-size: 17px;font-family:roboto-r;padding-bottom: 15px;">
                                 Some shared a STEP-BY-STEP TUTORIAL<br>
                                 Some shared the COMPLETE BLUEPRINT<br>
@@ -235,26 +296,44 @@
                                 Some shared a DETAILED CASE STUDY<br>
                                 Some shared a WHITEBOARD SESSION<br>
                                 But each of them had just *ONE GOAL IN MIND.</p>
-                            <p style="font-size: 17px;font-family:roboto-r;padding-bottom: 15px;">What Can We Share or Teach So That People Don't Just Consume Information But Actually Take Some Action On It..*</p>
-                            <p style="font-size: 23px;font-family:roboto-m;padding-top: 15px;">Here's what you get when you join -</p>
+                            <p style="font-size: 17px;font-family:roboto-r;padding-bottom: 15px;">What Can We Share or
+                                Teach So That People Don't Just Consume Information But Actually Take Some Action On
+                                It..*</p>
+                            <p style="font-size: 23px;font-family:roboto-m;padding-top: 15px;">Here's what you get when
+                                you join -</p>
                             <ul style="list-style-type:decimal;padding: 15px 20px;margin-bottom: 0 !important;">
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Life-Changing Case Studies, Tutorials and Blueprints shared by 28+ Experts and Influencers (INR 10,000 value)</li>
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">FREE Access to Complete Recordings of Crypto-Nite 2020 (INR 4,500 value)</li>
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Bonus Content, Cheat Sheets, and Mini-Courses (INR 5,000 value)</li>
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Member-Only Exclusive WhatsApp Group (INR 10,000 value)</li>
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Live QnA Calls (INR 2000 value)</li>
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Once In a Lifetime Event (Priceless)</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Life-Changing Case
+                                    Studies, Tutorials and Blueprints shared by 28+ Experts and Influencers (INR 10,000
+                                    value)</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">FREE Access to
+                                    Complete Recordings of Crypto-Nite 2020 (INR 4,500 value)</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Bonus Content,
+                                    Cheat Sheets, and Mini-Courses (INR 5,000 value)</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Member-Only
+                                    Exclusive WhatsApp Group (INR 10,000 value)</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Live QnA Calls
+                                    (INR 2000 value)</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Once In a Lifetime
+                                    Event (Priceless)</li>
                             </ul>
                             <p style="font-size: 17px;font-family:roboto-r;">Check full event details here:</p>
-                            <a style="font-size: 17px;font-family:roboto-r;padding-bottom: 15px;" href="/"> https://www.Finstreet.com </a>
-                            <p style="font-size: 23px;font-family:roboto-r;padding: 10px 0px;"><b>Main Themes Covered in the Event-</b></p>
+                            <a style="font-size: 17px;font-family:roboto-r;padding-bottom: 15px;" href="/">
+                                https://www.Finstreet.com </a>
+                            <p style="font-size: 23px;font-family:roboto-r;padding: 10px 0px;"><b>Main Themes Covered in
+                                    the Event-</b></p>
                             <ul style="list-style-type:decimal;padding: 15px 20px;margin-bottom: 0 !important;">
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Setting up in Crypto</li>
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Fundamental analysis of Crypt</li>
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Buying Crypto in India</li>
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Securing your Crypto wallet</li>
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Marking the next big Blockchain startup</li>
-                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Liquifying your Crypto assets</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Setting up in
+                                    Crypto</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Fundamental
+                                    analysis of Crypt</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Buying Crypto in
+                                    India</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Securing your
+                                    Crypto wallet</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Marking the next
+                                    big Blockchain startup</li>
+                                <li style="font-size: 17px;font-family:roboto-r;padding-bottom: 5px;">Liquifying your
+                                    Crypto assets</li>
                             </ul>
                         </div>
                     </div>
@@ -266,16 +345,22 @@
         <div class="container-fluid" style="background-color:#fff;">
             <div class="container" style="padding:30px 0px;margin:0 auto;">
                 <b class="font-Oswald-b" style="display:block;text-align:center;font-size:20px;color:rgb(0, 75, 145);">
-                Got Any Questions ? Write to us.</b>
+                    Got Any Questions ? Write to us.</b>
                 <br>
-                <b class="font-roboto-r" style="display:block;text-align:center;font-size:20px;color:rgb(0, 75, 145);"><a style="color:rgb(0, 75, 145);" href="mailto:support@finstreet.in">support@finstreet.in</a></b>
-                <b class="font-roboto-r" style="display:block;text-align:center;font-size:20px;color:rgb(0, 75, 145);">+91-8968232722</b>
+                <b class="font-roboto-r"
+                    style="display:block;text-align:center;font-size:20px;color:rgb(0, 75, 145);"><a
+                        style="color:rgb(0, 75, 145);" href="mailto:support@finstreet.in">support@finstreet.in</a></b>
+                <b class="font-roboto-r"
+                    style="display:block;text-align:center;font-size:20px;color:rgb(0, 75, 145);">+91-8968232722</b>
             </div>
         </div>
         <!-- content 1 -->
         <div class="container-fluid" style="background-color:#000;">
             <div class="container" style="padding:30px 0px;margin:0 auto;">
-                <b class="font-Oswald-b" style="display:block;text-align:center;font-size:14px;color:rgba(255, 255, 255, 0.53);">Copyright &copy; 2019 All Right Reserved. Designed By <a rel="nofollow" href="https://www.quadbtech.com" target="_blank">QuadBTech</a></b>
+                <b class="font-Oswald-b"
+                    style="display:block;text-align:center;font-size:14px;color:rgba(255, 255, 255, 0.53);">Copyright
+                    &copy; 2019 All Right Reserved. Designed By <a rel="nofollow" href="https://www.quadbtech.com"
+                        target="_blank">QuadBTech</a></b>
             </div>
         </div>
     </div>
@@ -284,45 +369,62 @@
     <div class="d-lg-none">
         <div class="fixed-top" style="padding: 50px 0px;background-color:#00abc9;outline:none;">
             <header>
-                <div class="position-fixed h-100 w-100" style="opacity: 1; backdrop-filter: blur(8px); z-index: 16; display: none; top: 0px;" id="drawer">
+                <div class="position-fixed h-100 w-100"
+                    style="opacity: 1; backdrop-filter: blur(8px); z-index: 16; display: none; top: 0px;" id="drawer">
                     <div class="container h-100 w-100 pr-0">
                         <div class="row h-100 w-100 mr-0 position-absolute">
-                            <div class="col-2 d-flex justify-content-end pt-5 pl-0" id="cross" style="padding-right: 15px !important;">
+                            <div class="col-2 d-flex justify-content-end pt-5 pl-0" id="cross"
+                                style="padding-right: 15px !important;">
                                 <div id="mobile-cross">
                                     <p class="m-0" style="font-size: 30px;color:#fff;">X</p>
                                 </div>
                             </div>
-                            <div class="col-10 position-relative" style="background: #00abc9 0% 0% no-repeat padding-box;">
+                            <div class="col-10 position-relative"
+                                style="background: #00abc9 0% 0% no-repeat padding-box;">
                                 <div class="position-absolute w-100" style="top:35%;">
-                                    <p class="footer-text font-weight-light text-center" style="font-size: 30px;margin-bottom: 5px;font-family: europhonic;color:#231c62;" onclick="window.location = '/'">Home</p>
-                                    <p class="footer-text font-weight-light text-center" style="font-size: 30px;margin-bottom: 5px;font-family: europhonic;color:#fff;" onclick="window.open('https://www.finstreet.in/about-me/','_blank')">About</p>
-                                    <p class="footer-text font-weight-light text-center" style="font-size: 30px;margin-bottom: 5px;font-family: europhonic;color:#fff;" onclick="window.open('https://www.finstreet.in/contact/','_blank')">Contact</p>
-                                    <p class="footer-text font-weight-light text-center" style="font-size: 30px;margin-bottom:10px;font-family: europhonic;color:#fff;" onclick="window.location = 'user-login'">Login</p>
-                                </div>                          
-                            </div>                        
-                        </div>                
-                    </div>                
-                </div>        
+                                    <p class="footer-text font-weight-light text-center"
+                                        style="font-size: 30px;margin-bottom: 5px;font-family: europhonic;color:#231c62;"
+                                        onclick="window.location = '/'">Home</p>
+                                    <p class="footer-text font-weight-light text-center"
+                                        style="font-size: 30px;margin-bottom: 5px;font-family: europhonic;color:#fff;"
+                                        onclick="window.open('https://www.finstreet.in/about-me/','_blank')">About</p>
+                                    <p class="footer-text font-weight-light text-center"
+                                        style="font-size: 30px;margin-bottom: 5px;font-family: europhonic;color:#fff;"
+                                        onclick="window.open('https://www.finstreet.in/contact/','_blank')">Contact</p>
+                                    <p class="footer-text font-weight-light text-center"
+                                        style="font-size: 30px;margin-bottom:10px;font-family: europhonic;color:#fff;"
+                                        onclick="window.location = 'user-login'">Login</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="nav-container">
                     <div id="mobile-navbar">
-                        <div style="position: fixed;z-index: 10;right: 20px;margin-top: -30px;z-index:15 !important;" id="open-drawer">
-                            <hr style="width: 40px;height: 4px;background-color: white;margin-top: 10px;margin-bottom: 0px;border-radius: 100px;">
-                            <hr style="width: 40px;height: 4px;background-color: white;margin-top: 10px;margin-bottom: 0px;border-radius: 100px;">
-                            <hr style="width: 40px;height: 4px;background-color: white;margin-top: 10px;margin-bottom: 0px;border-radius: 100px;">
+                        <div style="position: fixed;z-index: 10;right: 20px;margin-top: -30px;z-index:15 !important;"
+                            id="open-drawer">
+                            <hr
+                                style="width: 40px;height: 4px;background-color: white;margin-top: 10px;margin-bottom: 0px;border-radius: 100px;">
+                            <hr
+                                style="width: 40px;height: 4px;background-color: white;margin-top: 10px;margin-bottom: 0px;border-radius: 100px;">
+                            <hr
+                                style="width: 40px;height: 4px;background-color: white;margin-top: 10px;margin-bottom: 0px;border-radius: 100px;">
                         </div>
-                        <div class="d-flex position-fixed align-items-center w-100" style="z-index: 10;margin-top: -30px;margin-left: 15px;">
+                        <div class="d-flex position-fixed align-items-center w-100"
+                            style="z-index: 10;margin-top: -30px;margin-left: 15px;">
                             <a class="navbar-brand header-text" id="mobile-header-logo-text" href="/">
                                 <img class="logo-header" src="images/logo.png" alt="" style="width: 150px;">
                             </a>
                         </div>
                     </div>
-                </div>            
+                </div>
             </header>
         </div>
 
         <!-- Page Content -->
         <div class="container-fluid" style="width:100%;padding:15px;">
-            <div class="container-fluid" style="margin-top: 115px;padding: 0px 0px;background-color:#fff;height: 705px;border-radius:10px;">
+            <div class="container-fluid"
+                style="margin-top: 115px;padding: 0px 0px;background-color:#fff;height: 705px;border-radius:10px;">
                 <div>
                     <div class="col-md-12" style="padding: 20px;float:left;">
                         <img src="images/image.png" alt="" width="100%" style="border-radius:10px;">
@@ -333,37 +435,56 @@
                             <li style="padding-top:10px;padding-bottom:5px;"><b>Date:</b> April 12, 2020, 11 a.m.</li>
                             <li style="padding-bottom:5px;"><b>End Date:</b> April 14, 2020, 8 p.m.</li>
                             <li style="padding-bottom:5px;"><b>Lecture timings:</b> 6 p.m. - 8 p.m.</li>
-                            <li style="padding-bottom: 5px;"><b>Venue:</b> Online Event</li>                       
-                            <p style="font-size: 25px;"><strike class="strike-mobile"><b>&#8377;1,997</b></strike> <span id="price-mobile" style="color:#2fbe6d;">&#8377;497</span></p>
-                        </ul>                      
+                            <li style="padding-bottom: 5px;"><b>Venue:</b> Online Event</li>
+                            <p style="font-size: 25px;"><strike class="strike-mobile"><b>&#8377;1,997</b></strike> <span
+                                    id="price-mobile" style="color:#2fbe6d;">&#8377;497</span></p>
+                        </ul>
                         <div class="couponDiv-mobile" style="padding:10px;display:flex;font-size:18px;">
-                            <input type="text" name="coupon-mobile" id="in-mobile" class="coupon-mobile" title="Enter coupon" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;border:2px solid #2fbe6d;width:145%;">
-                            <a onClick="validate(couponMob)" id="err-mobile" class="btn-green btn-block caps disabled" style="padding: 5px;background-color:#2fbe6d;border-top-right-radius: 10px;border-bottom-right-radius: 10px;color:#fff;font-size:20px;text-align:center;">Apply Coupon</a>
+                            <input type="text" name="coupon-mobile" id="in-mobile" class="coupon-mobile"
+                                title="Enter coupon"
+                                style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;border:2px solid #2fbe6d;width:145%;">
+                            <a onClick="validate(couponMob)" id="err-mobile" class="btn-green btn-block caps"
+                                style="padding: 5px;background-color:#2fbe6d;border-top-right-radius: 10px;border-bottom-right-radius: 10px;color:#fff;font-size:20px;text-align:center;">Apply
+                                Coupon</a>
                         </div>
                         <div class="applied-mobile" style="padding:10px;">
-                            <a class="btn-green btn-block caps" style="border-radius:10px;color: #000;font-size:20px;text-align:left;"><span id="code-mobile">EARLYBIRD70</span> Coupon Applied</a>
+                            <a class="btn-green btn-block caps"
+                                style="border-radius:10px;color: #000;font-size:20px;text-align:left;"><span
+                                    id="code-mobile">EARLYBIRD70</span> Coupon Applied</a>
                             <div class="position-absolute" style="right:7px;margin-top: -41px;">
-                                <div style="border-radius: 100px;width: 50px;height: 50px;color: #3c4792;font-size: 10px;" class="d-flex justify-content-center align-items-center cursor-pointer coupon-code-applied-cross-mobile">
+                                <div style="border-radius: 100px;width: 50px;height: 50px;color: #3c4792;font-size: 10px;"
+                                    class="d-flex justify-content-center align-items-center cursor-pointer coupon-code-applied-cross-mobile">
                                     <p class="m-0" style="font-size:30px;transform:rotate(40deg);">+</p>
                                 </div>
                             </div>
                         </div>
                         <div style="padding: 0px 10px;">
-                            <a data-toggle="modal" data-target="#razorpay" class="btn-green btn-block caps" style="padding: 5px;background-color:#2fbe6d;border-radius: 10px;color:#fff;font-size: 23px;text-align:center;">Buy Tickets</a>
+                            <a data-toggle="modal" data-target="#razorpay" class="btn-green btn-block caps"
+                                style="padding: 5px;background-color:#2fbe6d;border-radius: 10px;color:#fff;font-size: 23px;text-align:center;">Buy
+                                Tickets</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid" style="margin-top:20px;padding: 10px 0px;background-color:#fff;border-radius:10px;">
-                <div class="col-md-12 font-roboto-b" style="padding: 5px 20px;background-color:#fff;border-radius:10px;">
+            <div class="container-fluid"
+                style="margin-top:20px;padding: 10px 0px;background-color:#fff;border-radius:10px;">
+                <div class="col-md-12 font-roboto-b"
+                    style="padding: 5px 20px;background-color:#fff;border-radius:10px;">
                     <p style="font-size: 19px;font-family:roboto-m;text-decoration:underline;">DESCRIPTION</p>
-                    <p style="font-size: 18px;font-family:roboto-m;padding-top:10px;">India's Biggest Cryptocurrency Event Is HERE ..!</p>
-                    <p style="font-size: 15px;font-family:roboto-r;padding: 10px 0px;">After having huge success in 2019 with 5,492 students we are here to provide more value.</p>
-                    <p style="font-size: 15px;font-family:roboto-r;padding-bottom: 10px;">Full details here - <a href="/"> https://www.Finstreet.in </a></p>
-                    <p style="font-size: 15px;font-family:roboto-r;padding-bottom: 10px;">In 2020 we wanted to keep things more Practical and Actionable.</p>
-                    <p style="font-size: 15px;font-family:roboto-r;padding-bottom:10px;">So we asked all ourselves <b>ONE QUESTION</b></p>                    
-                    <p style="font-size: 14px;font-family:roboto-r;padding-bottom:10px;">If You Have To START ALL OVER FROM ZERO...<br>"WHAT WOULD YOU DO FROM DAY 1 TO DAY 30, STEP-BY-STEP?"</p>
-                    <p style="font-size: 18px;font-family:roboto-b;padding-bottom:10px;">People shared their Amazing plans in different ways:</p>
+                    <p style="font-size: 18px;font-family:roboto-m;padding-top:10px;">India's Biggest Cryptocurrency
+                        Event Is HERE ..!</p>
+                    <p style="font-size: 15px;font-family:roboto-r;padding: 10px 0px;">After having huge success in 2019
+                        with 5,492 students we are here to provide more value.</p>
+                    <p style="font-size: 15px;font-family:roboto-r;padding-bottom: 10px;">Full details here - <a
+                            href="/"> https://www.Finstreet.in </a></p>
+                    <p style="font-size: 15px;font-family:roboto-r;padding-bottom: 10px;">In 2020 we wanted to keep
+                        things more Practical and Actionable.</p>
+                    <p style="font-size: 15px;font-family:roboto-r;padding-bottom:10px;">So we asked all ourselves
+                        <b>ONE QUESTION</b></p>
+                    <p style="font-size: 14px;font-family:roboto-r;padding-bottom:10px;">If You Have To START ALL OVER
+                        FROM ZERO...<br>"WHAT WOULD YOU DO FROM DAY 1 TO DAY 30, STEP-BY-STEP?"</p>
+                    <p style="font-size: 18px;font-family:roboto-b;padding-bottom:10px;">People shared their Amazing
+                        plans in different ways:</p>
                     <p style="font-size: 15px;font-family:roboto-r;padding-bottom:10px;">
                         some shared a STEP-BY-STEP TUTORIAL<br>
                         some shared the COMPLETE BLUEPRINT<br>
@@ -372,225 +493,288 @@
                         some shared a WHITEBOARD SESSION<br>
                         But each of them had just *ONE GOAL IN MIND.<br>
                     </p>
-                    <p style="font-size: 15px;font-family:roboto-r;padding-bottom:10px;">What Can We Share or Teach So That People Don't Just Consume Information But Actually Take Some Action On It..*</p>
-                    <p style="font-size: 18px;font-family:roboto-m;padding-top:10px;">Here's what you get when you join -</p>
+                    <p style="font-size: 15px;font-family:roboto-r;padding-bottom:10px;">What Can We Share or Teach So
+                        That People Don't Just Consume Information But Actually Take Some Action On It..*</p>
+                    <p style="font-size: 18px;font-family:roboto-m;padding-top:10px;">Here's what you get when you join
+                        -</p>
                     <ul style="list-style-type:decimal;padding: 0px 20px;">
-                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Life-Changing Case Studies, Tutorials and Blueprints shared by 28+ Experts and Influencers (INR 10,000 value)</li>
-                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">FREE Access to Complete Recordings of Crypto-Nite 2020 (INR 4,500 value)</li>
-                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Bonus Content, Cheat Sheets, and Mini-Courses (INR 5,000 value)</li>
-                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Member-Only Exclusive WhatsApp Group (INR 10,000 value)</li>
-                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Live QnA Calls (INR 2000 value)</li>
-                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Once In a Lifetime Event (Priceless)</li>
+                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Life-Changing Case
+                            Studies, Tutorials and Blueprints shared by 28+ Experts and Influencers (INR 10,000 value)
+                        </li>
+                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">FREE Access to Complete
+                            Recordings of Crypto-Nite 2020 (INR 4,500 value)</li>
+                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Bonus Content, Cheat
+                            Sheets, and Mini-Courses (INR 5,000 value)</li>
+                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Member-Only Exclusive
+                            WhatsApp Group (INR 10,000 value)</li>
+                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Live QnA Calls (INR 2000
+                            value)</li>
+                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Once In a Lifetime Event
+                            (Priceless)</li>
                     </ul>
                     <p style="font-size: 18px;font-family:roboto-r;">Check full event details here:</p>
-                    <a style="font-size: 15px;font-family:roboto-r;padding-bottom:10px;" href="/"> https://www.Finstreet.com </a>
-                    <p style="font-size: 18px;font-family:roboto-r;padding-bottom:10px;padding-top:10px;"><b>Main Themes Covered in the Event-</b></p>
+                    <a style="font-size: 15px;font-family:roboto-r;padding-bottom:10px;" href="/">
+                        https://www.Finstreet.com </a>
+                    <p style="font-size: 18px;font-family:roboto-r;padding-bottom:10px;padding-top:10px;"><b>Main Themes
+                            Covered in the Event-</b></p>
                     <ul style="list-style-type:decimal;padding: 0px 20px;margin-bottom: 0 !important;">
                         <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Setting up in Crypto</li>
-                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Fundamental analysis of Crypt</li>
-                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Buying Crypto in India</li>
-                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Securing your Crypto wallet</li>
-                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Marking the next big Blockchain startup</li>
-                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Liquifying your Crypto assets</li>
+                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Fundamental analysis of
+                            Crypt</li>
+                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Buying Crypto in India
+                        </li>
+                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Securing your Crypto
+                            wallet</li>
+                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Marking the next big
+                            Blockchain startup</li>
+                        <li style="font-size: 15px;font-family:roboto-r;padding-bottom: 5px;">Liquifying your Crypto
+                            assets</li>
                     </ul>
                 </div>
-            </div> 
-            <div class="container-fluid" style="margin-top:20px;padding: 10px 0px;background-color:#fff;border-radius:10px;">
-                <div class="col-md-12 font-roboto-b" style="padding: 5px 20px;background-color:#fff;border-radius:10px;">
+            </div>
+            <div class="container-fluid"
+                style="margin-top:20px;padding: 10px 0px;background-color:#fff;border-radius:10px;">
+                <div class="col-md-12 font-roboto-b"
+                    style="padding: 5px 20px;background-color:#fff;border-radius:10px;">
                     <div class="font-roboto-r" style="padding: 20px 0px;justify-content:center;display:flex;">
                         <span style="color: #000;">
-                            <span style="vertical-align:middle;font-size: 23px;" class="caps strong soft-half--left seller-name store__link font-roboto-b">About Finstreet</span>
-                            <img src="images/Finstreet-min.jpg" alt="" width="250" style="justify-content:center;display:flex;padding-top:10px;">
-                        </span>                               
+                            <span style="vertical-align:middle;font-size: 23px;"
+                                class="caps strong soft-half--left seller-name store__link font-roboto-b">About
+                                Finstreet</span>
+                            <img src="images/Finstreet-min.jpg" alt="" width="250"
+                                style="justify-content:center;display:flex;padding-top:10px;">
+                        </span>
                     </div>
-                    <p style="font-size: 15px;font-family:roboto-r;padding-bottom:15px;text-align:justify;">Finstreet is the first and only solution in India which focuses to increase your monthly income and overall wealth by giving you precise and researched content on passive income and investment options. We at Finstreet always believe the fact that 1% of the population which hold more than 90% of world wealth is always smarter and these attributes can be embedded artificially via smart and vigrous researched content.</p>                
+                    <p style="font-size: 15px;font-family:roboto-r;padding-bottom:15px;text-align:justify;">Finstreet is
+                        the first and only solution in India which focuses to increase your monthly income and overall
+                        wealth by giving you precise and researched content on passive income and investment options. We
+                        at Finstreet always believe the fact that 1% of the population which hold more than 90% of world
+                        wealth is always smarter and these attributes can be embedded artificially via smart and vigrous
+                        researched content.</p>
                 </div>
-            </div>          
+            </div>
         </div>
         <!-- footer -->
         <!-- content -->
         <div class="container-fluid" style="background-color:#fff;">
             <div class="container" style="padding:30px 0px;margin:0 auto;">
                 <b class="font-Oswald-b" style="display:block;text-align:center;font-size:20px;color:rgb(0, 75, 145);">
-                Got Any Questions ? Write to us.</b>
+                    Got Any Questions ? Write to us.</b>
                 <br>
-                <b class="font-roboto-r" style="display:block;text-align:center;font-size:20px;color:rgb(0, 75, 145);"><a style="color:rgb(0, 75, 145);" href="mailto:support@finstreet.in">support@finstreet.in</a></b>
-                <b class="font-roboto-r" style="display:block;text-align:center;font-size:20px;color:rgb(0, 75, 145);">+91-8968232722</b>
+                <b class="font-roboto-r"
+                    style="display:block;text-align:center;font-size:20px;color:rgb(0, 75, 145);"><a
+                        style="color:rgb(0, 75, 145);" href="mailto:support@finstreet.in">support@finstreet.in</a></b>
+                <b class="font-roboto-r"
+                    style="display:block;text-align:center;font-size:20px;color:rgb(0, 75, 145);">+91-8968232722</b>
             </div>
         </div>
         <!-- content 1 -->
         <div class="container-fluid" style="background-color:#000;padding-bottom:70px;">
             <div class="container" style="padding:30px 0px;margin:0 auto;">
-                <b class="font-Oswald-b" style="display:block;text-align:center;font-size:16px;color:rgba(255, 255, 255, 0.53);"> Copyright &copy; 2019 All Right Reserved. Designed By <a rel="nofollow" href="https://www.quadbtech.com" target="_blank">QuadBTech</a></b>
+                <b class="font-Oswald-b"
+                    style="display:block;text-align:center;font-size:16px;color:rgba(255, 255, 255, 0.53);"> Copyright
+                    &copy; 2019 All Right Reserved. Designed By <a rel="nofollow" href="https://www.quadbtech.com"
+                        target="_blank">QuadBTech</a></b>
             </div>
         </div>
-    
+
         <!-- sharing button mobile -->
-        <div id="st-2" class=" st-sticky-share-buttons st-left st-toggleable st-has-labels st-show-total " style="bottom:0;display:flex;left:0;right:0;top:auto;width:100%;">
+        <div id="st-2" class=" st-sticky-share-buttons st-left st-toggleable st-has-labels st-show-total "
+            style="bottom:0;display:flex;left:0;right:0;top:auto;width:100%;">
             <div class="st-total" style="padding:12px 0px;width:100%;font-size:13px;">
                 <span class="st-label">1.1k</span>
                 <span class="st-shares">
-                Shares
+                    Sharesgt
                 </span>
             </div>
-            <div class="st-btn" onclick="window.location = 'https://www.facebook.com/sharer.php?display=page&u=https%3A%2F%2Fcryptonite.finstreet.in%2F'" target="_blank" data-network="facebook" style="display:flex;justify-content:center;width:100%;height:auto;">
-                <img alt="facebook sharing button" style="width:40px;height:40px" src="https://platform-cdn.sharethis.com/img/facebook.svg">
+            <div class="st-btn"
+                onclick="window.location = 'https://www.facebook.com/sharer.php?display=page&u=https%3A%2F%2Fcryptonite.finstreet.in%2F'"
+                target="_blank" data-network="facebook"
+                style="display:flex;justify-content:center;width:100%;height:auto;">
+                <img alt="facebook sharing button" style="width:40px;height:40px"
+                    src="https://platform-cdn.sharethis.com/img/facebook.svg">
             </div>
-            <div class="st-btn" onclick="window.location ='https://twitter.com/intent/tweet?text=India%27s%20Biggest%20Cryptocurrency%20Event%20%7C%20Register%20Now&url=https%3A%2F%2Fcryptonite.finstreet.in'" data-network="twitter" style="display:flex;justify-content:center;width:100%;height:auto;">
-                <img alt="twitter sharing button" style="width:40px;height:40px" src="https://platform-cdn.sharethis.com/img/twitter.svg">
+            <div class="st-btn"
+                onclick="window.location ='https://twitter.com/intent/tweet?text=India%27s%20Biggest%20Cryptocurrency%20Event%20%7C%20Register%20Now&url=https%3A%2F%2Fcryptonite.finstreet.in'"
+                data-network="twitter" style="display:flex;justify-content:center;width:100%;height:auto;">
+                <img alt="twitter sharing button" style="width:40px;height:40px"
+                    src="https://platform-cdn.sharethis.com/img/twitter.svg">
             </div>
-            <div class="st-btn" onclick="window.location = 'mailto:support@finstreet.in'" data-network="email" style="display:flex;justify-content:center;width:100%;height:auto;">
-                <img alt="email sharing button" style="width:40px;height:40px" src="https://platform-cdn.sharethis.com/img/email.svg">
+            <div class="st-btn" onclick="window.location = 'mailto:support@finstreet.in'" data-network="email"
+                style="display:flex;justify-content:center;width:100%;height:auto;">
+                <img alt="email sharing button" style="width:40px;height:40px"
+                    src="https://platform-cdn.sharethis.com/img/email.svg">
             </div>
-            <div class="st-btn" onclick="window.location = 'whatsapp://send?text=If You Have To START ALL OVER FROM ZERO... WHAT WOULD YOU DO FROM DAY 1 TO DAY 30, STEP-BY-STEP? https%3A%2F%2Fcryptonite.finstreet.in'" data-action="share/whatsapp/share" data-network="whatsapp" style="display:flex;justify-content:center;width:100%;height:auto;">
-                <img alt="whatsapp sharing button" style="width:40px;height:40px" src="https://platform-cdn.sharethis.com/img/whatsapp.svg">
+            <div class="st-btn"
+                onclick="window.location = 'whatsapp://send?text=If You Have To START ALL OVER FROM ZERO... WHAT WOULD YOU DO FROM DAY 1 TO DAY 30, STEP-BY-STEP? https%3A%2F%2Fcryptonite.finstreet.in'"
+                data-action="share/whatsapp/share" data-network="whatsapp"
+                style="display:flex;justify-content:center;width:100%;height:auto;">
+                <img alt="whatsapp sharing button" style="width:40px;height:40px"
+                    src="https://platform-cdn.sharethis.com/img/whatsapp.svg">
             </div>
         </div>
         <!--end sharing button  -->
     </div>
     <!-- razorpay popup -->
-    <div class="modal fade" id="razorpay" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade" id="razorpay" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" style="max-width:920px;">
             <div class="modal-content">
                 <div class="text-center">
                     <div style="margin-top:37px;">
                         <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div style="margin-top:10px;">
                         <h2 class="font-roboto-b">BILLING DETAILS</h2>
                     </div>
                 </div>
-                <div id="order-success" style="border-radius:10px;top:5px;display:none;" class="bg-white shadow-buy-now-button-1 position-relative">
-                    <h2 class="font-roboto-b m-0 mb-2 text-capitalize text-center" style="font-size: 40px;padding-top:30px;">THANK YOU</h2>
-                    <h2 class="font-poppins-regular m-0 mb-2 text-center" style="font-size:20px;padding:10px;">Your paid Successfully</h2>
+                <div style="border-radius:10px;top:5px;display:none;" class="order-success bg-white shadow-buy-now-button-1 position-relative">
+                    <h2 class="font-roboto-b m-0 mb-2 text-capitalize text-center"
+                        style="font-size: 40px;padding-top:30px;">THANK YOU</h2>
+                    <h2 class="font-poppins-regular m-0 mb-2 text-center" style="font-size:20px;padding:10px;">Your Already paid for this Course</h2>
                     <div class="px-5">
                         <hr>
-                        <h3 class="font-roboto-b m-0 text-center" style="font-size:22px;">Ticket ID <span style="margin-left: 15px; color: #FA21FD; font-family: roboto-regular; font-size: 22px;text-align:center;padding-top:1px;" id="order-id">#1234</span></h3>
-                        <hr>
                         <div class="d-flex justify-content-center align-items-center">
-                            <p class="para font-poppins-regular" style="text-align:center;padding-top:10px;padding-bottom:20px;margin:1px auto !important;">Please make note of the Ticket ID for any future refrence.
+                            <p class="para font-poppins-regular"
+                                style="text-align:center;padding-top:10px;padding-bottom:20px;margin:1px auto !important;">
+                                Please used user credentials for login, Click on given login button
                             </p>
-                        </div>                                        
-                        <div class="d-flex justify-content-center align-items-center" style="padding-bottom: 60px;" >
-                            <a class="cursor-pointer text-uppercase font-roboto-b shadow-buy-now-button buy-now-button backToShop" onclick="window.location = '/'">Back to Shop</a>
                         </div>
-                    </div>   
+                        <div class="d-flex justify-content-center align-items-center" style="padding-bottom: 60px;">
+                            <a class="cursor-pointer text-uppercase font-roboto-b shadow-buy-now-button buy-now-button backToShop"
+                                onclick="window.location = 'user-login'">Login Now</a>
+                        </div>
+                    </div>
                 </div>
-                <div id="checkout-form" class="modal-body">
+                <div class="checkout-form modal-body">
                     <div class="form formStyle needs-validation" method="POST">
                         <div class="form-froup">
                             <label for="InputYourOrder">Your Order Details</label>
-                            <table style="border:1px solid rgba(0, 0, 0, 0.1);border-right:none;margin:0px 0px 40px 0px;text-align:left;width:100%;border-collapse:separate;overflow:hidden;">
+                            <table
+                                style="border:1px solid rgba(0, 0, 0, 0.1);border-right:none;margin:0px 0px 40px 0px;text-align:left;width:100%;border-collapse:separate;overflow:hidden;">
                                 <thead>
                                     <tr>
                                         <th style="background:#f5f5f5;border-color:#eee;border-width:1px 1px 0 0;
-                                        border-style: solid;color:#4c5462;vertical-align:middle;" class="product-name">Product</th>
+                                        border-style: solid;color:#4c5462;vertical-align:middle;" class="product-name">
+                                            Product</th>
                                         <th style="background:#f5f5f5;border-color:#eee;border-width:1px 1px 0 0;
-                                        border-style: solid;color:#4c5462;vertical-align:middle;" class="product-total">Subtotal</th>
+                                        border-style: solid;color:#4c5462;vertical-align:middle;"
+                                            class="product-total">Subtotal</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="cart_item">
-                                        <td id="buyProductName" class="product-name up text-uppercase">Crypto-Nite 2020					
+                                        <td id="buyProductName" class="product-name up text-uppercase">Crypto-Nite 2020
                                         </td>
                                         <td class="product-total">
                                             <strong>
                                                 <span>&#8377;<span id="buypriceDollar">1997</span></span>
-                                            </strong> 		
+                                            </strong>
                                         </td>
                                     </tr>
                                 </tbody>
-                                <tfoot>                        
+                                <tfoot>
                                     <tr class="cart-subtotal">
                                         <th>Subtotal</th>
                                         <td><strong>
-                                            <span>&#8377;<span class="modalSubtotal">1997</span></span>
-                                            </strong> 
+                                                <span>&#8377;<span class="modalSubtotal">1997</span></span>
+                                            </strong>
                                         </td>
                                     </tr>
                                     <tr class="cart-subtotal">
                                         <th>Discount(%)</th>
                                         <td><strong>
-                                            <span><span id="discount">0</span>%</span>
-                                            </strong> 
+                                                <span><span id="discount">0</span>%</span>
+                                            </strong>
                                         </td>
-                                    </tr>  
+                                    </tr>
                                     <tr class="order-total">
                                         <th>Total</th>
                                         <td><strong>
                                                 <span>&#8377;<span name="amount" class="modaltotal">1997</span></span>
-                                            </strong> 
+                                            </strong>
                                         </td>
-                                    </tr>    
+                                    </tr>
                                 </tfoot>
                             </table>
                         </div>
                         <div class="formInput">
                             <div class="form-group">
                                 <label for="Name">Name</label>
-                                <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter Name">
+                                <input type="text" class="form-control" name="name" id="name" aria-describedby="name"
+                                    placeholder="Enter Name">
                             </div>
                             <div class="form-group">
                                 <label for="InputPhone">Phone Number</label>
-                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+                                <input type="text" class="form-control" name="phone" id="phone"
+                                    placeholder="Phone Number">
                             </div>
                             <div class="form-group">
                                 <label for="InputEmail">E-mail</label>
-                                <input type="email" class="form-control" name="email" id="email" aria-describedby="email" placeholder="Enter email">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    aria-describedby="email" placeholder="Enter email">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" name="password" id="password" aria-describedby="name" placeholder="Enter Password">
+                                <input type="password" class="form-control" name="password" id="password"
+                                    aria-describedby="name" placeholder="Enter Password">
                             </div>
                             <div class="form-group">
                                 <label for="confirm_password">Confirm Password</label>
-                                <input type="password" class="form-control" name="confirm_password" id="confirm_password" aria-describedby="name" placeholder="Confirm Password">
+                                <input type="password" class="form-control" name="confirm_password"
+                                    id="confirm_password" aria-describedby="name" placeholder="Confirm Password">
                             </div>
-                            
-                            
+
+
                         </div>
                         <div class="formInput1">
                             <div class="form-group">
                                 <label for="InputAddress">Address</label>
-                                <input type="text" class="form-control" name="address" id="address" aria-describedby="address" placeholder="Enter Address">
+                                <input type="text" class="form-control" name="address" id="address"
+                                    aria-describedby="address" placeholder="Enter Address">
                             </div>
                             <div class="form-group">
                                 <label for="InputState">State</label>
-                                <input type="text" class="form-control" name="state" id="state" aria-describedby="state" placeholder="Enter State">
+                                <input type="text" class="form-control" name="state" id="state" aria-describedby="state"
+                                    placeholder="Enter State">
                             </div>
                             <div class="form-group">
                                 <label for="Inputpostcode">Postcode</label>
-                                <input type="text" class="form-control" name="postcode" id="postcode" aria-describedby="postcode" placeholder="Enter Postcode">
+                                <input type="text" class="form-control" name="postcode" id="postcode"
+                                    aria-describedby="postcode" placeholder="Enter Postcode">
                             </div>
                             <div class="form-group">
                                 <label for="Country">Country</label>
-                                <input type="text" class="form-control" name="country" id="country" placeholder="Country">		
+                                <input type="text" class="form-control" name="country" id="country"
+                                    placeholder="Country">
                             </div>
                             <div class="form-group" style="margin-top:4px;">
                                 <label for="other_details">Additional Details</label>
-                                <textarea class="form-control" name="other_details" id="other_details" rows="3"></textarea>
+                                <textarea class="form-control" name="other_details" id="other_details"
+                                    rows="3"></textarea>
                             </div>
                         </div>
                         <br>
                         <br>
-                        
+
                         <!-- <div style="padding-left: 25px;">
                             <input class="form-check-input" type="checkbox" value="" id="chkterms" required>
                             <label class="form-check-label" for="chkterms">
                             Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.
                             </label>
                         </div> -->
-                        
-                           
-                        <button type="submit" id="razorpaycheckout" class="btn btn-primary buttonStyle mb-5">Place Order</button>
+
+
+                        <button type="submit" id="razorpaycheckout" class="btn btn-primary buttonStyle mb-5">Place
+                            Order</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -599,168 +783,212 @@
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
 
-    var referral_id = sessionStorage.getItem('referral_id');
-    if(referral_id == null){
-        referral_id = "";
-    }
+        var referral_id = sessionStorage.getItem('referral_id');
+        if (referral_id == null) {
+            referral_id = "";
+        }
 
-    if( window.innerWidth >= 960 ){
-        var coupon = document.getElementById('in').value;
-        function validate(coupon) {
-            var input = "";
-            if(input.toUpperCase() == coupon.toUpperCase()) {
-			    $.ajax({
-                    type: "POST",
-                    url: "php/process.php",
-                    'async': false,
-                    dataType: "json",
-                    data:{
-                        coupon_code: document.getElementById('in').value
-                    },
-                    success: function(dataResult){
-                        if(dataResult.statusCode==200){
-                            result = dataResult;
-                            $('#price').html(dataResult.value);
-                            $(".applied").css('display','block');
-                            $(".strike").css('display','contents');
-                            $("#price").css('color','#2fbe6d');
-                            $('#code').html(dataResult.coupon_value);
-                            $('.modaltotal').html(dataResult.value);
-                            $('#discount').html(dataResult.discount);
-                            document.getElementById('err').innerHTML="Apply Coupon";
-                            $("#err").addClass("disabled");
-                            return true;                            
-                        }
-                        else if(dataResult.statusCode==201){
-                            $('#err').html("Invalid coupon");
-                            $(".applied").css('display','none');
-                            $(".strike").css('display','none');
-                            document.getElementById('price').innerHTML="&#8377;1,997";
-                            $("#price").css('color','#000');
-                        }
+        if (window.innerWidth >= 960) {
+
+            var result = "";
+            $.ajax({
+                type: "POST",
+                url: "php/process.php",
+                'async': false,
+                dataType: "json",
+                data: {
+                    type: "default"
+                },
+                success: function (dataResult) {
+                    if (dataResult.statusCode == 200) {
+                        result = dataResult;
+                        $('#price').html(result.value);
+                        $(".applied").css('display', 'block');
+                        $(".strike").css('display', 'contents');
+                        $("#price").css('color', '#2fbe6d');
+                        $('#code').html(result.coupon_code);
+                        $('.modaltotal').html(result.value);
+                        $('#discount').html(result.discount);
+                        return true;
                     }
-			    });
-		    }else{
-                document.getElementById('err').innerHTML="Invalid coupon";
-            }
-            
+                    else if (dataResult.statusCode == 201) {
+                        alert("Invalid coupon");
+                        $(".applied").css('display', 'none');
+                        $(".strike").css('display', 'none');
+                        document.getElementById('price').innerHTML = "&#8377;1,997";
+                        $("#price").css('color', '#000');
+                    }
+                }
+            });
             var dataResult = result;
+            var coupon = document.getElementById('in').value;
+            function validate(coupon) {
+                var input = "";
+                result = "";
+                // $("#err").attr("disabled","true");    
+                if (input.toUpperCase() == coupon.toUpperCase()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "php/process.php",
+                        'async': false,
+                        dataType: "json",
+                        data: {
+                            coupon_code: document.getElementById('in').value,
+                            type: "coupon"
+                        },
+                        success: function (dataResult) {
+                            if (dataResult.statusCode == 200) {
+                                result = dataResult;
+                                $('#price').html(dataResult.value);
+                                $(".applied").css('display', 'block');
+                                $(".strike").css('display', 'contents');
+                                $("#price").css('color', '#2fbe6d');
+                                $('#code').html(dataResult.coupon_code);
+                                $('.modaltotal').html(dataResult.value);
+                                $('#discount').html(dataResult.discount);
+                                return true;
+                            }
+                            else if (dataResult.statusCode == 201) {
+                                alert("Invalid coupon");
+                                $(".applied").css('display', 'none');
+                                $(".strike").css('display', 'none');
+                                document.getElementById('price').innerHTML = "&#8377;1,997";
+                                $("#price").css('color', '#000');
+                            }
+                        }
+                    });
+                } else {
+                    alert("Invalid coupon");
+                }
+
+                dataResult = result;
+
+                $(".coupon-code-applied-cross").on("click", function (e) {
+                    e.preventDefault();
+                    document.getElementById('err').innerHTML = "Apply Coupon";
+                    $(".applied").css('display', 'none');
+                    $(".strike").css('display', 'none');
+                    document.getElementById('price').innerHTML = "&#8377;1,997";
+                    $("#price").css('color', '#000');
+                    $("#err").removeClass("disabled");
+                });
+            }
             // validation razorpay 
-            $("#razorpaycheckout").on("click",function(){
+            $("#razorpaycheckout").on("click", function () {
                 var error = "";
                 function validateEmail() {
                     var email = $("#email").val();
                     var emailReg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
-                if( emailReg.test(email)){
-                    return true;
-                    }else{
+                    if (emailReg.test(email)) {
+                        return true;
+                    } else {
                         return false;
                     }
                 }
                 var error = "";
                 function validateEmail() {
-                    var phone= $("#phone").val();
+                    var phone = $("#phone").val();
                     var phoneReg = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
-                if( phoneReg.test(phone)){
-                    return true;
-                    }else{
+                    if (phoneReg.test(phone)) {
+                        return true;
+                    } else {
                         return false;
                     }
                 }
-                if($("#name").val() == ""){
-                    $("#name").css('border-color','red');
-                    $("#name").css('border-width','2px');
-                    $("#name").attr('placeholder','Required Field');
+                if ($("#name").val() == "") {
+                    $("#name").css('border-color', 'red');
+                    $("#name").css('border-width', '2px');
+                    $("#name").attr('placeholder', 'Required Field');
                     error = error + 'name';
-                } else{
-                    $("#name").css('border-color','black');
-                    $("#name").css('border-width','1px');
-                }
-                
-                if($("#phone").val() == ""){
-                    $("#phone").css('border-color','red');
-                    $("#phone").css('border-width','2px');
-                    $("#phone").attr('placeholder','Required Field');
-                    error = error + 'Phone';
-                }else{
-                    $("#phone").css('border-color','black');
-                    $("#phone").css('border-width','1px');
-                }
-                if(validateEmail()) {
-                    $("#email").css('border-color','black');
-                    $("#email").css('border-width','1px');
-                    
-                }else{
-                    $("#email").css('border-color','red');
-                    $("#email").css('border-width','2px');
-                    $("#email").attr('placeholder','Required Field');
-                    error = error + 'email';
-                }
-                if($("#country").val() == 0){
-                    $("#country").css('border-color','red');
-                    $("#country").css('border-width','2px');
-                    $("#country").attr('placeholder','Required Field');
-                    error = error + 'country';
-                } else{
-                    $("#country").css('border-color','black');
-                    $("#Country").css('border-width','1px');
-                }
-                if($("#address").val() == ""){
-                    $("#address").css('border-color','red');
-                    $("#address").css('border-width','2px');
-                    $("#address").attr('placeholder','Required Field');
-                    error = error + 'address';
-                } else{
-                    $("#address").css('border-color','black');
-                    $("#address").css('border-width','1px');
-                }
-                if($("#state").val() == ""){
-                    $("#state").css('border-color','red');
-                    $("#state").css('border-width','2px');
-                    $("#state").attr('placeholder','Required Field');
-                    error = error + 'state';
-                } else{
-                    $("#state").css('border-color','black');
-                    $("#state").css('border-width','1px');
-                }
-                if($("#postcode").val() == ""){
-                    $("#postcode").css('border-color','red');
-                    $("#postcode").css('border-width','2px');
-                    $("#postcode").attr('placeholder','Required Field');
-                    error = error + 'postcode';
-                } else{
-                    $("#postcode").css('border-color','black');
-                    $("#postcode").css('border-width','1px');
+                } else {
+                    $("#name").css('border-color', 'black');
+                    $("#name").css('border-width', '1px');
                 }
 
-                if(error == ""){
-                    if($("#confirm_password").val() == ""){
-                        $("#confirm_password").css('border-color','red');
-                        $("#confirm_password").css('border-width','1px');
+                if ($("#phone").val() == "") {
+                    $("#phone").css('border-color', 'red');
+                    $("#phone").css('border-width', '2px');
+                    $("#phone").attr('placeholder', 'Required Field');
+                    error = error + 'Phone';
+                } else {
+                    $("#phone").css('border-color', 'black');
+                    $("#phone").css('border-width', '1px');
+                }
+                if (validateEmail()) {
+                    $("#email").css('border-color', 'black');
+                    $("#email").css('border-width', '1px');
+
+                } else {
+                    $("#email").css('border-color', 'red');
+                    $("#email").css('border-width', '2px');
+                    $("#email").attr('placeholder', 'Required Field');
+                    error = error + 'email';
+                }
+                if ($("#country").val() == 0) {
+                    $("#country").css('border-color', 'red');
+                    $("#country").css('border-width', '2px');
+                    $("#country").attr('placeholder', 'Required Field');
+                    error = error + 'country';
+                } else {
+                    $("#country").css('border-color', 'black');
+                    $("#Country").css('border-width', '1px');
+                }
+                if ($("#address").val() == "") {
+                    $("#address").css('border-color', 'red');
+                    $("#address").css('border-width', '2px');
+                    $("#address").attr('placeholder', 'Required Field');
+                    error = error + 'address';
+                } else {
+                    $("#address").css('border-color', 'black');
+                    $("#address").css('border-width', '1px');
+                }
+                if ($("#state").val() == "") {
+                    $("#state").css('border-color', 'red');
+                    $("#state").css('border-width', '2px');
+                    $("#state").attr('placeholder', 'Required Field');
+                    error = error + 'state';
+                } else {
+                    $("#state").css('border-color', 'black');
+                    $("#state").css('border-width', '1px');
+                }
+                if ($("#postcode").val() == "") {
+                    $("#postcode").css('border-color', 'red');
+                    $("#postcode").css('border-width', '2px');
+                    $("#postcode").attr('placeholder', 'Required Field');
+                    error = error + 'postcode';
+                } else {
+                    $("#postcode").css('border-color', 'black');
+                    $("#postcode").css('border-width', '1px');
+                }
+
+                if (error == "") {
+                    if ($("#confirm_password").val() == "") {
+                        $("#confirm_password").css('border-color', 'red');
+                        $("#confirm_password").css('border-width', '1px');
                         error = error + 'confirm password';
-                    }else{
-                        if($("#confirm_password").val() != $("#password").val()){
-                            $("#confirm_password").css('border-color','red');
-                            $("#confirm_password").css('border-width','1px');
+                    } else {
+                        if ($("#confirm_password").val() != $("#password").val()) {
+                            $("#confirm_password").css('border-color', 'red');
+                            $("#confirm_password").css('border-width', '1px');
                             error = error + 'confirm password failure';
                             alert("Password and Confirm password fields do not match");
-                        }else{
-                            $("#confirm_password").css('border-color','#BCE0FD');
-                            $("#confirm_password").css('border-width','1px');
+                        } else {
+                            $("#confirm_password").css('border-color', '#BCE0FD');
+                            $("#confirm_password").css('border-width', '1px');
                         }
                     }
 
-                    if($("#password").val() == ""){
-                        $("#password").css('border-color','red');
-                        $("#password").css('border-width','1px');
+                    if ($("#password").val() == "") {
+                        $("#password").css('border-color', 'red');
+                        $("#password").css('border-width', '1px');
                         error = error + 'confirm password';
-                    }else{
-                        $("#password").css('border-color','#BCE0FD');
-                        $("#password").css('border-width','1px');
+                    } else {
+                        $("#password").css('border-color', '#BCE0FD');
+                        $("#password").css('border-width', '1px');
                     }
                 }
 
-                
+
 
                 // if(error == ""){
                 //     if ($('#chkterms').is(':checked')) {
@@ -771,59 +999,59 @@
                 //     }	
                 // }
                 // console.log(dataResult);	
-                if(error == ""){
-                // ajax call
+                if (error == "") {
+                    // ajax call
                     $.ajax({
-                        type:'POST',
-                        url:'php/checkout-form.php',
+                        type: 'POST',
+                        url: 'php/checkout-form.php',
                         dataType: "json",
-                        data:{
-                            name : $("#name").val(),
-                            email : $("#email").val(),
-                            phone : $("#phone").val(),
-                            country : $("#country").val(),
-                            address : $("#address").val(),
-                            state : $("#state").val(),
-                            postcode : $("#postcode").val(),
-                            other_details : $("#other_details").val(),
-                            productName :  "Crypto-Nite 2020",
-                            amount :  dataResult.value,
+                        data: {
+                            name: $("#name").val(),
+                            email: $("#email").val(),
+                            phone: $("#phone").val(),
+                            country: $("#country").val(),
+                            address: $("#address").val(),
+                            state: $("#state").val(),
+                            postcode: $("#postcode").val(),
+                            other_details: $("#other_details").val(),
+                            productName: "Crypto-Nite2",
+                            amount: dataResult.value,
                             'referral_id': referral_id,
                             password: $("#password").val(),
-                            discount: dataResult.discount
-
+                            discount: dataResult.discount,
+                            'coupon_code': dataResult.coupon_code,
                         },
-                        success:function(data){
-                            if(data.status == 201){
+                        success: function (data) {
+                            if (data.status == 201) {
                                 window.dataLayer = window.dataLayer || [];
-                                window.dataLayer.push({'event': 'payment initiated'});
+                                window.dataLayer.push({ 'event': 'payment initiated' });
                                 // alert("checked out");
                                 var order_id = data.id;
                                 var options = {
                                     "key": "rzp_test_BAnreND3t2AMOK", // rzp_live_LSedTe83FzVuTe, rzp_test_BAnreND3t2AMOK test key // Enter the Key ID generated from the Dashboard rzp_test_Deii5btTqdfYUu rzp_live_LSedTe83FzVuTe
-                                    "amount": parseInt(dataResult.value*100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
-                                    "currency": "INR",    
+                                    "amount": parseInt(dataResult.value * 100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                    "currency": "INR",
                                     "name": "Finstreet",
                                     "description": "Crypto-Nite",
-                                    "image": "images/logo.png",    
+                                    "image": "images/logo.png",
                                     //"order_id": "order_9A33XWu170gUtm",//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below    
-                                    "handler": function (response){
+                                    "handler": function (response) {
                                         // alert(response.razorpay_payment_id);
                                         var razorpay_payment_id = response.razorpay_payment_id;
                                         // console.log(response);
                                         $.ajax({
-                                            type:'POST',
-                                            url:'php/checkout-update-form.php',
+                                            type: 'POST',
+                                            url: 'php/checkout-update-form.php',
                                             dataType: "json",
-                                            data:{
+                                            data: {
                                                 id: data.id,
-                                                productName : "Finstreet",
-                                                razorpay_payment_id : razorpay_payment_id,
-                                                amount : dataResult.value,
-                                                email : $("#email").val()
+                                                productName: "Finstreet",
+                                                razorpay_payment_id: razorpay_payment_id,
+                                                amount: dataResult.value,
+                                                email: $("#email").val()
                                             },
-                                            success:function(data){
-                                                if(data.status == 'ok'){
+                                            success: function (data) {
+                                                if (data.status == 'ok') {
                                                     //window.location = "thankyou.html";
                                                     //alert("Your payment has been successful");
                                                     // $("#checkout-form").css('display','none');
@@ -832,237 +1060,272 @@
                                                     // window.scrollTo(0,0);
                                                     sessionStorage.useremail = $("#email").val();
                                                     window.dataLayer = window.dataLayer || [];
-                                                    window.dataLayer.push({'event':'payment success'});
+                                                    window.dataLayer.push({ 'event': 'payment success' });
 
                                                     window.location = "user-dashboard";
-                                                }else{
+                                                } else {
                                                     console.log("error");
-                                                } 
+                                                }
                                             }
                                         });
-                                
-                                        
-                                    },"prefill": {
+
+
+                                    }, "prefill": {
                                         "name": $("#name").val(),
                                         "email": $("#email").val(),
                                         "phone": $("#phone").val()
-                                    },"notes": {
+                                    }, "notes": {
                                         "country": $("#country").val(),
                                         "address": $("#Address").val(),
                                         "state": $("#state").val(),
                                         "postcode": $("#postcode").val(),
                                         "productName": "Crypto-Nite 2020",
 
-                                    },"theme": {
+                                    }, "theme": {
                                         "color": "#2e3192"
                                     }
                                 };
 
                                 var rzp1 = new Razorpay(options);
                                 rzp1.open();
-                                
-                                
-                            }else if(data.status == 601){
+
+
+                            }else if (data.status == 601) {
                                 console.log(data.error);
                                 // alert("problem with query");
+                            
+                            }else if (data.status == 701){
+                                $(".order-success").css('display', 'block');
+                                $(".checkout-form").css('display', 'none');
+                            
                             }else{
-                                
-                            } 
+
+                            }
                         }
                     });
-                }else{
+                } else {
                     return true;
-                }     
+                }
             });
 
-            $("#razorpay").on('show.bs.modal',function(e){
+            $("#razorpay").on('show.bs.modal', function (e) {
                 window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({'event':'buy ticket'});
+                window.dataLayer.push({ 'event': 'buy ticket' });
             })
-        }
+        } else {
 
-        $(".coupon-code-applied-cross").on("click",function(e){
-                e.preventDefault();
-            document.getElementById('err').innerHTML="Apply Coupon";
-            $(".applied").css('display','none');
-            $(".strike").css('display','none');
-            document.getElementById('price').innerHTML="&#8377;1,997";
-            $("#price").css('color','#000');
-            $("#err").removeClass("disabled");            
+            //open mobile drawer
+            $("#drawer").css('display', 'none');
+            $("#open-drawer").on("click", function () {
+                if ($("#drawer").css('display') == 'none') {
+                    $("#drawer").css('display', 'block');
+                } else {
+                    $("#drawer").css('display', 'none');
+                }
             });
-    }else{
+            $("#cross").on("click", function () {
+                $("#drawer").css('display', 'none');
+            });
 
-        //open mobile drawer
-        $("#drawer").css('display','none');
-        $("#open-drawer").on("click",function(){
-            if($("#drawer").css('display') == 'none'){
-                $("#drawer").css('display','block');
-            } else{
-                $("#drawer").css('display','none');
-            }
-        });
-        $("#cross").on("click",function(){
-            $("#drawer").css('display','none');
-        });
-
-
-        // coupon code js
-        var couponMob = document.getElementById('in').value;
-        function validate(couponMob) {
-            var input = "";
-            if(input.toUpperCase() == couponMob.toUpperCase()) {
-			    $.ajax({
-                    type: "POST",
-                    url: "php/process.php",
-                    'async': false,
-                    dataType: "json",
-                    data:{
-                        coupon_code: document.getElementById('in-mobile').value
-                    },
-                    success: function(dataResult){
-                        if(dataResult.statusCode==200){
-                            result = dataResult;
-                            $('#price-mobile').html(dataResult.value);
-                            $(".applied-mobile").css('display','block');
-                            $(".strike-mobile").css('display','contents');
-                            $("#price-mobile").css('color','#2fbe6d');
-                            $('#code-mobile').html(dataResult.coupon_value);
-                            $('.modaltotal').html(dataResult.value);
-                            $('#discount').html(dataResult.discount);
-                            document.getElementById('err-mobile').innerHTML="Apply Coupon";
-                            $("#err-mobile").addClass("disabled");
-                            return true;                            
-                        }
-                        else if(dataResult.statusCode==201){
-                            $('#err-mobile').html("Invalid coupon");
-                            $(".applied-mobile").css('display','none');
-                            $(".strike-mobile").css('display','none');
-                            document.getElementById('price-mobile').innerHTML="&#8377;1,997";
-                            $("#price-mobile").css('color','#000');
-                        }
+            var result = "";
+            $.ajax({
+                type: "POST",
+                url: "php/process.php",
+                'async': false,
+                dataType: "json",
+                data: {
+                    type: "default"
+                },
+                success: function (dataResult) {
+                    if (dataResult.statusCode == 200) {
+                        result = dataResult;
+                        $('#price-mobile').html(result.value);
+                        $(".applied-mobile").css('display', 'block');
+                        $(".strike-mobile").css('display', 'contents');
+                        $("#price-mobile").css('color', '#2fbe6d');
+                        $('#code-mobile').html(result.coupon_code);
+                        $('.modaltotal').html(result.value);
+                        $('#discount').html(result.discount);
+                        return true;
                     }
-			    });
-		    }else{
-                document.getElementById('err-mobile').innerHTML="Invalid coupon";
-            }
-            
+                    else if (dataResult.statusCode == 201) {
+                        alert("Invalid coupon");
+                        $(".applied-mobile").css('display', 'none');
+                        $(".strike-mobile").css('display', 'none');
+                        document.getElementById('price-mobile').innerHTML = "&#8377;1,997";
+                        $("#price-mobile").css('color', '#000');
+                    }
+                }
+            });
             var dataResult = result;
+            var couponMob = document.getElementById('in-mobile').value;
+            function validate(couponMob) {
+                var input = "";
+                result = "";
+                // $("#err").attr("disabled","true");    
+                if (input.toUpperCase() == couponMob.toUpperCase()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "php/process.php",
+                        'async': false,
+                        dataType: "json",
+                        data: {
+                            coupon_code: document.getElementById('in-mobile').value,
+                            type: "coupon"
+                        },
+                        success: function (dataResult) {
+                            if (dataResult.statusCode == 200) {
+                                result = dataResult;
+                                $('#price-mobile').html(dataResult.value);
+                                $(".applied-mobile").css('display', 'block');
+                                $(".strike-mobile").css('display', 'contents');
+                                $("#price-mobile").css('color', '#2fbe6d');
+                                $('#code-mobile').html(dataResult.coupon_code);
+                                $('.modaltotal').html(dataResult.value);
+                                $('#discount').html(dataResult.discount);
+                                return true;
+                            }
+                            else if (dataResult.statusCode == 201) {
+                                alert("Invalid coupon");
+                                $(".applied-mobile").css('display', 'none');
+                                $(".strike-mobile").css('display', 'none');
+                                document.getElementById('price-mobile').innerHTML = "&#8377;1,997";
+                                $("#price-mobile").css('color', '#000');
+                            }
+                        }
+                    });
+                } else {
+                    alert("Invalid coupon");
+                }
+
+                dataResult = result;
+
+                $(".coupon-code-applied-cross-mobile").on("click", function (e) {
+                    e.preventDefault();
+                    document.getElementById('err-mobile').innerHTML = "Apply Coupon";
+                    $(".applied-mobile").css('display', 'none');
+                    $(".strike-mobile").css('display', 'none');
+                    document.getElementById('price-mobile').innerHTML = "&#8377;1,997";
+                    $("#price-mobile").css('color', '#000');
+                    $("#err-mobile").removeClass("disabled");
+                });
+            }
             // validation razorpay 
-            $("#razorpaycheckout").on("click",function(){
+            $("#razorpaycheckout").on("click", function () {
                 var error = "";
                 function validateEmail() {
                     var email = $("#email").val();
                     var emailReg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
-                if( emailReg.test(email)){
-                    return true;
-                    }else{
+                    if (emailReg.test(email)) {
+                        return true;
+                    } else {
                         return false;
                     }
                 }
                 var error = "";
                 function validateEmail() {
-                    var phone= $("#phone").val();
+                    var phone = $("#phone").val();
                     var phoneReg = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
-                if( phoneReg.test(phone)){
-                    return true;
-                    }else{
+                    if (phoneReg.test(phone)) {
+                        return true;
+                    } else {
                         return false;
                     }
                 }
-                if($("#name").val() == ""){
-                    $("#name").css('border-color','red');
-                    $("#name").css('border-width','2px');
-                    $("#name").attr('placeholder','Required Field');
+                if ($("#name").val() == "") {
+                    $("#name").css('border-color', 'red');
+                    $("#name").css('border-width', '2px');
+                    $("#name").attr('placeholder', 'Required Field');
                     error = error + 'name';
-                } else{
-                    $("#name").css('border-color','black');
-                    $("#name").css('border-width','1px');
-                }
-                
-                if($("#phone").val() == ""){
-                    $("#phone").css('border-color','red');
-                    $("#phone").css('border-width','2px');
-                    $("#phone").attr('placeholder','Required Field');
-                    error = error + 'Phone';
-                }else{
-                    $("#phone").css('border-color','black');
-                    $("#phone").css('border-width','1px');
-                }
-                if(validateEmail()) {
-                    $("#email").css('border-color','black');
-                    $("#email").css('border-width','1px');
-                    
-                }else{
-                    $("#email").css('border-color','red');
-                    $("#email").css('border-width','2px');
-                    $("#email").attr('placeholder','Required Field');
-                    error = error + 'email';
-                }
-                if($("#country").val() == 0){
-                    $("#country").css('border-color','red');
-                    $("#country").css('border-width','2px');
-                    $("#country").attr('placeholder','Required Field');
-                    error = error + 'country';
-                } else{
-                    $("#country").css('border-color','black');
-                    $("#Country").css('border-width','1px');
-                }
-                if($("#address").val() == ""){
-                    $("#address").css('border-color','red');
-                    $("#address").css('border-width','2px');
-                    $("#address").attr('placeholder','Required Field');
-                    error = error + 'address';
-                } else{
-                    $("#address").css('border-color','black');
-                    $("#address").css('border-width','1px');
-                }
-                if($("#state").val() == ""){
-                    $("#state").css('border-color','red');
-                    $("#state").css('border-width','2px');
-                    $("#state").attr('placeholder','Required Field');
-                    error = error + 'state';
-                } else{
-                    $("#state").css('border-color','black');
-                    $("#state").css('border-width','1px');
-                }
-                if($("#postcode").val() == ""){
-                    $("#postcode").css('border-color','red');
-                    $("#postcode").css('border-width','2px');
-                    $("#postcode").attr('placeholder','Required Field');
-                    error = error + 'postcode';
-                } else{
-                    $("#postcode").css('border-color','black');
-                    $("#postcode").css('border-width','1px');
+                } else {
+                    $("#name").css('border-color', 'black');
+                    $("#name").css('border-width', '1px');
                 }
 
-                if(error == ""){
-                    if($("#confirm_password").val() == ""){
-                        $("#confirm_password").css('border-color','red');
-                        $("#confirm_password").css('border-width','1px');
+                if ($("#phone").val() == "") {
+                    $("#phone").css('border-color', 'red');
+                    $("#phone").css('border-width', '2px');
+                    $("#phone").attr('placeholder', 'Required Field');
+                    error = error + 'Phone';
+                } else {
+                    $("#phone").css('border-color', 'black');
+                    $("#phone").css('border-width', '1px');
+                }
+                if (validateEmail()) {
+                    $("#email").css('border-color', 'black');
+                    $("#email").css('border-width', '1px');
+
+                } else {
+                    $("#email").css('border-color', 'red');
+                    $("#email").css('border-width', '2px');
+                    $("#email").attr('placeholder', 'Required Field');
+                    error = error + 'email';
+                }
+                if ($("#country").val() == 0) {
+                    $("#country").css('border-color', 'red');
+                    $("#country").css('border-width', '2px');
+                    $("#country").attr('placeholder', 'Required Field');
+                    error = error + 'country';
+                } else {
+                    $("#country").css('border-color', 'black');
+                    $("#Country").css('border-width', '1px');
+                }
+                if ($("#address").val() == "") {
+                    $("#address").css('border-color', 'red');
+                    $("#address").css('border-width', '2px');
+                    $("#address").attr('placeholder', 'Required Field');
+                    error = error + 'address';
+                } else {
+                    $("#address").css('border-color', 'black');
+                    $("#address").css('border-width', '1px');
+                }
+                if ($("#state").val() == "") {
+                    $("#state").css('border-color', 'red');
+                    $("#state").css('border-width', '2px');
+                    $("#state").attr('placeholder', 'Required Field');
+                    error = error + 'state';
+                } else {
+                    $("#state").css('border-color', 'black');
+                    $("#state").css('border-width', '1px');
+                }
+                if ($("#postcode").val() == "") {
+                    $("#postcode").css('border-color', 'red');
+                    $("#postcode").css('border-width', '2px');
+                    $("#postcode").attr('placeholder', 'Required Field');
+                    error = error + 'postcode';
+                } else {
+                    $("#postcode").css('border-color', 'black');
+                    $("#postcode").css('border-width', '1px');
+                }
+
+                if (error == "") {
+                    if ($("#confirm_password").val() == "") {
+                        $("#confirm_password").css('border-color', 'red');
+                        $("#confirm_password").css('border-width', '1px');
                         error = error + 'confirm password';
-                    }else{
-                        if($("#confirm_password").val() != $("#password").val()){
-                            $("#confirm_password").css('border-color','red');
-                            $("#confirm_password").css('border-width','1px');
+                    } else {
+                        if ($("#confirm_password").val() != $("#password").val()) {
+                            $("#confirm_password").css('border-color', 'red');
+                            $("#confirm_password").css('border-width', '1px');
                             error = error + 'confirm password failure';
                             alert("Password and Confirm password fields do not match");
-                        }else{
-                            $("#confirm_password").css('border-color','#BCE0FD');
-                            $("#confirm_password").css('border-width','1px');
+                        } else {
+                            $("#confirm_password").css('border-color', '#BCE0FD');
+                            $("#confirm_password").css('border-width', '1px');
                         }
                     }
 
-                    if($("#password").val() == ""){
-                        $("#password").css('border-color','red');
-                        $("#password").css('border-width','1px');
+                    if ($("#password").val() == "") {
+                        $("#password").css('border-color', 'red');
+                        $("#password").css('border-width', '1px');
                         error = error + 'confirm password';
-                    }else{
-                        $("#password").css('border-color','#BCE0FD');
-                        $("#password").css('border-width','1px');
+                    } else {
+                        $("#password").css('border-color', '#BCE0FD');
+                        $("#password").css('border-width', '1px');
                     }
                 }
 
-                
+
 
                 // if(error == ""){
                 //     if ($('#chkterms').is(':checked')) {
@@ -1073,59 +1336,59 @@
                 //     }	
                 // }
                 // console.log(dataResult);	
-                if(error == ""){
-                // ajax call
+                if (error == "") {
+                    // ajax call
                     $.ajax({
-                        type:'POST',
-                        url:'php/checkout-form.php',
+                        type: 'POST',
+                        url: 'php/checkout-form.php',
                         dataType: "json",
-                        data:{
-                            name : $("#name").val(),
-                            email : $("#email").val(),
-                            phone : $("#phone").val(),
-                            country : $("#country").val(),
-                            address : $("#address").val(),
-                            state : $("#state").val(),
-                            postcode : $("#postcode").val(),
-                            other_details : $("#other_details").val(),
-                            productName :  "Crypto-Nite 2020",
-                            amount :  dataResult.value,
+                        data: {
+                            name: $("#name").val(),
+                            email: $("#email").val(),
+                            phone: $("#phone").val(),
+                            country: $("#country").val(),
+                            address: $("#address").val(),
+                            state: $("#state").val(),
+                            postcode: $("#postcode").val(),
+                            other_details: $("#other_details").val(),
+                            productName: "Crypto-Nite2",
+                            amount: dataResult.value,
                             'referral_id': referral_id,
                             password: $("#password").val(),
-                            discount: dataResult.discount
-
+                            discount: dataResult.discount,
+                            'coupon_code': dataResult.coupon_code,
                         },
-                        success:function(data){
-                            if(data.status == 201){
+                        success: function (data) {
+                            if (data.status == 201) {
                                 window.dataLayer = window.dataLayer || [];
-                                window.dataLayer.push({'event': 'payment initiated'});
+                                window.dataLayer.push({ 'event': 'payment initiated' });
                                 // alert("checked out");
                                 var order_id = data.id;
                                 var options = {
                                     "key": "rzp_test_BAnreND3t2AMOK", // rzp_live_LSedTe83FzVuTe, rzp_test_BAnreND3t2AMOK test key // Enter the Key ID generated from the Dashboard rzp_test_Deii5btTqdfYUu rzp_live_LSedTe83FzVuTe
-                                    "amount": parseInt(dataResult.value*100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
-                                    "currency": "INR",    
+                                    "amount": parseInt(dataResult.value * 100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                    "currency": "INR",
                                     "name": "Finstreet",
                                     "description": "Crypto-Nite",
-                                    "image": "images/logo.png",    
+                                    "image": "images/logo.png",
                                     //"order_id": "order_9A33XWu170gUtm",//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below    
-                                    "handler": function (response){
+                                    "handler": function (response) {
                                         // alert(response.razorpay_payment_id);
                                         var razorpay_payment_id = response.razorpay_payment_id;
                                         // console.log(response);
                                         $.ajax({
-                                            type:'POST',
-                                            url:'php/checkout-update-form.php',
+                                            type: 'POST',
+                                            url: 'php/checkout-update-form.php',
                                             dataType: "json",
-                                            data:{
+                                            data: {
                                                 id: data.id,
-                                                productName : "Finstreet",
-                                                razorpay_payment_id : razorpay_payment_id,
-                                                amount : dataResult.value,
-                                                email : $("#email").val()
+                                                productName: "Finstreet",
+                                                razorpay_payment_id: razorpay_payment_id,
+                                                amount: dataResult.value,
+                                                email: $("#email").val()
                                             },
-                                            success:function(data){
-                                                if(data.status == 'ok'){
+                                            success: function (data) {
+                                                if (data.status == 'ok') {
                                                     //window.location = "thankyou.html";
                                                     //alert("Your payment has been successful");
                                                     // $("#checkout-form").css('display','none');
@@ -1134,65 +1397,60 @@
                                                     // window.scrollTo(0,0);
                                                     sessionStorage.useremail = $("#email").val();
                                                     window.dataLayer = window.dataLayer || [];
-                                                    window.dataLayer.push({'event':'payment success'});
+                                                    window.dataLayer.push({ 'event': 'payment success' });
 
                                                     window.location = "user-dashboard";
-                                                }else{
+                                                } else {
                                                     console.log("error");
-                                                } 
+                                                }
                                             }
                                         });
-                                
-                                        
-                                    },"prefill": {
+
+
+                                    }, "prefill": {
                                         "name": $("#name").val(),
                                         "email": $("#email").val(),
                                         "phone": $("#phone").val()
-                                    },"notes": {
+                                    }, "notes": {
                                         "country": $("#country").val(),
                                         "address": $("#Address").val(),
                                         "state": $("#state").val(),
                                         "postcode": $("#postcode").val(),
                                         "productName": "Crypto-Nite 2020",
 
-                                    },"theme": {
+                                    }, "theme": {
                                         "color": "#2e3192"
                                     }
                                 };
 
                                 var rzp1 = new Razorpay(options);
                                 rzp1.open();
-                                
-                                
-                            }else if(data.status == 601){
+
+
+                            } else if (data.status == 601) {
                                 console.log(data.error);
                                 // alert("problem with query");
+
+                            }else if (data.status == 701){
+                                $(".order-success").css('display', 'block');
+                                $(".checkout-form").css('display', 'none');                            
                             }else{
-                                
-                            } 
+
+                            }
                         }
                     });
-                }else{
+                } else {
                     return true;
-                }     
+                }
             });
 
-            $("#razorpay").on('show.bs.modal',function(e){
+            $("#razorpay").on('show.bs.modal', function (e) {
                 window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({'event':'buy ticket'});
+                window.dataLayer.push({ 'event': 'buy ticket' });
             })
         }
-        $(".coupon-code-applied-cross-mobile").on("click",function(e){
-                e.preventDefault();
-            document.getElementById('err').innerHTML="Apply Coupon";
-            $(".applied-mobile").css('display','none');
-            $(".strike-mobile").css('display','none');
-            document.getElementById('price-mobile').innerHTML="&#8377;1,997";
-            $("#price-mobile").css('color','#000');
-            $("#err-mobile").removeClass("disabled");            
-            });
-    }
-    
+
     </script>
 </body>
+
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2020 at 08:23 PM
+-- Generation Time: Apr 15, 2020 at 07:17 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -32,16 +32,17 @@ CREATE TABLE `coupon_code` (
   `id` int(11) NOT NULL,
   `coupon_code` varchar(100) NOT NULL,
   `coupon_value` varchar(100) NOT NULL,
-  `status` varchar(100) NOT NULL
+  `discount` varchar(100) NOT NULL,
+  `status` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `coupon_code`
 --
 
-INSERT INTO `coupon_code` (`id`, `coupon_code`, `coupon_value`, `status`) VALUES
-(1, 'EARLYBIRD70', '497', '200'),
-(2, 'EARLYBIRD50', '597', '200');
+INSERT INTO `coupon_code` (`id`, `coupon_code`, `coupon_value`, `discount`, `status`) VALUES
+(1, 'EARLYBIRD70', '497', '70', 'default'),
+(2, 'EARLYBIRD50', '597', '50', '');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +62,7 @@ ALTER TABLE `coupon_code`
 -- AUTO_INCREMENT for table `coupon_code`
 --
 ALTER TABLE `coupon_code`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

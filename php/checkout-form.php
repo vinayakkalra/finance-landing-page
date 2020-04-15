@@ -24,6 +24,9 @@ if(isset($_POST['productName']) == 'productName'){
     if(isset($_POST["referral_id"])){
         $referral_id = mysqli_real_escape_string($link, $_POST["referral_id"]);
     }
+    if(isset($_POST["coupon_code"])){
+        $coupon_code = mysqli_real_escape_string($link, $_POST["coupon_code"]);
+    }
     $password = mysqli_real_escape_string($link, $_POST['password']);
     $hashed_password = hash("sha512", $password);
 
@@ -46,24 +49,28 @@ if(isset($_POST['productName']) == 'productName'){
     }
     $id = $id + 1;
 
-    $query = "INSERT INTO `orders_razorpay` (`id`, `name`, `phone`, `email`, `country`, `address`, `state`, `postcode`, `other_details`, `productName`, `amount`, `date_now`, `from_ip`, `from_browser`, `status`, `referral_id` ,`password`) VALUES ('$id','$name', '$phone', '$email', '$country', '$address', '$state', '$postcode' , '$other_details', '$productName', '$amount','$date_now','$from_ip', '$from_browser','processing', '$referral_id' ,'$hashed_password')";
+    $query =mysqli_query($link, "SELECT * FROM `orders_razorpay` WHERE email ='$email' AND status ='paid'");
+        if (mysqli_num_rows($query)>0){
+		    echo json_encode(array(
+                "status"=>701
+            ));
+        }else{        
+            $query = "INSERT INTO `orders_razorpay` (`id`, `name`, `phone`, `email`, `country`, `address`, `state`, `postcode`, `other_details`, `productName`, `amount`, `coupon_code`, `date_now`, `from_ip`, `from_browser`, `status`, `referral_id` ,`password`) VALUES ('$id','$name', '$phone', '$email', '$country', '$address', '$state', '$postcode' , '$other_details', '$productName', '$amount','$coupon_code','$date_now','$from_ip', '$from_browser','processing', '$referral_id' ,'$hashed_password')";
 
-    // echo $query;
-    
-    if($result = mysqli_query($link, $query))  
-    {  
-        $data['status'] = 201;
-        $data['id'] = $id;
-        echo json_encode($data);
-    }  
-    else  
-    {  
-        $data['status'] = 601;
-        $data['error'] = $link -> error;
-        echo json_encode($data);
-    } 
-
-}
-
-
+            // echo $query;
+            
+            if($result = mysqli_query($link, $query))  
+            {  
+                $data['status'] = 201;
+                $data['id'] = $id;
+                echo json_encode($data);
+            }  
+            else  
+            {  
+                $data['status'] = 601;
+                $data['error'] = $link -> error;
+                echo json_encode($data);
+            } 
+        }
+    }
 ?>
