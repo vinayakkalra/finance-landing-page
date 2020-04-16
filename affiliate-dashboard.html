@@ -818,6 +818,14 @@
                     $("#unique-visitors-desktop").html(data.unique_visitors);
                     $("#unique-visitors-mobile").html(data.unique_visitors);
 
+                    // payment options autofill
+                    $("#gpay-number").val(data.phone);
+                    $("#phonepay-number").val(data.phone);
+                    $("#paytm-number").val(data.phone);
+                    $("#gpay-number-mobile").val(data.phone);
+                    $("#phonepay-number-mobile").val(data.phone);
+                    $("#paytm-number-mobile").val(data.phone);
+
                 } else if(data.status == 301){
                     //Email already registered
                     alert(data.error);
