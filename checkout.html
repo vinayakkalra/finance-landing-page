@@ -846,6 +846,7 @@
                                 $('#code').html(dataResult.coupon_code);
                                 $('.modaltotal').html(dataResult.value);
                                 $('#discount').html(dataResult.discount);
+                                alert (dataResult.coupon_code + " has been Successfully Applied");
                                 return true;
                             }
                             else if (dataResult.statusCode == 201) {
@@ -1183,6 +1184,7 @@
                                 $('#code-mobile').html(dataResult.coupon_code);
                                 $('.modaltotal').html(dataResult.value);
                                 $('#discount').html(dataResult.discount);
+                                alert (dataResult.coupon_code + " has been Successfully Applied");
                                 return true;
                             }
                             else if (dataResult.statusCode == 201) {
