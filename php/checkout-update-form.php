@@ -34,6 +34,8 @@ if(isset($_POST['razorpay_payment_id']) == 'razorpay_payment_id'){
         // $result = mysqli_query($link, $query);
         $data['status'] = 'ok';
         $data['id'] = $id;
+        session_start();
+        $_SESSION['useremail'] = $_POST['email'];
         echo json_encode($data);
 
 

@@ -13,6 +13,7 @@ if(isset($_POST['email'])){
     $email = mysqli_real_escape_string($link, $_POST['email']) ;
     $referral_id = "";
     $orders = array();
+    $redeem_requests = array();
 
     $result = mysqli_query($link, "SELECT `name`, `phone`, `referral_id`, `total_clicks`, `unique_visitors` FROM `webinar_signup_affiliate` WHERE `email` = '$email' ");
 
@@ -36,7 +37,23 @@ if(isset($_POST['email'])){
                 $orders[$i]['date_now'] = $row['date_now'];
                 $i = $i + 1;
             }
+
+            $result = mysqli_query($link, "SELECT * FROM `redeem_requests` WHERE `email` = '$email' AND `status` = 'paid' ");
+            
+            if (mysqli_num_rows($result) !=0 ) { 
+                $i = 0;
+                $data['redeemStatus'] = 211;
+                while ($row = mysqli_fetch_array($result)) {
+                    $redeem_requests[$i]['redeem_amount'] = $row['redeem_amount'];  
+                    $redeem_requests[$i]['time'] = $row['time'];
+                    $i = $i + 1;
+                }
+            }else{
+                $data['redeemStatus'] = 212;
+            }
+
             $data['orders'] =$orders;
+            $data['redeem_requests'] =$redeem_requests;
             $data['status'] = 201;
             echo json_encode($data);
         } else { 

@@ -13,6 +13,67 @@
         $day = "1";
     }
 
+    require_once 'php/link.php';
+    session_start();
+
+    $name = "";  
+    $phone = ""; 
+    $country = ""; 
+    $address = ""; 
+    $state = ""; 
+    $postcode = ""; ;
+    $amount = ""; 
+    $date_now = ""; 
+    $product_name = ""; 
+    $new_batch = true;
+    $token = null;
+
+
+
+    if(isset($_SESSION['useremail'])){
+
+        $email = $_SESSION['useremail'];
+
+        $result = mysqli_query($link, "SELECT `name`, `phone`, `country`, `address`, `state`, `postcode`, `amount`, `date_now`, `productName`, `token` FROM `orders_razorpay` WHERE `email` = '$email' AND `status` = 'paid' ");
+
+        if (mysqli_num_rows($result) !=0 ) { 
+            while ($row = mysqli_fetch_array($result)) {
+                $name = $row['name'];  
+                $phone = $row['phone'];
+                $country = $row['country'];
+                $address = $row['address'];
+                $state = $row['state'];
+                $postcode = $row['postcode'];
+                $amount = $row['amount'];
+                $date_now = $row['date_now'];
+                $product_name = $row['productName'];
+                $token = $row['token'];
+                
+            }
+
+            if($token == null || $token == $_SESSION['token']){
+                    
+                if($product_name == 'Crypto-Nite2'){
+                    $new_batch = true;
+                    header("Location: user-login");
+                } else if($product_name == 'Crypto-Nite 2020'){
+                    $new_batch = false;
+                }
+            } else{
+                header("Location: user-login");
+            }
+
+        } else { 
+            // $data['status'] = 301;
+            // $data['error'] = 'There was an error accessing your dashboard. Please contact us at support@finstreet.in';
+            header("Location: user-login");
+        }
+
+    } else{
+        header("Location: user-login");
+        // echo 'inside else';
+    }
+
 ?>
 
 
@@ -333,6 +394,18 @@
                             </div>
                         </div>
                     </div>
+                    <div style="display:flex;justify-content:center;margin-top:20px;">
+                        <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                        border-radius:15px;padding:0;">
+                            
+                            <div class="col-md-7" style="padding:18px;text-align:left;">
+                                <p style="margin-bottom:0px; font-weight: bold;">Certification Of Participation</p>
+                            </div>
+                            <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                <a href="https://cryptonite.finstreet.in/docs/Venezuela%20hyper%20inflation%20case%20study.pdf" target="_blank" id="certificate-desktop" style="color:#000;">DOWNLOAD</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- tab 3 -->
                 <div id="live-q&a" class="tabcontent">
@@ -343,10 +416,36 @@
                                 <p style="margin-bottom:0px;">Join The Live Chat</p>
                             </div>
                             <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://www.youtube.com/watch?v=CJaBrGIroLg&feature=youtu.be" target="_blank" style="color:#000;">Join Now</a>
+                                <a href="https://www.youtube.com/watch?v=e_RNCZw8y7E&feature=youtu.be" target="_blank" style="color:#000;">Join Now</a>
                             </div>
                         </div>
                     </div>
+
+                    <div style="display:flex;justify-content:center;" class="mt-3">
+                        <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                        border-radius:15px;padding:0;">
+                            <div class="col-md-7" style="padding:18px;text-align:left;">
+                                <p style="margin-bottom:0px;">Day 1 Q&A</p>
+                            </div>
+                            <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                <a href="https://youtu.be/L1qm8j1_eGI" target="_blank" style="color:#000;">View Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;justify-content:center;" class="mt-3">
+                        <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                        border-radius:15px;padding:0;">
+                            <div class="col-md-7" style="padding:18px;text-align:left;">
+                                <p style="margin-bottom:0px;">Day 2 Q&A</p>
+                            </div>
+                            <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                <a href="https://youtu.be/CJaBrGIroLg" target="_blank" style="color:#000;">View Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
                 </div>
                 <!-- tab 4 -->
                 <div id="start-trading" class="tabcontent">
@@ -396,7 +495,7 @@
                             </div>
                             <div class="col-10 position-relative" style="background: #00abc9 0% 0% no-repeat padding-box;">
                                 <div class="position-absolute w-100" style="top:35%;">
-                                    <p class="footer-text font-weight-light text-center" style="font-size:30px;margin-bottom:10px; font-family: europhonic;color:#fff;" onclick="window.location = 'user-location'">Logout</p>
+                                    <p class="footer-text font-weight-light text-center" style="font-size:30px;margin-bottom:10px; font-family: europhonic;color:#fff;" onclick="window.location = 'user-login'">Logout</p>
                                 </div>                          
                             </div>                        
                         </div>                
@@ -596,7 +695,18 @@
                                 <a href="https://cryptonite.finstreet.in/docs/Venezuela%20hyper%20inflation%20case%20study.pdf" target="_blank" style="color:#000;">DOWNLOAD</a>
                             </div>
                         </div>
-                    </div>                   
+                    </div>     
+                    <div style="margin-top:20px;">
+                        <div class="row" style="display:flex;justify-content:center;border:2px solid #fff;
+                        border-radius:18px;padding:0;">
+                            <div class="col-7" style="padding:12px;text-align:left;">
+                                <p style="margin-bottom:0px;"><b style="padding-right:7px;">Certificate Of Participation</b></p>
+                            </div>
+                            <div class="col-5 d-flex justify-content-center align-items-center" style="padding:12px;text-align:center;background-color:#fff;border-radius:15px;">
+                                <a href="https://cryptonite.finstreet.in/docs/Venezuela%20hyper%20inflation%20case%20study.pdf" id="certificate-mobile" target="_blank" style="color:#000;">DOWNLOAD</a>
+                            </div>
+                        </div>
+                    </div>               
                 </div>
                 <!-- tab 3 -->
                 <div id="live-q&a-mobile" class="tabcontent">
@@ -607,10 +717,35 @@
                                 <p style="margin-bottom:0px;">Join The Live Chat</p>
                             </div>
                             <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://www.youtube.com/watch?v=CJaBrGIroLg&feature=youtu.be" target="_blank" style="color:#000;">Join</a>
+                                <a href="https://www.youtube.com/watch?v=e_RNCZw8y7E&feature=youtu.be" target="_blank" style="color:#000;">Join</a>
                             </div>
                         </div>
                     </div>
+
+                    <div style="display:flex;justify-content:center;" class="mt-3">
+                        <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                        border-radius:15px;padding:0;">
+                            <div class="col-8" style="padding:18px;text-align:left;">
+                                <p style="margin-bottom:0px;">Day 1 Q&A</p>
+                            </div>
+                            <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                <a href="https://youtu.be/L1qm8j1_eGI" target="_blank" style="color:#000;">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;justify-content:center;" class="mt-3">
+                        <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                        border-radius:15px;padding:0;">
+                            <div class="col-8" style="padding:18px;text-align:left;">
+                                <p style="margin-bottom:0px;">Day 2 Q&A</p>
+                            </div>
+                            <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                <a href="https://youtu.be/CJaBrGIroLg" target="_blank" style="color:#000;">View</a>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
                 <!-- tab 4 -->
                 <div id="start-trading-mobile" class="tabcontent">
@@ -670,6 +805,11 @@
         if(email == null){
             window.location = "user-login";
         }
+
+        var certiName = email.toString().replace("@", "-");
+        var certiName = certiName.replace(".", "-");
+        $("#certificate-desktop").attr("href","docs/certificate/" + certiName + ".pdf");
+        $("#certificate-mobile").attr("href","docs/certificate/" + certiName + ".pdf");
 
         // tab js
         function openCity(evt, cityName) {
