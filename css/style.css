@@ -570,4 +570,14 @@ background-color: #D1D1D1;
     border-right: 2px solid rgb(0,0,0);
     background-color: #ccc;
     transform: rotate(45deg);
-    }
+}
+.carousel-control-prev-icon{
+    background-image: url(../icons/ArrowBlue.svg);
+    transform: rotate(180deg);
+}
+.carousel-control-next-icon{
+    background-image: url(../icons/ArrowBlue.svg);
+}
+.carousel-control-next .carousel-control-prev{
+    width: 9% !important;
+}
