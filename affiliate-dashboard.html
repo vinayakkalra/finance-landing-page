@@ -1402,29 +1402,24 @@
                     // console.log(data.orders.length);
                     if (data.orders.length < 5) {
                         $(".level").html(1);
-                        $(".icon1").css("display", "none");
                     } else if (data.orders.length < 10) {
                         $(".level").html(2);
                         $(".icon1").css("display", "none");
-                        $(".icon2").css("display", "none");
                     } else if (data.orders.length < 15) {
                         $(".level").html(3);
                         $(".icon1").css("display", "none");
                         $(".icon2").css("display", "none");
-                        $(".icon3").css("display", "none");
                     } else if (data.orders.length < 20) {
                         $(".level").html(4);
                         $(".icon1").css("display", "none");
                         $(".icon2").css("display", "none");
                         $(".icon3").css("display", "none");
-                        $(".icon4").css("display", "none");
                     } else if (data.orders.length < 25) {
                         $(".level").html(5);
                         $(".icon1").css("display", "none");
                         $(".icon2").css("display", "none");
                         $(".icon3").css("display", "none");
                         $(".icon4").css("display", "none");
-                        $(".icon5").css("display", "none");
                     } else if (data.orders.length < 30) {
                         $(".level").html(6);
                         $(".icon1").css("display", "none");
@@ -1432,7 +1427,6 @@
                         $(".icon3").css("display", "none");
                         $(".icon4").css("display", "none");
                         $(".icon5").css("display", "none");
-                        $(".icon6").css("display", "none");
                     } else if (data.orders.length < 40) {
                         $(".level").html(7);
                         $(".icon1").css("display", "none");
@@ -1441,7 +1435,6 @@
                         $(".icon4").css("display", "none");
                         $(".icon5").css("display", "none");
                         $(".icon6").css("display", "none");
-                        $(".icon7").css("display", "none");
                     } else if (data.orders.length < 50) {
                         $(".level").html(8);
                         $(".icon1").css("display", "none");
@@ -1451,7 +1444,6 @@
                         $(".icon5").css("display", "none");
                         $(".icon6").css("display", "none");
                         $(".icon7").css("display", "none");
-                        $(".icon8").css("display", "none");
                     } else if (data.orders.length < 60) {
                         $(".level").html(9);
                         $(".icon1").css("display", "none");
@@ -1462,7 +1454,6 @@
                         $(".icon6").css("display", "none");
                         $(".icon7").css("display", "none");
                         $(".icon8").css("display", "none");
-                        $(".icon9").css("display", "none");
                     } else if (data.orders.length < 75) {
                         $(".level").html(10);
                         $(".icon1").css("display", "none");
@@ -1474,9 +1465,20 @@
                         $(".icon7").css("display", "none");
                         $(".icon8").css("display", "none");
                         $(".icon9").css("display", "none");
-                        $(".icon10").css("display", "none");
                     } else if (data.orders.length < 100) {
                         $(".level").html(11);
+                        $(".icon1").css("display", "none");
+                        $(".icon2").css("display", "none");
+                        $(".icon3").css("display", "none");
+                        $(".icon4").css("display", "none");
+                        $(".icon5").css("display", "none");
+                        $(".icon6").css("display", "none");
+                        $(".icon7").css("display", "none");
+                        $(".icon8").css("display", "none");
+                        $(".icon9").css("display", "none");
+                        $(".icon10").css("display", "none");
+                    }else if (data.orders.length >= 100) {
+                        $(".level").html(12);
                         $(".icon1").css("display", "none");
                         $(".icon2").css("display", "none");
                         $(".icon3").css("display", "none");
