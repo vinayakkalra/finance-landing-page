@@ -456,7 +456,7 @@
                                 <p style="margin-bottom:0px;">Get started with crypto</p>
                             </div>
                             <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://wazirx.com/invite/sp7pvbt6"  rel="NOFOLLOW" style="color:#000;">REGISTER NOW</a>
+                                <a href="https://wazirx.com/invite/sp7pvbt6" target="_blank"  rel="NOFOLLOW" style="color:#000;">REGISTER NOW</a>
                             </div>
                         </div>
                     </div>
@@ -756,7 +756,7 @@
                                 <p style="margin-bottom:0px;">Get started with crypto</p>
                             </div>
                             <div class="col-md-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;">
-                                <a href="https://wazirx.com/invite/sp7pvbt6" style="color:#000;">REGISTER NOW</a>
+                                <a href="https://wazirx.com/invite/sp7pvbt6" target="_blank" rel="NOFOLLOW" style="color:#000;">REGISTER NOW</a>
                             </div>
                         </div>
                     </div>
