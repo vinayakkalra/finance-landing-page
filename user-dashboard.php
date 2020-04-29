@@ -371,8 +371,8 @@ if(isset($_SESSION['useremail'])){
                                                 
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; display: none !important;"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; display: none !important;">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -422,7 +422,8 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center">REDEEM<br>NOW</h5>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://cryptonite.finstreet.in/docs/Crypto Cheat Sheets.pdf','_blank');" >REDEEM<br>NOW</h5>
+                                                        <!-- <h5 class="font-poppins-bold m-0 p-2 text-center">REDEEM<br>NOW</h5> -->
                                                     
                                                     <?php 
                                                     
@@ -441,8 +442,8 @@ if(isset($_SESSION['useremail'])){
                                                     
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; display: none !important;"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; display: none !important;">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -493,7 +494,8 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" >REDEEM<br>NOW</h5>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://cryptonite.finstreet.in/docs/Venezuela hyper inflation case study.pdf','_blank');" >REDEEM<br>NOW</h5>
+                                                        <!-- <h5 class="font-poppins-bold m-0 p-2 text-center" >REDEEM<br>NOW</h5> -->
                                                     
                                                     <?php 
                                                     
@@ -966,8 +968,8 @@ if(isset($_SESSION['useremail'])){
                                                 
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; display: none !important;"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; display: none !important;">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold" style="font-size: 2.5rem;">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -1017,7 +1019,8 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" style="font-size: 2rem;" >REDEEM<br>NOW</h5>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://cryptonite.finstreet.in/docs/Crypto Cheat Sheets.pdf','_blank');" style="font-size: 2rem;" >REDEEM<br>NOW</h5>
+                                                        <!-- <h5 class="font-poppins-bold m-0 p-2 text-center" style="font-size: 2rem;" >REDEEM<br>NOW</h5> -->
                                                     
                                                     <?php 
                                                     
@@ -1036,8 +1039,8 @@ if(isset($_SESSION['useremail'])){
                                                 
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; display: none !important;"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; display: none !important;">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold" style="font-size: 2.5rem;">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -1088,7 +1091,8 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center"   style="font-size: 2rem;">REDEEM<br>NOW</h5>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://cryptonite.finstreet.in/docs/Venezuela hyper inflation case study.pdf','_blank');"  style="font-size: 2rem;">REDEEM<br>NOW</h5>
+                                                        <!-- <h5 class="font-poppins-bold m-0 p-2 text-center"   style="font-size: 2rem;">REDEEM<br>NOW</h5> -->
                                                     
                                                     <?php 
                                                     
