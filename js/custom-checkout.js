@@ -27,7 +27,9 @@ var referral_id = sessionStorage.getItem('referral_id');
                         return true;
                     }
                     else if (dataResult.statusCode == 201) {
-                        alert("Invalid coupon");
+                        result = dataResult;
+                        $('.modaltotal').html(result.value);
+                        $('#discount').html(result.discount);
                         $(".applied").css('display', 'none');
                         $(".strike").css('display', 'none');
                         document.getElementById('price').innerHTML = "&#8377;1,997";
@@ -35,13 +37,9 @@ var referral_id = sessionStorage.getItem('referral_id');
                     }
                 }
             });
-            var dataResult = result;
-            var coupon = document.getElementById('in').value;
-            function validate(coupon) {
-                var input = "";
-                result = "";
+            function validate() {
                 // $("#err").attr("disabled","true");    
-                if (input.toUpperCase() == coupon.toUpperCase()) {
+                if (document.getElementById('in').value != "") {
                     $.ajax({
                         type: "POST",
                         url: "php/process.php",
@@ -54,14 +52,14 @@ var referral_id = sessionStorage.getItem('referral_id');
                         success: function (dataResult) {
                             if (dataResult.statusCode == 200) {
                                 result = dataResult;
-                                $('#price').html(dataResult.value);
+                                $('#price').html(result.value);
                                 $(".applied").css('display', 'block');
                                 $(".strike").css('display', 'contents');
                                 $("#price").css('color', '#2fbe6d');
-                                $('#code').html(dataResult.coupon_code);
-                                $('.modaltotal').html(dataResult.value);
-                                $('#discount').html(dataResult.discount);
-                                alert (dataResult.coupon_code + " has been Successfully Applied");
+                                $('#code').html(result.coupon_code);
+                                $('.modaltotal').html(result.value);
+                                $('#discount').html(result.discount);
+                                alert (result.coupon_code + " has been Successfully Applied");
                                 return true;
                             }
                             else if (dataResult.statusCode == 201) {
@@ -75,9 +73,12 @@ var referral_id = sessionStorage.getItem('referral_id');
                     });
                 } else {
                     alert("Invalid coupon");
-                }
+                    // result.value = 1997;
+                    // result.discount = 0;
+                    // document.getElementById('price').innerHTML = "&#8377;1,997";
+                    // $("#price").css('color', '#000');
+                }   
 
-                dataResult = result;
 
                 $(".coupon-code-applied-cross").on("click", function (e) {
                     e.preventDefault();
@@ -87,6 +88,8 @@ var referral_id = sessionStorage.getItem('referral_id');
                     document.getElementById('price').innerHTML = "&#8377;1,997";
                     $("#price").css('color', '#000');
                     $("#err").removeClass("disabled");
+                    result.value = 1997;
+                    result.discount = 0;
                 });
             }
             // validation razorpay 
@@ -96,16 +99,6 @@ var referral_id = sessionStorage.getItem('referral_id');
                     var email = $("#email").val();
                     var emailReg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
                     if (emailReg.test(email)) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-                var error = "";
-                function validateEmail() {
-                    var phone = $("#phone").val();
-                    var phoneReg = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
-                    if (phoneReg.test(phone)) {
                         return true;
                     } else {
                         return false;
@@ -140,42 +133,42 @@ var referral_id = sessionStorage.getItem('referral_id');
                     $("#email").attr('placeholder', 'Required Field');
                     error = error + 'email';
                 }
-                if ($("#country").val() == 0) {
-                    $("#country").css('border-color', 'red');
-                    $("#country").css('border-width', '2px');
-                    $("#country").attr('placeholder', 'Required Field');
-                    error = error + 'country';
-                } else {
-                    $("#country").css('border-color', 'black');
-                    $("#Country").css('border-width', '1px');
-                }
-                if ($("#address").val() == "") {
-                    $("#address").css('border-color', 'red');
-                    $("#address").css('border-width', '2px');
-                    $("#address").attr('placeholder', 'Required Field');
-                    error = error + 'address';
-                } else {
-                    $("#address").css('border-color', 'black');
-                    $("#address").css('border-width', '1px');
-                }
-                if ($("#state").val() == "") {
-                    $("#state").css('border-color', 'red');
-                    $("#state").css('border-width', '2px');
-                    $("#state").attr('placeholder', 'Required Field');
-                    error = error + 'state';
-                } else {
-                    $("#state").css('border-color', 'black');
-                    $("#state").css('border-width', '1px');
-                }
-                if ($("#postcode").val() == "") {
-                    $("#postcode").css('border-color', 'red');
-                    $("#postcode").css('border-width', '2px');
-                    $("#postcode").attr('placeholder', 'Required Field');
-                    error = error + 'postcode';
-                } else {
-                    $("#postcode").css('border-color', 'black');
-                    $("#postcode").css('border-width', '1px');
-                }
+                // if ($("#country").val() == 0) {
+                //     $("#country").css('border-color', 'red');
+                //     $("#country").css('border-width', '2px');
+                //     $("#country").attr('placeholder', 'Required Field');
+                //     error = error + 'country';
+                // } else {
+                //     $("#country").css('border-color', 'black');
+                //     $("#Country").css('border-width', '1px');
+                // }
+                // if ($("#address").val() == "") {
+                //     $("#address").css('border-color', 'red');
+                //     $("#address").css('border-width', '2px');
+                //     $("#address").attr('placeholder', 'Required Field');
+                //     error = error + 'address';
+                // } else {
+                //     $("#address").css('border-color', 'black');
+                //     $("#address").css('border-width', '1px');
+                // }
+                // if ($("#state").val() == "") {
+                //     $("#state").css('border-color', 'red');
+                //     $("#state").css('border-width', '2px');
+                //     $("#state").attr('placeholder', 'Required Field');
+                //     error = error + 'state';
+                // } else {
+                //     $("#state").css('border-color', 'black');
+                //     $("#state").css('border-width', '1px');
+                // }
+                // if ($("#postcode").val() == "") {
+                //     $("#postcode").css('border-color', 'red');
+                //     $("#postcode").css('border-width', '2px');
+                //     $("#postcode").attr('placeholder', 'Required Field');
+                //     error = error + 'postcode';
+                // } else {
+                //     $("#postcode").css('border-color', 'black');
+                //     $("#postcode").css('border-width', '1px');
+                // }
 
                 if (error == "") {
                     if ($("#confirm_password").val() == "") {
@@ -214,7 +207,9 @@ var referral_id = sessionStorage.getItem('referral_id');
                 //     error = error +"chkterms";
                 //     }	
                 // }
-                // console.log(dataResult);	
+                // console.log(dataResult);
+                coupon_code = result.coupon_code;	
+                var coupon_code = "";                
                 if (error == "") {
                     // ajax call
                     $.ajax({
@@ -231,11 +226,11 @@ var referral_id = sessionStorage.getItem('referral_id');
                             postcode: $("#postcode").val(),
                             other_details: $("#other_details").val(),
                             productName: "Crypto-Nite2",
-                            amount: dataResult.value,
+                            amount: result.value,
                             'referral_id': referral_id,
                             password: $("#password").val(),
-                            discount: dataResult.discount,
-                            'coupon_code': dataResult.coupon_code,
+                            discount: result.discount,
+                            'coupon_code': coupon_code,
                         },
                         success: function (data) {
                             if (data.status == 201) {
@@ -245,7 +240,7 @@ var referral_id = sessionStorage.getItem('referral_id');
                                 var order_id = data.id;
                                 var options = {
                                     "key": "rzp_live_LSedTe83FzVuTe", // rzp_live_LSedTe83FzVuTe, rzp_test_BAnreND3t2AMOK test key // Enter the Key ID generated from the Dashboard rzp_test_Deii5btTqdfYUu rzp_live_LSedTe83FzVuTe
-                                    "amount": parseInt(dataResult.value * 100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                    "amount": parseInt(result.value * 100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
                                     "currency": "INR",
                                     "name": "Finstreet",
                                     "description": "Crypto-Nite",
@@ -263,7 +258,7 @@ var referral_id = sessionStorage.getItem('referral_id');
                                                 id: data.id,
                                                 productName: "Finstreet",
                                                 razorpay_payment_id: razorpay_payment_id,
-                                                amount: dataResult.value,
+                                                amount: result.value,
                                                 email: $("#email").val()
                                             },
                                             success: function (data) {
@@ -365,7 +360,9 @@ var referral_id = sessionStorage.getItem('referral_id');
                         return true;
                     }
                     else if (dataResult.statusCode == 201) {
-                        alert("Invalid coupon");
+                        result = dataResult;
+                        $('.modaltotal').html(result.value);
+                        $('#discount').html(result.discount);
                         $(".applied-mobile").css('display', 'none');
                         $(".strike-mobile").css('display', 'none');
                         document.getElementById('price-mobile').innerHTML = "&#8377;1,997";
@@ -373,13 +370,10 @@ var referral_id = sessionStorage.getItem('referral_id');
                     }
                 }
             });
-            var dataResult = result;
-            var couponMob = document.getElementById('in-mobile').value;
-            function validate(couponMob) {
-                var input = "";
-                result = "";
+            console.log(result);
+            function validate() {
                 // $("#err").attr("disabled","true");    
-                if (input.toUpperCase() == couponMob.toUpperCase()) {
+                if (document.getElementById('in-mobile').value != "") {
                     $.ajax({
                         type: "POST",
                         url: "php/process.php",
@@ -392,17 +386,17 @@ var referral_id = sessionStorage.getItem('referral_id');
                         success: function (dataResult) {
                             if (dataResult.statusCode == 200) {
                                 result = dataResult;
-                                $('#price-mobile').html(dataResult.value);
+                                $('#price-mobile').html(result.value);
                                 $(".applied-mobile").css('display', 'block');
                                 $(".strike-mobile").css('display', 'contents');
                                 $("#price-mobile").css('color', '#2fbe6d');
-                                $('#code-mobile').html(dataResult.coupon_code);
-                                $('.modaltotal').html(dataResult.value);
-                                $('#discount').html(dataResult.discount);
-                                alert (dataResult.coupon_code + " has been Successfully Applied");
+                                $('#code-mobile').html(result.coupon_code);
+                                $('.modaltotal').html(result.value);
+                                $('#discount').html(result.discount);
+                                alert (result.coupon_code + " has been Successfully Applied");
                                 return true;
                             }
-                            else if (dataResult.statusCode == 201) {
+                            else if (result.statusCode == 201) {
                                 alert("Invalid coupon");
                                 $(".applied-mobile").css('display', 'none');
                                 $(".strike-mobile").css('display', 'none');
@@ -415,8 +409,6 @@ var referral_id = sessionStorage.getItem('referral_id');
                     alert("Invalid coupon");
                 }
 
-                dataResult = result;
-
                 $(".coupon-code-applied-cross-mobile").on("click", function (e) {
                     e.preventDefault();
                     document.getElementById('err-mobile').innerHTML = "Apply Coupon";
@@ -425,6 +417,8 @@ var referral_id = sessionStorage.getItem('referral_id');
                     document.getElementById('price-mobile').innerHTML = "&#8377;1,997";
                     $("#price-mobile").css('color', '#000');
                     $("#err-mobile").removeClass("disabled");
+                    result.value = 1997;
+                    result.discount = 0;
                 });
             }
             // validation razorpay 
@@ -478,42 +472,42 @@ var referral_id = sessionStorage.getItem('referral_id');
                     $("#email").attr('placeholder', 'Required Field');
                     error = error + 'email';
                 }
-                if ($("#country").val() == 0) {
-                    $("#country").css('border-color', 'red');
-                    $("#country").css('border-width', '2px');
-                    $("#country").attr('placeholder', 'Required Field');
-                    error = error + 'country';
-                } else {
-                    $("#country").css('border-color', 'black');
-                    $("#Country").css('border-width', '1px');
-                }
-                if ($("#address").val() == "") {
-                    $("#address").css('border-color', 'red');
-                    $("#address").css('border-width', '2px');
-                    $("#address").attr('placeholder', 'Required Field');
-                    error = error + 'address';
-                } else {
-                    $("#address").css('border-color', 'black');
-                    $("#address").css('border-width', '1px');
-                }
-                if ($("#state").val() == "") {
-                    $("#state").css('border-color', 'red');
-                    $("#state").css('border-width', '2px');
-                    $("#state").attr('placeholder', 'Required Field');
-                    error = error + 'state';
-                } else {
-                    $("#state").css('border-color', 'black');
-                    $("#state").css('border-width', '1px');
-                }
-                if ($("#postcode").val() == "") {
-                    $("#postcode").css('border-color', 'red');
-                    $("#postcode").css('border-width', '2px');
-                    $("#postcode").attr('placeholder', 'Required Field');
-                    error = error + 'postcode';
-                } else {
-                    $("#postcode").css('border-color', 'black');
-                    $("#postcode").css('border-width', '1px');
-                }
+                // if ($("#country").val() == 0) {
+                //     $("#country").css('border-color', 'red');
+                //     $("#country").css('border-width', '2px');
+                //     $("#country").attr('placeholder', 'Required Field');
+                //     error = error + 'country';
+                // } else {
+                //     $("#country").css('border-color', 'black');
+                //     $("#Country").css('border-width', '1px');
+                // }
+                // if ($("#address").val() == "") {
+                //     $("#address").css('border-color', 'red');
+                //     $("#address").css('border-width', '2px');
+                //     $("#address").attr('placeholder', 'Required Field');
+                //     error = error + 'address';
+                // } else {
+                //     $("#address").css('border-color', 'black');
+                //     $("#address").css('border-width', '1px');
+                // }
+                // if ($("#state").val() == "") {
+                //     $("#state").css('border-color', 'red');
+                //     $("#state").css('border-width', '2px');
+                //     $("#state").attr('placeholder', 'Required Field');
+                //     error = error + 'state';
+                // } else {
+                //     $("#state").css('border-color', 'black');
+                //     $("#state").css('border-width', '1px');
+                // }
+                // if ($("#postcode").val() == "") {
+                //     $("#postcode").css('border-color', 'red');
+                //     $("#postcode").css('border-width', '2px');
+                //     $("#postcode").attr('placeholder', 'Required Field');
+                //     error = error + 'postcode';
+                // } else {
+                //     $("#postcode").css('border-color', 'black');
+                //     $("#postcode").css('border-width', '1px');
+                // }
 
                 if (error == "") {
                     if ($("#confirm_password").val() == "") {
@@ -552,7 +546,9 @@ var referral_id = sessionStorage.getItem('referral_id');
                 //     error = error +"chkterms";
                 //     }	
                 // }
-                // console.log(dataResult);	
+                // console.log(dataResult);
+                coupon_code = result.coupon_code;	
+                var coupon_code = "";    	
                 if (error == "") {
                     // ajax call
                     $.ajax({
@@ -569,11 +565,11 @@ var referral_id = sessionStorage.getItem('referral_id');
                             postcode: $("#postcode").val(),
                             other_details: $("#other_details").val(),
                             productName: "Crypto-Nite2",
-                            amount: dataResult.value,
+                            amount: result.value,
                             'referral_id': referral_id,
                             password: $("#password").val(),
-                            discount: dataResult.discount,
-                            'coupon_code': dataResult.coupon_code,
+                            discount: result.discount,
+                            'coupon_code': coupon_code,
                         },
                         success: function (data) {
                             if (data.status == 201) {
@@ -583,7 +579,7 @@ var referral_id = sessionStorage.getItem('referral_id');
                                 var order_id = data.id;
                                 var options = {
                                     "key": "rzp_live_LSedTe83FzVuTe", // rzp_live_LSedTe83FzVuTe, rzp_test_BAnreND3t2AMOK test key // Enter the Key ID generated from the Dashboard rzp_test_Deii5btTqdfYUu rzp_live_LSedTe83FzVuTe
-                                    "amount": parseInt(dataResult.value * 100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                    "amount": parseInt(result.value * 100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
                                     "currency": "INR",
                                     "name": "Finstreet",
                                     "description": "Crypto-Nite",
@@ -601,7 +597,7 @@ var referral_id = sessionStorage.getItem('referral_id');
                                                 id: data.id,
                                                 productName: "Finstreet",
                                                 razorpay_payment_id: razorpay_payment_id,
-                                                amount: dataResult.value,
+                                                amount: result.value,
                                                 email: $("#email").val()
                                             },
                                             success: function (data) {
