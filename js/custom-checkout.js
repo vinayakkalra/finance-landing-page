@@ -195,6 +195,8 @@ var referral_id = sessionStorage.getItem('referral_id');
                         $("#password").css('border-color', '#BCE0FD');
                         $("#password").css('border-width', '1px');
                     }
+                } else{
+                    alert("There are errors in your form. Please check");
                 }
 
 
@@ -433,16 +435,7 @@ var referral_id = sessionStorage.getItem('referral_id');
                         return false;
                     }
                 }
-                var error = "";
-                function validateEmail() {
-                    var phone = $("#phone").val();
-                    var phoneReg = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
-                    if (phoneReg.test(phone)) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
+            
                 if ($("#name").val() == "") {
                     $("#name").css('border-color', 'red');
                     $("#name").css('border-width', '2px');
@@ -534,6 +527,8 @@ var referral_id = sessionStorage.getItem('referral_id');
                         $("#password").css('border-color', '#BCE0FD');
                         $("#password").css('border-width', '1px');
                     }
+                } else{
+                    alert("There are errors in your form. Please check");
                 }
 
 
