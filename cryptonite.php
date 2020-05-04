@@ -1,18 +1,5 @@
 <?php
 
-    $day = "1";
-    
-
-    if(isset($_GET['day'])){
-        
-        $day = $_GET['day'];
-        if($day > 3 ){
-            $day = '1';
-        }
-    }else{
-        $day = "1";
-    }
-
     require_once 'php/link.php';
     session_start();
 
@@ -27,7 +14,21 @@
     $product_name = ""; 
     $new_batch = true;
     $token = null;
+    $day = "1";
 
+    
+    date_default_timezone_set("Asia/Calcutta");
+
+    //video start timestamp for day 1, 2 and 3
+    $eventDay1 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 15, 2020));
+    $eventDay2 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 16, 2020));
+    $eventDay3 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 17, 2020));
+
+    //intro to make dir
+    //mktime(hour, minute, second, month, day, year)
+
+    //current date
+    $currentDate = date("Y-m-d H:i:s");
 
 
     if(isset($_SESSION['useremail'])){
@@ -53,11 +54,41 @@
 
             if($token == null || $token == $_SESSION['token']){
                     
-                if($product_name == 'Crypto-Nite2'){
+                if($product_name == 'Crypto-Nite3'){
                     $new_batch = true;
-                    header("Location: user-login");
-                } else if($product_name == 'Crypto-Nite 2020'){
+                    $tillDay = 0;
+                    if(strtotime($eventDay3) - strtotime($currentDate) < 0){
+                        $tillDay = 3;
+                    }else if(strtotime($eventDay2) - strtotime($currentDate) < 0){
+                        $tillDay = 2;
+                    }else if(strtotime($eventDay1) - strtotime($currentDate) < 0){
+                        $tillDay = 1;
+                    }else{
+                        $tillDay = 0;
+                        header("Location: user-login");
+                    }
+
+                    if(isset($_GET['day'])){
+                        
+                        $day = $_GET['day'];
+                        if($day > $tillDay ){
+                            $day = '1';
+                        }
+                    }else{
+                        $day = "1";
+                    }
+                    // header("Location: user-login");
+                } else if($product_name == 'Crypto-Nite 2020' || $product_name == 'Crypto-Nite2'){
                     $new_batch = false;
+                    if(isset($_GET['day'])){
+                        
+                        $day = $_GET['day'];
+                        if($day > 3 ){
+                            $day = '1';
+                        }
+                    }else{
+                        $day = "1";
+                    }
                 }
             } else{
                 header("Location: user-login");
@@ -151,6 +182,8 @@
             color:#fff;
             /* border:2px solid #ffffff; */
         }
+
+        
     </style>
 
     <!-- Facebook Pixel Code -->
@@ -243,7 +276,18 @@
                                     if($day == "1"){ 
                                         echo '<a href="#" style="color:#000;">Now Watching</a>'; 
                                     } else{
-                                        echo '<a href="cryptonite?day=1" style="color:#000;">Watch Now</a>';
+                                        if($new_batch){
+                                            if(strtotime($eventDay1) - strtotime($currentDate) < 0){
+                                                echo '<a href="cryptonite?day=1" style="color:#000;">Watch Now</a>';
+                                            }else{
+                                                echo '<a style="color:#000;">Unlocks in 24 Hours</a>';
+                                                
+                                            }
+                                            
+                                        }else{
+                                            echo '<a href="cryptonite?day=1" style="color:#000;">Watch Now</a>';
+                                        }
+                                        
                                     }
                                 
                                 ?>
@@ -266,7 +310,18 @@
                                     if($day == "2"){ 
                                         echo '<a href="#" style="color:#000;">Now Watching</a>'; 
                                     } else{
-                                        echo '<a href="cryptonite?day=2" style="color:#000;">Watch Now</a>';
+                                        if($new_batch){
+                                            if(strtotime($eventDay2) - strtotime($currentDate) < 0){
+                                                echo '<a href="cryptonite?day=2" style="color:#000;">Watch Now</a>';
+                                            }else{
+                                                echo '<a style="color:#000;">Unlocks in '.round((int)abs(strtotime($eventDay2) - strtotime($currentDate))/(60*60)).' Hours</a>';
+                                                
+                                            }
+                                            
+                                        }else{
+                                            echo '<a href="cryptonite?day=2" style="color:#000;">Watch Now</a>';
+                                        }
+                                        
                                     }
                                 
                                 ?>
@@ -312,7 +367,18 @@
                                     if($day == "3"){ 
                                         echo '<a href="#" style="color:#000;">Now Watching</a>'; 
                                     } else{
-                                        echo '<a href="cryptonite?day=3" style="color:#000;">Watch Now</a>';
+                                        if($new_batch){
+                                            if(strtotime($eventDay3) - strtotime($currentDate) < 0){
+                                                echo '<a href="cryptonite?day=3" style="color:#000;">Watch Now</a>';
+                                            }else{
+                                                echo '<a style="color:#000;">Unlocks in '.round((int)abs(strtotime($eventDay3) - strtotime($currentDate))/(60*60)).' Hours</a>';
+                                                
+                                            }
+                                            
+                                        }else{
+                                            echo '<a href="cryptonite?day=3" style="color:#000;">Watch Now</a>';
+                                        }
+                                        
                                     }
                                     
                                 ?>
@@ -394,21 +460,31 @@
                             </div>
                         </div>
                     </div>
-                    <div style="display:flex;justify-content:center;margin-top:20px;">
-                        <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
-                        border-radius:15px;padding:0;">
+                    <!-- <?php
+                        if(!$new_batch){
+                            ?>
+                                <div style="display:flex;justify-content:center;margin-top:20px;">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        
+                                        <div class="col-md-7" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px; font-weight: bold;">Certification Of Participation</p>
+                                        </div>
+                                        <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://cryptonite.finstreet.in/docs/Venezuela%20hyper%20inflation%20case%20study.pdf" target="_blank" id="certificate-desktop" style="color:#000;">DOWNLOAD</a>
+                                        </div>
+                                    </div>
+                                </div>
                             
-                            <div class="col-md-7" style="padding:18px;text-align:left;">
-                                <p style="margin-bottom:0px; font-weight: bold;">Certification Of Participation</p>
-                            </div>
-                            <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://cryptonite.finstreet.in/docs/Venezuela%20hyper%20inflation%20case%20study.pdf" target="_blank" id="certificate-desktop" style="color:#000;">DOWNLOAD</a>
-                            </div>
-                        </div>
-                    </div>
+                            <?php
+                        }
+                    ?> -->
+                    
                 </div>
                 <!-- tab 3 -->
                 <div id="live-q&a" class="tabcontent">
+                    
+                    
                     <div style="display:flex;justify-content:center;">
                         <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
                         border-radius:15px;padding:0;">
@@ -416,34 +492,86 @@
                                 <p style="margin-bottom:0px;">Join The Live Chat</p>
                             </div>
                             <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://www.youtube.com/watch?v=e_RNCZw8y7E&feature=youtu.be" target="_blank" style="color:#000;">Join Now</a>
+                                <a href="https://youtu.be/ZK6zJoJPx90" target="_blank" style="color:#000;">Join Now</a>
                             </div>
                         </div>
                     </div>
+                            
+                    <?php
+                        if($new_batch == false){
+                            ?>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-md-7" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 2 May 1st</p>
+                                        </div>
+                                        <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://youtu.be/dWLaOQRl_Zs" target="_blank" style="color:#000;">View Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-md-7" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 2 May 2nd</p>
+                                        </div>
+                                        <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://www.youtube.com/watch?v=5LP3qtOOZ1g&feature=youtu.be" target="_blank" style="color:#000;">View Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-md-7" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 2 May 3rd</p>
+                                        </div>
+                                        <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://www.youtube.com/watch?v=ZK6zJoJPx90" target="_blank" style="color:#000;">View Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-md-7" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 1 April 14th</p>
+                                        </div>
+                                        <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://youtu.be/L1qm8j1_eGI" target="_blank" style="color:#000;">View Now</a>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div style="display:flex;justify-content:center;" class="mt-3">
-                        <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
-                        border-radius:15px;padding:0;">
-                            <div class="col-md-7" style="padding:18px;text-align:left;">
-                                <p style="margin-bottom:0px;">Day 1 Q&A</p>
-                            </div>
-                            <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://youtu.be/L1qm8j1_eGI" target="_blank" style="color:#000;">View Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="display:flex;justify-content:center;" class="mt-3">
-                        <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
-                        border-radius:15px;padding:0;">
-                            <div class="col-md-7" style="padding:18px;text-align:left;">
-                                <p style="margin-bottom:0px;">Day 2 Q&A</p>
-                            </div>
-                            <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://youtu.be/CJaBrGIroLg" target="_blank" style="color:#000;">View Now</a>
-                            </div>
-                        </div>
-                    </div>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-md-7" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 1 April 15th</p>
+                                        </div>
+                                        <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://youtu.be/CJaBrGIroLg" target="_blank" style="color:#000;">View Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-md-7" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 1 April 16th</p>
+                                        </div>
+                                        <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://youtu.be/e_RNCZw8y7E" target="_blank" style="color:#000;">View Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php
+                        }
+                    ?>
+                    
+                    
 
                     
                 </div>
@@ -556,7 +684,17 @@
                                     if($day == "1"){ 
                                         echo '<a href="#" style="color:#000;">Now Watching</a>'; 
                                     } else{
-                                        echo '<a href="cryptonite?day=1" style="color:#000;">Watch Now</a>';
+                                        if($new_batch){
+                                            if(strtotime($eventDay1) - strtotime($currentDate) < 0){
+                                                echo '<a href="cryptonite?day=1" style="color:#000;">Watch Now</a>';
+                                            }else{
+                                                echo '<a style="color:#000;">Unlocks in '.round((int)abs(strtotime($eventDay1) - strtotime($currentDate))/(60*60)).' Hours</a>';
+                                                
+                                            }
+                                        }else{
+                                            echo '<a href="cryptonite?day=1" style="color:#000;">Watch Now</a>';
+                                        }
+                                        
                                     }
                                 
                                 ?>
@@ -575,7 +713,18 @@
                                     if($day == "2"){ 
                                         echo '<a href="#" style="color:#000;">Now Watching</a>'; 
                                     } else{
-                                        echo '<a href="cryptonite?day=2" style="color:#000;">Watch Now</a>';
+                                        if($new_batch){
+                                            if(strtotime($eventDay2) - strtotime($currentDate) < 0){
+                                                echo '<a href="cryptonite?day=2" style="color:#000;">Watch Now</a>';
+                                            }else{
+                                                echo '<a style="color:#000;">Unlocks in '.round((int)abs(strtotime($eventDay2) - strtotime($currentDate))/(60*60)).' Hours</a>';
+                                                
+                                            }
+                                            
+                                        }else{
+                                            echo '<a href="cryptonite?day=2" style="color:#000;">Watch Now</a>';
+                                        }
+                                        
                                     }
                                 
                                 ?>
@@ -618,7 +767,17 @@
                                     if($day == "3"){ 
                                         echo '<a href="#" style="color:#000;">Now Watching</a>'; 
                                     } else{
-                                        echo '<a href="cryptonite?day=3" style="color:#000;">Watch Now</a>';
+                                        if($new_batch){
+                                            if(strtotime($eventDay3) - strtotime($currentDate) < 0){
+                                                echo '<a href="cryptonite?day=3" style="color:#000;">Watch Now</a>';
+                                            }else{
+                                                echo '<a style="color:#000;">Unlocks in '.round((int)abs(strtotime($eventDay3) - strtotime($currentDate))/(60*60)).' Hours</a>';
+                                                
+                                            }
+                                        }else{
+                                            echo '<a href="cryptonite?day=3" style="color:#000;">Watch Now</a>';
+                                        }
+                                        
                                     }
                                     
                                 ?>
@@ -696,17 +855,26 @@
                             </div>
                         </div>
                     </div>     
-                    <div style="margin-top:20px;">
-                        <div class="row" style="display:flex;justify-content:center;border:2px solid #fff;
-                        border-radius:18px;padding:0;">
-                            <div class="col-7" style="padding:12px;text-align:left;">
-                                <p style="margin-bottom:0px;"><b style="padding-right:7px;">Certificate Of Participation</b></p>
-                            </div>
-                            <div class="col-5 d-flex justify-content-center align-items-center" style="padding:12px;text-align:center;background-color:#fff;border-radius:15px;">
-                                <a href="https://cryptonite.finstreet.in/docs/Venezuela%20hyper%20inflation%20case%20study.pdf" id="certificate-mobile" target="_blank" style="color:#000;">DOWNLOAD</a>
-                            </div>
-                        </div>
-                    </div>               
+                    
+                    <!-- <?php
+                        if(!$new_batch){
+                            ?>
+                                <div style="margin-top:20px;">
+                                    <div class="row" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:18px;padding:0;">
+                                        <div class="col-7" style="padding:12px;text-align:left;">
+                                            <p style="margin-bottom:0px;"><b style="padding-right:7px;">Certificate Of Participation</b></p>
+                                        </div>
+                                        <div class="col-5 d-flex justify-content-center align-items-center" style="padding:12px;text-align:center;background-color:#fff;border-radius:15px;">
+                                            <a href="https://cryptonite.finstreet.in/docs/Venezuela%20hyper%20inflation%20case%20study.pdf" id="certificate-mobile" target="_blank" style="color:#000;">DOWNLOAD</a>
+                                        </div>
+                                    </div>
+                                </div>  
+                            
+                            <?php
+                        }
+                    ?> -->
+                                 
                 </div>
                 <!-- tab 3 -->
                 <div id="live-q&a-mobile" class="tabcontent">
@@ -717,33 +885,84 @@
                                 <p style="margin-bottom:0px;">Join The Live Chat</p>
                             </div>
                             <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://www.youtube.com/watch?v=e_RNCZw8y7E&feature=youtu.be" target="_blank" style="color:#000;">Join</a>
+                                <a href="https://youtu.be/ZK6zJoJPx90" target="_blank" style="color:#000;">Join</a>
                             </div>
                         </div>
                     </div>
+                    <?php
+                        if($new_batch == false){
+                            ?>
 
-                    <div style="display:flex;justify-content:center;" class="mt-3">
-                        <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
-                        border-radius:15px;padding:0;">
-                            <div class="col-8" style="padding:18px;text-align:left;">
-                                <p style="margin-bottom:0px;">Day 1 Q&A</p>
-                            </div>
-                            <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://youtu.be/L1qm8j1_eGI" target="_blank" style="color:#000;">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="display:flex;justify-content:center;" class="mt-3">
-                        <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
-                        border-radius:15px;padding:0;">
-                            <div class="col-8" style="padding:18px;text-align:left;">
-                                <p style="margin-bottom:0px;">Day 2 Q&A</p>
-                            </div>
-                            <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://youtu.be/CJaBrGIroLg" target="_blank" style="color:#000;">View</a>
-                            </div>
-                        </div>
-                    </div>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-8" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 2 May 1st</p>
+                                        </div>
+                                        <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://youtu.be/dWLaOQRl_Zs" target="_blank" style="color:#000;">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-8" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 2 May 2nd</p>
+                                        </div>
+                                        <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://www.youtube.com/watch?v=5LP3qtOOZ1g&feature=youtu.be" target="_blank" style="color:#000;">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-8" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 2 May 3rd</p>
+                                        </div>
+                                        <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://www.youtube.com/watch?v=ZK6zJoJPx90" target="_blank" style="color:#000;">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-8" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 1 April 14th</p>
+                                        </div>
+                                        <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://youtu.be/L1qm8j1_eGI" target="_blank" style="color:#000;">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-8" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 1 April 15th</p>
+                                        </div>
+                                        <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://youtu.be/CJaBrGIroLg" target="_blank" style="color:#000;">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;justify-content:center;" class="mt-3">
+                                    <div class="col-md-6" style="display:flex;justify-content:center;border:2px solid #fff;
+                                    border-radius:15px;padding:0;">
+                                        <div class="col-8" style="padding:18px;text-align:left;">
+                                            <p style="margin-bottom:0px;">Batch 1 April 16th</p>
+                                        </div>
+                                        <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
+                                            <a href="https://youtu.be/e_RNCZw8y7E" target="_blank" style="color:#000;">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php
+                        }
+                    ?>
+                    
 
 
                 </div>
@@ -1040,7 +1259,7 @@
         dynamicLabel: true
     });
     videojs('video_1_mobile').videoJsResolutionSwitcher({
-        default: 540,
+        default: 270,
         dynamicLabel: true
     });
   </script>

@@ -15,6 +15,47 @@ $product_name = "";
 $new_batch = true;
 $token = null;
 
+date_default_timezone_set("Asia/Calcutta");
+
+//video start timestamp for day 1, 2 and 3
+$eventDay1 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 15, 2020));
+$eventDay2 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 16, 2020));
+$eventDay3 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 17, 2020));
+
+//intro to make dir
+//mktime(hour, minute, second, month, day, year)
+
+//current date
+$currentDate = date("Y-m-d H:i:s");
+
+// glosarry timer
+// $countDownDate12 = "apr 20, 2020 24:00:00";
+$countDownDate12 = date("Y-m-d H:i:s", mktime(24, 00, 00, 5, 8, 2020));
+
+//bonus content timer
+// $countDownDate13 = "apr 25, 2020 24:00:00";
+$countDownDate13 = date("Y-m-d H:i:s", mktime(24, 00, 00, 5, 10, 2020));
+
+//life changing seminar timer
+// $countDownDate14 = "apr 28, 2020 24:00:00";
+$countDownDate14 = date("Y-m-d H:i:s", mktime(24, 00, 00, 5, 12, 2020));
+
+//how to defi timer
+// $countDownDate15 = "apr 30, 2020 24:00:00";
+$countDownDate15 = date("Y-m-d H:i:s", mktime(24, 00, 00, 5, 14, 2020));
+
+//participation certificate timer
+// $countDownDate16 = "may 3, 2020 21:00:00";
+$countDownDate16 = date("Y-m-d H:i:s", mktime(20, 45, 00, 5, 17, 2020));
+
+// Event start timer 
+// $countDownDate1 = "may 1, 2020 18:00:00";
+$countDownDate1 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 15, 2020));
+
+// blockchain certificate countdown
+// $countDownDate2 = "may 25, 2020 24:00:00";
+$countDownDate2 = date("Y-m-d H:i:s", mktime(24, 00, 00, 5, 25, 2020));
+// echo (strtotime($currentDate) - strtotime($countDownDate15));
 
 
 if(isset($_SESSION['useremail'])){
@@ -39,8 +80,10 @@ if(isset($_SESSION['useremail'])){
         }
 
         if($token == null || $token == $_SESSION['token']){
-            if($product_name == 'Crypto-Nite2'){
+            if($product_name == 'Crypto-Nite3'){
                 $new_batch = true;
+            } else if($product_name == 'Crypto-Nite2'){
+                $new_batch = false;
             } else if($product_name == 'Crypto-Nite 2020'){
                 $new_batch = false;
             }
@@ -176,17 +219,37 @@ if(isset($_SESSION['useremail'])){
                                         
                                             if($new_batch == false){
                                                 ?>  
-                                                    <p class="font-poppins-regular mb-0">Start Date : 12th April 2020</p>
-                                                    <p class="font-poppins-regular mb-0">End Date : 14th April 2020</p>
-                                                    <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 25px;" onclick="window.location = 'cryptonite?day=1'">Go To Event >></button>
+                                                    
+                                                    <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 25px;" onclick="window.location = 'cryptonite?day=1'">Watch Videos >></button>
                                                 <?php
                                             } else if($new_batch == true){
                                                 ?>
-                                                    <p class="font-poppins-regular mb-0">Start Date : 1st May 2020</p>
-                                                    <p class="font-poppins-regular mb-0">End Date : 3rd May 2020</p>
-                                                   <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 25px;" id="event">Go To Event >></button> 
+                                                    <p class="font-poppins-regular mb-0">Start Date : <?php echo date_format(date_create($eventDay1), "d/m/Y");?></p>
+                                                    <p class="font-poppins-regular mb-0">End Date : <?php echo date_format(date_create($eventDay3), "d/m/Y");?></p>
+                                                <?php
+                                                if(strtotime($eventDay3) - strtotime($currentDate) < 0){
+                                                    ?>
+                                                        
+                                                        <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 25px;"  onclick="window.location = 'cryptonite?day=3'">Go To Event >></button> 
+                                                    
+                                                    <?php 
+                                                }else if(strtotime($eventDay2) - strtotime($currentDate) < 0){
+                                                    ?>
+                                                        <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 25px;"  onclick="window.location = 'cryptonite?day=2'">Go To Event >></button> 
+                                                    
+                                                    <?php 
+                                                }else if(strtotime($eventDay1) - strtotime($currentDate) < 0){
+                                                    ?>
+                                                        <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 25px;"  onclick="window.location = 'cryptonite?day=1'">Go To Event >></button> 
+                                                    
+                                                    <?php 
+                                                }else {
+                                                    ?>
+                                                        <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 25px;" id="event">Go To Event >></button> 
+                                                    
+                                                    <?php 
+                                                }
                                                 
-                                                <?php 
                                                 
                                             }
                                         ?>
@@ -254,42 +317,18 @@ if(isset($_SESSION['useremail'])){
                         <div class="w-100" style="border-radius: 10px; border: 1px solid lightgray;">
                             <div class="container-fluid">
                                 <div class="row py-2">
-                                    <?php 
-                                        
-                                        if($new_batch == false){
-                                            ?>
-                                                <div class="col-md-2 d-flex justify-content-center align-items-center">
-                                                    <img src="images/WhatsApp_Logo_6.png" class="w-100">
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <h4 class="font-poppins-bold">Member-Only Exclusive WhatsApp Group</h4>
-                                                    <p class="font-poppins-regular">A members-only exclusive Whatsapp Group (INR 10,000 value) to connect with India's top Investors & ask questions.</p>
-                                                </div>
-                                                <div class="col-md-3 pl-0 d-flex justify-content-center align-items-center">
-                                                    <div class="w-100 cursor-pointer" style="border-radius: 10px; background-color: #00ABC9; color: white; ">
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://chat.whatsapp.com/JyfIfEt63On7EtqTcf3igZ','_blank');" >REDEEM<br>NOW</h5>
-                                                    </div>
-                                                </div>
-                                            <?php
-                                        } else if($new_batch == true){
-                                            ?>
-                                               <div class="col-md-2 d-flex justify-content-center align-items-center">
-                                                    <img src="icons/telegramda.png" class="w-100">
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <h4 class="font-poppins-bold">Member-Only Exclusive Telegram Group</h4>
-                                                    <p class="font-poppins-regular">A members-only exclusive Telegram Group (INR 10,000 value) to connect with India's top Investors & ask questions.</p>
-                                                </div>
-                                                <div class="col-md-3 pl-0 d-flex justify-content-center align-items-center">
-                                                    <div class="w-100 cursor-pointer" style="border-radius: 10px; background-color: #00ABC9; color: white; ">
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://t.me/joinchat/TLrEKkoYgOaljlwSpuEZzQ','_blank');" >REDEEM<br>NOW</h5>
-                                                    </div>
-                                                </div>
-                                            
-                                            <?php 
-                                            
-                                        }
-                                    ?>
+                                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                        <img src="icons/telegramda.png" class="w-100">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h4 class="font-poppins-bold">Member-Only Exclusive Telegram Group</h4>
+                                        <p class="font-poppins-regular">A members-only exclusive Telegram Group (INR 10,000 value) to connect with India's top Investors & ask questions.</p>
+                                    </div>
+                                    <div class="col-md-3 pl-0 d-flex justify-content-center align-items-center">
+                                        <div class="w-100 cursor-pointer" style="border-radius: 10px; background-color: #00ABC9; color: white; ">
+                                            <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://t.me/joinchat/TLrEKkoYgOaljlwSpuEZzQ','_blank');" >REDEEM<br>NOW</h5>
+                                        </div>
+                                    </div>
                                     
                                 </div>
                             </div>
@@ -300,8 +339,18 @@ if(isset($_SESSION['useremail'])){
                                             
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; display: none !important;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;display: none !important;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;
+                                            <?php
+                                                if(strtotime($countDownDate12) - strtotime($currentDate) < 0){
+                                                    echo "display: none !important; ";
+                                                }
+                                            ?>"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;
+                                                <?php
+                                                    if(strtotime($countDownDate12) - strtotime($currentDate) < 0){
+                                                        echo "display: none !important; ";
+                                                    }
+                                                ?>">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -352,7 +401,11 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://cryptonite.finstreet.in/docs/Finstreet Crypto Glossary.pdf','_blank');" >REDEEM<br>NOW</h5>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="<?php
+                                                            if(strtotime($countDownDate12) - strtotime($currentDate) < 0){
+                                                                echo "window.open('https://cryptonite.finstreet.in/docs/Finstreet Crypto Glossary.pdf','_blank');";
+                                                            }
+                                                        ?>" >REDEEM<br>NOW</h5>
                                                         <!-- <h5 class="font-poppins-bold m-0 p-2 text-center" >REDEEM<br>NOW</h5> -->
                                                     
                                                     <?php 
@@ -371,8 +424,19 @@ if(isset($_SESSION['useremail'])){
                                                 
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; display: none !important;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; display: none !important;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;
+                                            <?php
+                                                if(strtotime($countDownDate13) - strtotime($currentDate) < 0){
+                                                    echo "display: none !important;";
+                                                }
+                                            ?> 
+                                            "></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; 
+                                                <?php
+                                                    if(strtotime($countDownDate13) - strtotime($currentDate) < 0){
+                                                        echo "display: none !important;";
+                                                    }
+                                                ?> ">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -422,7 +486,11 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://cryptonite.finstreet.in/docs/Crypto Cheat Sheets.pdf','_blank');" >REDEEM<br>NOW</h5>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="<?php
+                                                            if(strtotime($countDownDate13) - strtotime($currentDate) < 0){
+                                                                echo "window.open('https://cryptonite.finstreet.in/docs/Crypto Cheat Sheets.pdf','_blank');";
+                                                            }
+                                                        ?>" >REDEEM<br>NOW</h5>
                                                         <!-- <h5 class="font-poppins-bold m-0 p-2 text-center">REDEEM<br>NOW</h5> -->
                                                     
                                                     <?php 
@@ -442,8 +510,18 @@ if(isset($_SESSION['useremail'])){
                                                     
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; display: none !important;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; display: none !important;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; 
+                                            <?php
+                                                if(strtotime($countDownDate14) - strtotime($currentDate) < 0){
+                                                    echo "display: none !important;";
+                                                }
+                                            ?>"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; 
+                                                <?php
+                                                    if(strtotime($countDownDate14) - strtotime($currentDate) < 0){
+                                                        echo "display: none !important;";
+                                                    }
+                                                ?>">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -494,7 +572,11 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://cryptonite.finstreet.in/docs/Venezuela hyper inflation case study.pdf','_blank');" >REDEEM<br>NOW</h5>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="<?php
+                                                            if(strtotime($countDownDate14) - strtotime($currentDate) < 0){
+                                                                echo "window.open('https://cryptonite.finstreet.in/docs/Venezuela hyper inflation case study.pdf','_blank');";
+                                                            }
+                                                        ?>" >REDEEM<br>NOW</h5>
                                                         <!-- <h5 class="font-poppins-bold m-0 p-2 text-center" >REDEEM<br>NOW</h5> -->
                                                     
                                                     <?php 
@@ -513,8 +595,20 @@ if(isset($_SESSION['useremail'])){
                                                     
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;
+                                            <?php
+                                                if(strtotime($countDownDate15) - strtotime($currentDate) < 0){
+                                                    echo "display: none !important; ";
+                                                }
+                                            ?>
+                                            "></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;
+                                                <?php
+                                                    if(strtotime($countDownDate15) - strtotime($currentDate) < 0){
+                                                        echo "display: none !important; ";
+                                                    }
+                                                ?>
+                                                ">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -564,7 +658,15 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center">REDEEM<br>NOW</h5>
+                                                        
+
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="<?php
+                                                            if(strtotime($countDownDate15) - strtotime($currentDate) < 0){
+                                                                echo "window.open('https://cryptonite.finstreet.in/docs/Defi ebook.pdf','_blank');";
+                                                            }
+                                                        ?>"
+                                                        
+                                                        >REDEEM<br>NOW</h5>
                                                     
                                                     <?php 
                                                     
@@ -583,8 +685,18 @@ if(isset($_SESSION['useremail'])){
                                                     
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;
+                                            <?php
+                                                if(strtotime($countDownDate16) - strtotime($currentDate) < 0){
+                                                    echo "display: none !important";
+                                                }
+                                            ?>"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;
+                                                <?php
+                                                    if(strtotime($countDownDate16) - strtotime($currentDate) < 0){
+                                                        echo "display: none !important";
+                                                    }
+                                                ?>">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -631,6 +743,79 @@ if(isset($_SESSION['useremail'])){
                                                 if($new_batch == false){
                                                     ?>
                                                         <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="certificate()" >REDEEM<br>NOW</h5>
+                                                    <?php
+                                                } else if($new_batch == true){
+                                                    ?>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="<?php
+                                                            if(strtotime($countDownDate16) - strtotime($currentDate) < 0){
+                                                                echo "certificate()";
+                                                            }
+                                                        ?>" >REDEEM<br>NOW</h5>
+                                                    <?php 
+                                                    
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100 mt-3" style="border-radius: 10px; border: 1px solid lightgray;">
+                            <div class="container-fluid position-relative p-0 d-flex align-items-center" style="height: 150px">
+
+                                <?php 
+                                                    
+                                    if($new_batch == true || $new_batch == false){
+                                        ?>
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;">
+                                                    <div>
+                                                        <h3 class="text-center text-white font-poppins-bold">UNLOCKS IN</h3>
+                                                        <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
+                                                            <span class="countdown-row countdown-show4">
+                                                                <span class="countdown-section">
+                                                                    <span class="days3 countdown-amount font-poppins-regular">11</span>
+                                                                    <br>
+                                                                    <span class="countdown-period font-poppins-regular">Days</span>
+                                                                </span>
+                                                                <span class="countdown-section">
+                                                                    <span class="hours3 countdown-amount font-poppins-regular">13</span><br>
+                                                                    <span class="countdown-period font-poppins-regular">Hours</span>
+                                                                </span>
+                                                                <span class="countdown-section">
+                                                                    <span class="mins3 countdown-amount font-poppins-regular">56</span><br>
+                                                                    <span class="countdown-period font-poppins-regular">Minutes</span>
+                                                                </span>
+                                                                <span class="countdown-section">
+                                                                    <span class="secs3 countdown-amount font-poppins-regular">19</span><br>
+                                                                    <span class="countdown-period font-poppins-regular">Seconds</span>
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                        
+                                        <?php 
+                                        
+                                    }
+                                ?>
+                                <div class="row py-2 px-2">
+                                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                        <img src="icons/blockchain-43-914983.png" class="w-100">
+                                    </div>
+                                    <div class="col-md-7 d-flex align-items-center">
+                                        <h4 class="font-poppins-bold">Certificate on Blockchain</h4>
+                                        
+                                    </div>
+                                    <div class="col-md-3 pl-0 d-flex justify-content-center align-items-center">
+                                        <div class="w-100 cursor-pointer" style="border-radius: 10px; background-color: #00ABC9; color: white; ">
+                                            <?php 
+                                            
+                                                if($new_batch == false){
+                                                    ?>
+                                                        <!-- <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="certificate()" >REDEEM<br>NOW</h5> -->
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" >REDEEM<br>NOW</h5>
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
@@ -769,15 +954,33 @@ if(isset($_SESSION['useremail'])){
                                         
                                             if($new_batch == false){
                                                 ?>
-                                                    <p class="font-poppins-regular mb-0" style="font-size: 1.5rem;">Start Date : 12th April 2020</p>
-                                                    <p class="font-poppins-regular mb-0" style="font-size: 1.5rem;">End Date : 14th April 2020</p>
-                                                    <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 2rem;" onclick="window.location = 'cryptonite?day=1'" >Go To Event >></button>
+                                                    <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 2rem;" onclick="window.location = 'cryptonite?day=1'" >Watch Videos >></button>
                                                 <?php
                                             } else if($new_batch == true){
                                                 ?>
-                                                    <p class="font-poppins-regular mb-0" style="font-size: 1.5rem;">Start Date : 1st May 2020</p>
-                                                    <p class="font-poppins-regular mb-0" style="font-size: 1.5rem;">End Date : 3rd May 2020</p>
-                                                    <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 2rem;" id="event-mobile" >Go To Event >></button>
+                                                    <p class="font-poppins-regular mb-0" style="font-size: 1.5rem;">Start Date : <?php echo date_format(date_create($eventDay1), "d/m/Y");?></p>
+                                                    <p class="font-poppins-regular mb-0" style="font-size: 1.5rem;">End Date : <?php echo date_format(date_create($eventDay3), "d/m/Y");?></p>
+
+                                                    <?php
+                                                        if(strtotime($eventDay3) - strtotime($currentDate) < 0){
+                                                            ?>
+                                                                <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 2rem;" onclick="window.location = 'cryptonite?day=3'" >Go To Event >></button>
+                                                            <?php
+                                                        }else if(strtotime($eventDay2) - strtotime($currentDate) < 0){
+                                                            ?>
+                                                                <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 2rem;" onclick="window.location = 'cryptonite?day=2'" >Go To Event >></button>
+                                                            <?php
+                                                        } else if(strtotime($eventDay1) - strtotime($currentDate) < 0){
+                                                            ?>
+                                                                <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 2rem;" onclick="window.location = 'cryptonite?day=1'" >Go To Event >></button>
+                                                            <?php
+                                                        }else {
+                                                            ?>
+                                                                <button class="mt-2 btn btn-primary font-poppins-bold" style="font-size: 2rem;" id="event-mobile" >Go To Event >></button>
+                                                            <?php
+                                                        }   
+                                                    ?>
+                                                    
                                                 
                                                 <?php 
                                                 
@@ -851,42 +1054,18 @@ if(isset($_SESSION['useremail'])){
                         <div class="w-100" style="border-radius: 10px; border: 2px solid lightgray;">
                             <div class="container-fluid">
                                 <div class="row py-2">
-                                <?php 
-                                        
-                                        if($new_batch == false){
-                                            ?>
-                                                <div class="col-md-2 d-flex justify-content-center align-items-center">
-                                                    <img src="images/WhatsApp_Logo_6.png" class="w-100">
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <h4 class="font-poppins-bold" style="font-size: 2rem;">Member-Only Exclusive WhatsApp Group</h4>
-                                                    <p class="font-poppins-regular" style="font-size: 1.5rem;">A members-only exclusive Whatsapp Group (INR 10,000 value) to connect with India's top Investors & ask questions.</p>
-                                                </div>
-                                                <div class="col-md-3 pl-0 d-flex justify-content-center align-items-center">
-                                                    <div class="w-100 cursor-pointer" style="border-radius: 10px; background-color: #00ABC9; color: white; ">
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://chat.whatsapp.com/JyfIfEt63On7EtqTcf3igZ','_blank');" style="font-size: 2rem;">REDEEM<br>NOW</h5>
-                                                    </div>
-                                                </div>
-                                            <?php
-                                        } else if($new_batch == true){
-                                            ?>
-                                                <div class="col-md-2 d-flex justify-content-center align-items-center">
-                                                    <img src="icons/telegramda.png" class="w-100">
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <h4 class="font-poppins-bold" style="font-size: 2rem;">Member-Only Exclusive Teegram Group</h4>
-                                                    <p class="font-poppins-regular" style="font-size: 1.5rem;">A members-only exclusive Telegram Group (INR 10,000 value) to connect with India's top Investors & ask questions.</p>
-                                                </div>
-                                                <div class="col-md-3 pl-0 d-flex justify-content-center align-items-center">
-                                                    <div class="w-100 cursor-pointer" style="border-radius: 10px; background-color: #00ABC9; color: white; ">
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://t.me/joinchat/TLrEKkoYgOaljlwSpuEZzQ','_blank');" style="font-size: 2rem;">REDEEM<br>NOW</h5>
-                                                    </div>
-                                                </div>
-                                            
-                                            <?php 
-                                            
-                                        }
-                                    ?>
+                                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                        <img src="icons/telegramda.png" class="w-100">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h4 class="font-poppins-bold" style="font-size: 2rem;">Member-Only Exclusive Teegram Group</h4>
+                                        <p class="font-poppins-regular" style="font-size: 1.5rem;">A members-only exclusive Telegram Group (INR 10,000 value) to connect with India's top Investors & ask questions.</p>
+                                    </div>
+                                    <div class="col-md-3 pl-0 d-flex justify-content-center align-items-center">
+                                        <div class="w-100 cursor-pointer" style="border-radius: 10px; background-color: #00ABC9; color: white; ">
+                                            <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://t.me/joinchat/TLrEKkoYgOaljlwSpuEZzQ','_blank');" style="font-size: 2rem;">REDEEM<br>NOW</h5>
+                                        </div>
+                                    </div>
                                     
                                 </div>
                             </div>
@@ -897,8 +1076,18 @@ if(isset($_SESSION['useremail'])){
                                             
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; display: none !important;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;display: none !important;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;
+                                            <?php
+                                                if(strtotime($countDownDate12) - strtotime($currentDate) < 0){
+                                                    echo "display: none !important;";
+                                                }
+                                            ?>"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;
+                                                <?php
+                                                    if(strtotime($countDownDate12) - strtotime($currentDate) < 0){
+                                                        echo "display: none !important;";
+                                                    }
+                                                ?>">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold" style="font-size: 2.5rem;">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -949,7 +1138,11 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://cryptonite.finstreet.in/docs/Finstreet Crypto Glossary.pdf','_blank');" style="font-size: 2rem;">REDEEM<br>NOW</h5>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="<?php
+                                                            if(strtotime($countDownDate12) - strtotime($currentDate) < 0){
+                                                                echo "window.open('https://cryptonite.finstreet.in/docs/Finstreet Crypto Glossary.pdf','_blank');";
+                                                            }
+                                                        ?>" style="font-size: 2rem;">REDEEM<br>NOW</h5>
                                                         <!-- <h5 class="font-poppins-bold m-0 p-2 text-center" style="font-size: 2rem;">REDEEM<br>NOW</h5> -->
                                                     
                                                     <?php 
@@ -968,8 +1161,18 @@ if(isset($_SESSION['useremail'])){
                                                 
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; display: none !important;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; display: none !important;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; 
+                                            <?php
+                                                if(strtotime($countDownDate13) - strtotime($currentDate) < 0){
+                                                    echo "display: none !important;";
+                                                }
+                                            ?>"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; 
+                                                <?php
+                                                    if(strtotime($countDownDate13) - strtotime($currentDate) < 0){
+                                                        echo "display: none !important;";
+                                                    }
+                                                ?>">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold" style="font-size: 2.5rem;">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -1019,7 +1222,11 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://cryptonite.finstreet.in/docs/Crypto Cheat Sheets.pdf','_blank');" style="font-size: 2rem;" >REDEEM<br>NOW</h5>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="<?php
+                                                            if(strtotime($countDownDate13) - strtotime($currentDate) < 0){
+                                                                echo "window.open('https://cryptonite.finstreet.in/docs/Crypto Cheat Sheets.pdf','_blank');";
+                                                            }
+                                                        ?>" style="font-size: 2rem;" >REDEEM<br>NOW</h5>
                                                         <!-- <h5 class="font-poppins-bold m-0 p-2 text-center" style="font-size: 2rem;" >REDEEM<br>NOW</h5> -->
                                                     
                                                     <?php 
@@ -1039,8 +1246,18 @@ if(isset($_SESSION['useremail'])){
                                                 
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20; display: none !important;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; display: none !important;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;
+                                            <?php
+                                                if(strtotime($countDownDate14) - strtotime($currentDate) < 0){
+                                                    echo "display: none !important;";
+                                                }
+                                            ?>"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30; 
+                                                <?php
+                                                    if(strtotime($countDownDate14) - strtotime($currentDate) < 0){
+                                                        echo "display: none !important;";
+                                                    }
+                                                ?>">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold" style="font-size: 2.5rem;">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -1091,7 +1308,11 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="window.open('https://cryptonite.finstreet.in/docs/Venezuela hyper inflation case study.pdf','_blank');"  style="font-size: 2rem;">REDEEM<br>NOW</h5>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="<?php
+                                                            if(strtotime($countDownDate14) - strtotime($currentDate) < 0){
+                                                                echo "window.open('https://cryptonite.finstreet.in/docs/Venezuela hyper inflation case study.pdf','_blank');";
+                                                            }
+                                                        ?>"  style="font-size: 2rem;">REDEEM<br>NOW</h5>
                                                         <!-- <h5 class="font-poppins-bold m-0 p-2 text-center"   style="font-size: 2rem;">REDEEM<br>NOW</h5> -->
                                                     
                                                     <?php 
@@ -1110,8 +1331,18 @@ if(isset($_SESSION['useremail'])){
                                                 
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;
+                                            <?php
+                                                if(strtotime($countDownDate15) - strtotime($currentDate) < 0){
+                                                    echo "display : none !important";
+                                                }
+                                            ?>"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;
+                                                <?php
+                                                    if(strtotime($countDownDate15) - strtotime($currentDate) < 0){
+                                                        echo "display : none !important";
+                                                    }
+                                                ?>">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold" style="font-size: 2.5rem;">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -1162,7 +1393,11 @@ if(isset($_SESSION['useremail'])){
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
-                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" style="font-size: 2rem;">REDEEM<br>NOW</h5>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="<?php
+                                                            if(strtotime($countDownDate15) - strtotime($currentDate) < 0){
+                                                                echo "window.open('https://cryptonite.finstreet.in/docs/Defi ebook.pdf','_blank');";
+                                                            }
+                                                        ?>" style="font-size: 2rem;">REDEEM<br>NOW</h5>
                                                     
                                                     <?php 
                                                     
@@ -1180,8 +1415,18 @@ if(isset($_SESSION['useremail'])){
                                             
                                     if($new_batch == true){
                                         ?>
-                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;"></div>
-                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;">
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;
+                                            <?php
+                                                if(strtotime($countDownDate16) - strtotime($currentDate) < 0){
+                                                    echo "display : none !important;";
+                                                }
+                                            ?>"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;
+                                                <?php
+                                                    if(strtotime($countDownDate16) - strtotime($currentDate) < 0){
+                                                        echo "display : none !important;";
+                                                    }
+                                                ?>">
                                                     <div>
                                                         <h3 class="text-center text-white font-poppins-bold" style="font-size: 2.5rem;">UNLOCKS IN</h3>
                                                         <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
@@ -1227,6 +1472,80 @@ if(isset($_SESSION['useremail'])){
                                                 if($new_batch == false){
                                                     ?>
                                                         <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="certificate()"  style="font-size: 2rem;">REDEEM<br>NOW</h5>
+                                                    <?php
+                                                } else if($new_batch == true){
+                                                    ?>
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="<?php
+                                                            if(strtotime($countDownDate16) - strtotime($currentDate) < 0){
+                                                                echo "certificate()";
+                                                            }
+                                                        ?>"   style="font-size: 2rem;">REDEEM<br>NOW</h5>
+                                                    
+                                                    <?php 
+                                                    
+                                                }
+                                            ?>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="w-100 mt-3" style="border-radius: 10px; border: 1px solid lightgray;">
+                            <div class="container-fluid position-relative p-0 d-flex align-items-center" style="height: 200px">
+                                <?php 
+                                            
+                                    if($new_batch == true || $new_batch == false){
+                                        ?>
+                                            <div class="w-100 h-100 position-absolute" style="background-color: black; opacity: 0.7; border-radius: 10px; z-index: 20;"></div>
+                                                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index: 30;">
+                                                    <div>
+                                                        <h3 class="text-center text-white font-poppins-bold" style="font-size: 2.5rem;">UNLOCKS IN</h3>
+                                                        <div class="wideCountdown clearfix cdLabelBold cdWhite cdLabelWhite cdStyleCircleLine wideCountdownSize1 is-countdown font-poppins-bold" data-date="03/26/2020" data-time="14" data-tz="india" data-url="#" data-lang="eng" data-color-time="rgb(255, 255, 255)" data-color-label="rgba(255, 255, 255, 0.3)" style="padding: 8px 0px;padding-left: 40px;font-size:9px;">
+                                                            <span class="countdown-row countdown-show4">
+                                                                <span class="countdown-section">
+                                                                    <span class="days3 countdown-amount font-poppins-regular" style="font-size: 1.5rem;">11</span>
+                                                                    <br>
+                                                                    <span class="countdown-period font-poppins-regular" style="font-size: 1.5rem;">Days</span>
+                                                                </span>
+                                                                <span class="countdown-section">
+                                                                    <span class="hours3 countdown-amount font-poppins-regular" style="font-size: 1.5rem;">13</span><br>
+                                                                    <span class="countdown-period font-poppins-regular" style="font-size: 1.5rem;">Hours</span>
+                                                                </span>
+                                                                <span class="countdown-section">
+                                                                    <span class="mins3 countdown-amount font-poppins-regular" style="font-size: 1.5rem;">56</span><br>
+                                                                    <span class="countdown-period font-poppins-regular" style="font-size: 1.5rem;">Minutes</span>
+                                                                </span>
+                                                                <span class="countdown-section">
+                                                                    <span class="secs3 countdown-amount font-poppins-regular" style="font-size: 1.5rem;">19</span><br>
+                                                                    <span class="countdown-period font-poppins-regular" style="font-size: 1.5rem;">Seconds</span>
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                        
+                                        <?php 
+                                        
+                                    }
+                                ?>
+                                <div class="row py-2 px-2">
+                                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                        <img src="icons/blockchain-43-914983.png" class="w-100">
+                                    </div>
+                                    <div class="col-md-7 d-flex align-items-center">
+                                        <h4 class="font-poppins-bold" style="font-size: 2rem;">Certificate on Blockchain</h4>
+                                    </div>
+                                    <div class="col-md-3 pl-0 d-flex justify-content-center align-items-center">
+                                        <div class="w-100 cursor-pointer" style="border-radius: 10px; background-color: #00ABC9; color: white; ">
+                                            <?php 
+                                            
+                                                if($new_batch == false){
+                                                    ?>
+                                                        <!-- <h5 class="font-poppins-bold m-0 p-2 text-center" onclick="certificate()"  style="font-size: 2rem;">REDEEM<br>NOW</h5> -->
+                                                        <h5 class="font-poppins-bold m-0 p-2 text-center"  style="font-size: 2rem;">REDEEM<br>NOW</h5>
                                                     <?php
                                                 } else if($new_batch == true){
                                                     ?>
@@ -1357,13 +1676,13 @@ if(isset($_SESSION['useremail'])){
         // });
 
         // The data/time we want to countdown to
-        var countDownDate = new Date("apr 11, 2020 24:00:00").getTime();
-        var countDownDate12 = new Date("apr 20, 2020 24:00:00").getTime();
-        var countDownDate13 = new Date("apr 25, 2020 24:00:00").getTime();
-        var countDownDate14 = new Date("apr 28, 2020 24:00:00").getTime();
-        var countDownDate15 = new Date("apr 30, 2020 24:00:00").getTime();
-        var countDownDate16 = new Date("may 3, 2020 21:00:00").getTime();
-        var countDownDate1 = new Date("may 1, 2020 18:00:00").getTime();
+        var countDownDate12 = new Date("<?php echo $countDownDate12; ?>").getTime();
+        var countDownDate13 = new Date("<?php echo $countDownDate13; ?>").getTime();
+        var countDownDate14 = new Date("<?php echo $countDownDate14; ?>").getTime();
+        var countDownDate15 = new Date("<?php echo $countDownDate15; ?>").getTime();
+        var countDownDate16 = new Date("<?php echo $countDownDate16; ?>").getTime();
+        var countDownDate1 = new Date("<?php echo $countDownDate1; ?>").getTime();
+        var countDownDate2 = new Date("<?php echo $countDownDate2; ?>").getTime();
 
         // Run myfunc every second
         var myfunc = setInterval(function() {
@@ -1377,6 +1696,7 @@ if(isset($_SESSION['useremail'])){
             var timeleft14 = countDownDate14 - now;
             var timeleft15 = countDownDate15 - now;
             var timeleft16 = countDownDate16 - now;
+            var timeleft2 = countDownDate2 - now;
                 
             // Calculating the days, hours, minutes and seconds left
             var days1 = Math.floor(timeleft1 / (1000 * 60 * 60 * 24));
@@ -1408,6 +1728,11 @@ if(isset($_SESSION['useremail'])){
             var hours16 = Math.floor((timeleft16 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes16 = Math.floor((timeleft16 % (1000 * 60 * 60)) / (1000 * 60));
             var seconds16 = Math.floor((timeleft16 % (1000 * 60)) / 1000);
+
+            var days2 = Math.floor(timeleft2 / (1000 * 60 * 60 * 24));
+            var hours2 = Math.floor((timeleft2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes2 = Math.floor((timeleft2 % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds2 = Math.floor((timeleft2 % (1000 * 60)) / 1000);
              
             // event timer
             if(document.getElementsByClassName("days1")[0] !== undefined ){
@@ -1593,6 +1918,37 @@ if(isset($_SESSION['useremail'])){
                     document.getElementsByClassName("secs2")[9].innerHTML = "00"
 
                     document.getElementsByClassName("end2").innerHTML = "TIME UP!!";
+                    
+                }
+            }
+
+
+            // blockchain certificate timer
+            if(document.getElementsByClassName("days3")[0] !== undefined){
+                document.getElementsByClassName("days3")[0].innerHTML = days2
+                document.getElementsByClassName("hours3")[0].innerHTML = hours2
+                document.getElementsByClassName("mins3")[0].innerHTML = minutes2
+                document.getElementsByClassName("secs3")[0].innerHTML = seconds2
+
+                document.getElementsByClassName("days3")[1].innerHTML = days2
+                document.getElementsByClassName("hours3")[1].innerHTML = hours2
+                document.getElementsByClassName("mins3")[1].innerHTML = minutes2
+                document.getElementsByClassName("secs3")[1].innerHTML = seconds2
+
+
+                if (timeleft2 < 0) {
+                    clearInterval(myfunc);
+                    document.getElementsByClassName("days3")[0].innerHTML = "00"
+                    document.getElementsByClassName("hours3")[0].innerHTML = "00" 
+                    document.getElementsByClassName("mins3")[0].innerHTML = "00"
+                    document.getElementsByClassName("secs3")[0].innerHTML = "00"
+
+                    document.getElementsByClassName("days3")[1].innerHTML = "00"
+                    document.getElementsByClassName("hours3")[1].innerHTML = "00" 
+                    document.getElementsByClassName("mins3")[1].innerHTML = "00"
+                    document.getElementsByClassName("secs3")[1].innerHTML = "00"
+
+                    document.getElementsByClassName("end3").innerHTML = "TIME UP!!";
                     
                 }
             }

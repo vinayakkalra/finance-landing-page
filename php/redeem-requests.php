@@ -86,7 +86,7 @@ if(isset($_POST['type'])){
             $account_name = mysqli_real_escape_string($link, $_POST['account_name']) ;
             $account_ifsc = mysqli_real_escape_string($link, $_POST['account_ifsc']) ;
             
-            $query = "INSERT INTO `redeem_requests` (`account_number`, `account_name`, `account_ifsc`, `email`, `time`, `from_ip`, `from_browser`, `status`, `redeem_amount`) VALUES ('$account_number','$account_name', '$account_ifsc', '$email', '$date_now', '$from_ip', '$from_browser', 'processing', ''$redeem_amount )";
+            $query = "INSERT INTO `redeem_requests` (`account_number`, `account_name`, `account_ifsc`, `email`, `time`, `from_ip`, `from_browser`, `status`, `redeem_amount`) VALUES ('$account_number','$account_name', '$account_ifsc', '$email', '$date_now', '$from_ip', '$from_browser', 'processing', '$redeem_amount' )";
     
             // echo $query;
             

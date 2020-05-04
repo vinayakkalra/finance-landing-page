@@ -211,7 +211,7 @@ var referral_id = sessionStorage.getItem('referral_id');
                 // }
                 // console.log(dataResult);
                 coupon_code = result.coupon_code;	
-                var coupon_code = "";                
+                // var coupon_code = "";                
                 if (error == "") {
                     // ajax call
                     $.ajax({
@@ -227,7 +227,7 @@ var referral_id = sessionStorage.getItem('referral_id');
                             state: $("#state").val(),
                             postcode: $("#postcode").val(),
                             other_details: $("#other_details").val(),
-                            productName: "Crypto-Nite2",
+                            productName: "Crypto-Nite3",
                             amount: result.value,
                             'referral_id': referral_id,
                             password: $("#password").val(),
@@ -543,7 +543,7 @@ var referral_id = sessionStorage.getItem('referral_id');
                 // }
                 // console.log(dataResult);
                 coupon_code = result.coupon_code;	
-                var coupon_code = "";    	
+                // var coupon_code = "";    	
                 if (error == "") {
                     // ajax call
                     $.ajax({
@@ -559,7 +559,7 @@ var referral_id = sessionStorage.getItem('referral_id');
                             state: $("#state").val(),
                             postcode: $("#postcode").val(),
                             other_details: $("#other_details").val(),
-                            productName: "Crypto-Nite2",
+                            productName: "Crypto-Nite3",
                             amount: result.value,
                             'referral_id': referral_id,
                             password: $("#password").val(),
