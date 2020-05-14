@@ -28,7 +28,7 @@ if(isset($_POST['name'])){
         $data['error'] = 'This Phone Number is already registered.';
         echo json_encode($data);
     } else{
-        $query = "INSERT INTO `webinar_signup_affiliate` (`name`, `phone`, `email`, `password`, `time`,`referral_id`, `from_ip`, `from_browser`) VALUES ('$name', '$phone', '$email', '$hashed_password','$date_now', '$hashed_email', '$from_ip', '$from_browser')";
+        $query = "INSERT INTO `webinar_signup_affiliate` (`name`, `phone`, `email`, `password`, `time`,`referral_id`, `from_ip`, `from_browser`, `commission`) VALUES ('$name', '$phone', '$email', '$hashed_password','$date_now', '$hashed_email', '$from_ip', '$from_browser', 0.3)";
 
         // echo $query;
         

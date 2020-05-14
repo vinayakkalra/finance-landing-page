@@ -15,7 +15,7 @@ if(isset($_POST['email'])){
     $orders = array();
     $redeem_requests = array();
 
-    $result = mysqli_query($link, "SELECT `name`, `phone`, `referral_id`, `total_clicks`, `unique_visitors` FROM `webinar_signup_affiliate` WHERE `email` = '$email' ");
+    $result = mysqli_query($link, "SELECT `name`, `phone`, `referral_id`, `total_clicks`, `unique_visitors`, `commission` FROM `webinar_signup_affiliate` WHERE `email` = '$email' ");
 
     if (mysqli_num_rows($result) !=0 ) { 
         while ($row = mysqli_fetch_array($result)) {
@@ -25,6 +25,7 @@ if(isset($_POST['email'])){
             $referral_id = $row['referral_id'];
             $data['total_clicks'] = $row['total_clicks'];
             $data['unique_visitors'] = $row['unique_visitors'];
+            $data['commission'] = $row['commission'];
         }
 
         $result = mysqli_query($link, "SELECT `name`, `amount`, `date_now` FROM `orders_razorpay` WHERE `referral_id` = '$referral_id' AND `status` = 'paid' ");

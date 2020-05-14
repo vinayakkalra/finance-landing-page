@@ -259,7 +259,7 @@
             </div>
         </div>
         <!-- achievement -->
-        <div class="container-fluid bg-blue mt-4">
+        <div class="container-fluid bg-blue mt-4 d-none">
             <h2 class="pt-3" style="display:flex;justify-content:center;color:#fff;">Achievement</h2>
             <div class="row p-2">
                 <div class="col-3 p-3">
@@ -417,7 +417,6 @@
                     <div class="icon8"  style="opacity:0.8;background-color:#000;height:380px;margin-top:-380px;border-radius:12px;"></div>
                 </div>            
             </div>
-            <!-- content 1 -->
             <div class="container">
                 <div class="row p-2">
                     <div class="col-4 p-3">
@@ -479,24 +478,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="container">
-                <div class="carousel-wrap mt-4">
-                    <div class="owl-carousel">
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                        <div class="item"><img src="http://placehold.it/150x150"></div>
-                    </div>
-                </div>
-            </div> -->
+            
         </div>
         <!-- sales overview -->
         <div class="container-fluid">
@@ -859,7 +841,7 @@
             </div>   
         </div>
         <!-- achievement -->
-        <div class="container-fluid bg-blue mt-4">
+        <div class="container-fluid bg-blue mt-4 d-none">
             <h1 class="pt-3" style="display:flex;justify-content:center;color:#fff;font-size:3rem;">Achievement</h1>
             <div class="row p-2">
                 <div class="col-6 pt-3">
@@ -1338,7 +1320,7 @@
                         $("#orders-desktop").html($("#orders-desktop").html() + '<div class="row"><div class="col-8 pl-5">' + data.orders[i].name + '</div><div class="col-4 pr-5 text-right"><span>&#8377;</span>'+ data.orders[i].amount +'</div></div><hr>');
                         $("#orders-mobile").html($("#orders-mobile").html() + '<div class="row"><div class="col-8" style="font-size: 2rem">'+ data.orders[i].name+'</div><div class="col-4 text-right" style="font-size: 2rem"><span>&#8377;</span>'+ data.orders[i].amount+'</div></div><hr>');
 
-                        total_income = Math.floor((data.orders[i].amount)*0.2) + total_income;
+                        total_income = Math.floor((data.orders[i].amount)*data.commission) + total_income;
                     }
 
                     if(data.redeemStatus == 211){
@@ -1369,17 +1351,17 @@
                     for( var i = 0; i<data.orders.length; i++){
                         var order_date = new Date(data.orders[i].date_now);
                         if(order_date.toDateString() === date_today.toDateString()){
-                            today = today + Math.floor((data.orders[i].amount)*0.2);
+                            today = today + Math.floor((data.orders[i].amount)*data.commission);
                         }
                         var diff = date_today.getDate() - order_date.getDate();
                         if(diff == 1){
-                            yesterday = yesterday + Math.floor((data.orders[i].amount)*0.2);
+                            yesterday = yesterday + Math.floor((data.orders[i].amount)*data.commission);
                         }
                         if(diff <= 7){
-                            week = week + Math.floor((data.orders[i].amount)*0.2);
+                            week = week + Math.floor((data.orders[i].amount)*data.commission);
                         }
                         if(diff <= 30){
-                            month = month + Math.floor((data.orders[i].amount)*0.2);
+                            month = month + Math.floor((data.orders[i].amount)*data.commission);
                         }
                     }
                     $("#month-desktop").html(month);
