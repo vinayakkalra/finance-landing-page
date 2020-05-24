@@ -20,9 +20,9 @@
     date_default_timezone_set("Asia/Calcutta");
 
     //video start timestamp for day 1, 2 and 3
-    $eventDay1 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 15, 2020));
-    $eventDay2 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 16, 2020));
-    $eventDay3 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 17, 2020));
+    $eventDay1 = date("Y-m-d H:i:s", mktime(18, 00, 00, 6, 12, 2020));
+    $eventDay2 = date("Y-m-d H:i:s", mktime(18, 00, 00, 6, 13, 2020));
+    $eventDay3 = date("Y-m-d H:i:s", mktime(18, 00, 00, 6, 14, 2020));
 
     //intro to make dir
     //mktime(hour, minute, second, month, day, year)
@@ -54,7 +54,7 @@
 
             if($token == null || $token == $_SESSION['token']){
                     
-                if($product_name == 'Crypto-Nite3'){
+                if($product_name == 'Crypto-Nite4'){
                     $new_batch = true;
                     $tillDay = 0;
                     if(strtotime($eventDay3) - strtotime($currentDate) < 0){
@@ -78,7 +78,7 @@
                         $day = "1";
                     }
                     // header("Location: user-login");
-                } else if($product_name == 'Crypto-Nite 2020' || $product_name == 'Crypto-Nite2'){
+                } else if($product_name == 'Crypto-Nite 2020' || $product_name == 'Crypto-Nite2' || $product_name == 'Crypto-Nite3'){
                     $new_batch = false;
                     if(isset($_GET['day'])){
                         
@@ -492,7 +492,7 @@
                                 <p style="margin-bottom:0px;">Join The Live Chat</p>
                             </div>
                             <div class="col-md-5" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://youtu.be/ZK6zJoJPx90" target="_blank" style="color:#000;">Join Now</a>
+                                <a href="https://youtu.be/4RDFG0dUYY8" target="_blank" style="color:#000;">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -885,7 +885,7 @@
                                 <p style="margin-bottom:0px;">Join The Live Chat</p>
                             </div>
                             <div class="col-4" style="padding:18px;text-align:center;background-color:#fff;border-radius:15px;margin-left:6px;">
-                                <a href="https://youtu.be/ZK6zJoJPx90" target="_blank" style="color:#000;">Join</a>
+                                <a href="https://youtu.be/4RDFG0dUYY8" target="_blank" style="color:#000;">Join</a>
                             </div>
                         </div>
                     </div>

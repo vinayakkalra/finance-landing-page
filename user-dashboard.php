@@ -18,9 +18,9 @@ $token = null;
 date_default_timezone_set("Asia/Calcutta");
 
 //video start timestamp for day 1, 2 and 3
-$eventDay1 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 15, 2020));
-$eventDay2 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 16, 2020));
-$eventDay3 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 17, 2020));
+$eventDay1 = date("Y-m-d H:i:s", mktime(18, 00, 00, 6, 12, 2020));
+$eventDay2 = date("Y-m-d H:i:s", mktime(18, 00, 00, 6, 13, 2020));
+$eventDay3 = date("Y-m-d H:i:s", mktime(18, 00, 00, 6, 14, 2020));
 
 //intro to make dir
 //mktime(hour, minute, second, month, day, year)
@@ -30,31 +30,31 @@ $currentDate = date("Y-m-d H:i:s");
 
 // glosarry timer
 // $countDownDate12 = "apr 20, 2020 24:00:00";
-$countDownDate12 = date("Y-m-d H:i:s", mktime(24, 00, 00, 5, 8, 2020));
+$countDownDate12 = date("Y-m-d H:i:s", mktime(24, 00, 00, 6, 3, 2020));
 
 //bonus content timer
 // $countDownDate13 = "apr 25, 2020 24:00:00";
-$countDownDate13 = date("Y-m-d H:i:s", mktime(24, 00, 00, 5, 10, 2020));
+$countDownDate13 = date("Y-m-d H:i:s", mktime(24, 00, 00, 6, 5, 2020));
 
 //life changing seminar timer
 // $countDownDate14 = "apr 28, 2020 24:00:00";
-$countDownDate14 = date("Y-m-d H:i:s", mktime(24, 00, 00, 5, 12, 2020));
+$countDownDate14 = date("Y-m-d H:i:s", mktime(24, 00, 00, 6, 7, 2020));
 
 //how to defi timer
 // $countDownDate15 = "apr 30, 2020 24:00:00";
-$countDownDate15 = date("Y-m-d H:i:s", mktime(24, 00, 00, 5, 14, 2020));
+$countDownDate15 = date("Y-m-d H:i:s", mktime(24, 00, 00, 6, 11, 2020));
 
 //participation certificate timer
 // $countDownDate16 = "may 3, 2020 21:00:00";
-$countDownDate16 = date("Y-m-d H:i:s", mktime(20, 45, 00, 5, 17, 2020));
+$countDownDate16 = date("Y-m-d H:i:s", mktime(20, 30, 00, 6, 14, 2020));
 
 // Event start timer 
 // $countDownDate1 = "may 1, 2020 18:00:00";
-$countDownDate1 = date("Y-m-d H:i:s", mktime(18, 00, 00, 5, 15, 2020));
+$countDownDate1 = date("Y-m-d H:i:s", mktime(18, 00, 00, 6, 12, 2020));
 
 // blockchain certificate countdown
 // $countDownDate2 = "may 25, 2020 24:00:00";
-$countDownDate2 = date("Y-m-d H:i:s", mktime(24, 00, 00, 5, 25, 2020));
+$countDownDate2 = date("Y-m-d H:i:s", mktime(24, 00, 00, 6, 15, 2020));
 // echo (strtotime($currentDate) - strtotime($countDownDate15));
 
 
@@ -80,8 +80,10 @@ if(isset($_SESSION['useremail'])){
         }
 
         if($token == null || $token == $_SESSION['token']){
-            if($product_name == 'Crypto-Nite3'){
+            if($product_name == 'Crypto-Nite4'){
                 $new_batch = true;
+            }else if($product_name == 'Crypto-Nite3'){
+                $new_batch = false;
             } else if($product_name == 'Crypto-Nite2'){
                 $new_batch = false;
             } else if($product_name == 'Crypto-Nite 2020'){
