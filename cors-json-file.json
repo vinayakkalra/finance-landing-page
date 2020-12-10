@@ -1,0 +1,9 @@
+[
+    {
+    "origin": ["https://www.finstreet.in/","https://finstreet.in/", "https://cryptonite.finstreet.in/", "http://test.finstreet.in/"],
+    "responseHeader": ["*"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+    }
+]
+///gsutil cors set cors-json-file.json gs://finstreet_event_videos
